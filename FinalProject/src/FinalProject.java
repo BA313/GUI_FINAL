@@ -13,22 +13,33 @@ public class FinalProject extends Application{
 	 * */
 	
 	//window size
-	static final double WIDTH = 1000.0, HEIGHT = 1500.0;
+	private static final double WIDTH = 1000.0, HEIGHT = 1500.0;
+	
+	//greeting header
+	private static final String header = "Welcome To: Gates N Fences";
+	private static final String subheader = "Designed to Enhance the Entry of your home with Custom Ornamental Decorative Driveway Gates while bringing Safety, Security and convenience.";
+	
+	//business info
+	private static final String businessInfo = "L.A. Ornamental Corp\r\n" + 
+			"3708 N.W. 82nd Street\r\n" + 
+			"Miami, Florida 33147\r\n" + 
+			"Phone: 305-696-0419\r\n" + 
+			"LAOrnamental@Aol.com";
 	
 	//about section text
-	static final String aboutSec1 = "All of our Aluminum or Wrought Iron Gates, or Fences are designed and manufactured to withstand a range of outdoor conditions. Our\r\n" + 
+	private static final String aboutSec1 = "All of our Aluminum or Wrought Iron Gates, or Fences are designed and manufactured to withstand a range of outdoor conditions. Our\r\n" + 
 			"commitment to our customers and dedication to produce quality gates has earned us thousands of satisfied customers.";
-	static final String aboutSec2 = "Although we offer a wide selection or Ornamental Designs or Decorative Designs, we can design and manufacture any style in aluminum or\r\n" + 
+	private static final String aboutSec2 = "Although we offer a wide selection or Ornamental Designs or Decorative Designs, we can design and manufacture any style in aluminum or\r\n" + 
 			"wrought iron metals. L. A. Ornamental & Rack Corp also offers Fences, Garden or Walk Thru Gates to match your driveway  gates. With over\r\n" + 
 			"thirty five years of experience in manufacturing and designing elegant, custom, or exotic Aluminum Driveway Gates and Fences, our past and\r\n" + 
 			"future customers can have peace of mind that they are receiving quality workmanship.  We are a Fence Company that gives our customers\r\n" + 
 			"110% of dedication to manufacture quality driveway gates and fences.\r\n" + 
 			"For a quote please send an e-mail to LAOrnamental@aol.com";
-	static final String aboutSec3 = "";
+	private static final String aboutSec3 = "";
 	
 	//reasons to buy section
-	static final String reasonsSec1 = "Why our Custom Made Aluminum Driveway Gates are Awsome looking, stronger, better material and workmanship is just part of our success";
-	static final String reasonsSec2 = "Aluminum driveway gates are becoming more and more popular because of how strong and durable they are. The wide choices for design and style is also\r\n" + 
+	private static final String reasonsSec1 = "Why our Custom Made Aluminum Driveway Gates are Awsome looking, stronger, better material and workmanship is just part of our success";
+	private static final String reasonsSec2 = "Aluminum driveway gates are becoming more and more popular because of how strong and durable they are. The wide choices for design and style is also\r\n" + 
 			"another reason why this type of gate is preferred by many people over wooden or iron gates.\r\n" + 
 			"\r\n" + 
 			"Here are the reasons why a lot of homeowners choose to put up custom made gates made of aluminum.\r\n" + 
@@ -54,21 +65,21 @@ public class FinalProject extends Application{
 			"time, money, and effort in maintenance This gates are capable of enduring different types of elements without flaking, chipping, or cracking.";
 	
 	//Gate and Fence Descriptions
-	static final String openAndOpsDes =  "We offer a large selection of  Gate Openers and Gate Operators for Residential Driveway Gates, Light or Heavy Commercial Gates, or industrial\r\n" + 
+	private static final String openAndOpsDes =  "We offer a large selection of  Gate Openers and Gate Operators for Residential Driveway Gates, Light or Heavy Commercial Gates, or industrial\r\n" + 
 			"locations. If your not sure the style or size of the Gate opener / gate operator  you need, please e-mail or contact us so we can gladly help guide\r\n" + 
 			"you to the correct choice. We offer all type of Gate Openers / Gate Operator, Sliding Gate Openers / Gate Operator, Swing Gate Openers / Gate\r\n" + 
 			"Operator, Hydraulic Gate Openers / Gate Operator. We also have a wide selection of replacement Main Circuit Boards for all brands, and\r\n" + 
 			"Remote Controls  for Visors or Keychains.";
-	static final String railingsDes = "Railings - L. A. Ornamental Rack Corp offers top quality Balcony Railings, Front Porch Railings, Deck Railings in Metal, Aluminum, or Wrought\r\n" + 
+	private static final String railingsDes = "Railings - L. A. Ornamental Rack Corp offers top quality Balcony Railings, Front Porch Railings, Deck Railings in Metal, Aluminum, or Wrought\r\n" + 
 			"Iron Steel.  We offer rails for residential or commercial locations for either Interior or Exterior locations. We also offer Custom Made Railings,\r\n" + 
 			"Decorative Railings, or HandRails that are powder coated paint for low maintenance and long last Balcony Rails, Porch Rails, or Deck Rails";
-	static final String gardenDes = "Garden Gates or Walk Gates can be designed to match any existing or ordered driveway gate.  Customers can choose between wrought iron\r\n" + 
+	private static final String gardenDes = "Garden Gates or Walk Gates can be designed to match any existing or ordered driveway gate.  Customers can choose between wrought iron\r\n" + 
 			"or aluminum as material  and choose from our wide selection of powder coated colors.  Garden or Walk Gates are custom made that can give\r\n" + 
 			"your home that special and elegant look.";
 	
 	//Brand Name Section
-	static final String nameBrandSec1 = "Top Brands of Gate Openers and Operators, Commercial, Residential, Industrial, Swing, Slide, Rack & Pinion, Barrier";
-	static final String nameBrandSec2 = "BFT Gate Openers\r\n" + 
+	private static final String nameBrandSec1 = "Top Brands of Gate Openers and Operators, Commercial, Residential, Industrial, Swing, Slide, Rack & Pinion, Barrier";
+	private static final String nameBrandSec2 = "BFT Gate Openers\r\n" + 
 			"PowerMaster Gate Openers\r\n" + 
 			"Eagle Gate Operators\r\n" + 
 			"Elite Gate Openers\r\n" + 
@@ -92,6 +103,12 @@ public class FinalProject extends Application{
 			"Revere\r\n" + 
 			"Aiphone Intercom";
 	
+	//final about section and legal information
+	static final String additionalInfo = "About Us  |   Contact Us   |   Our Policies   |   FAQ   |   Manufactures   |   Links   |   \r\n" + 
+			"Copyright Protected 2004-2008 - L. A. Ornamental & Rack Corp.  All rights reserved. No part of this site can be reproduced in any form or by any means,\r\n" + 
+			"electronic, mechanical, photocopying, or otherwise without prior written consent of L. A. Ornamental & Rack Corp.\r\n" + 
+			"3708 NW 82nd Street  Miami  Florida  33147, Office: 305-696-0419  Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com";
+	
 	
 	//Gate and Fence Images
 	static final Image AlFence1 = new Image("AluminumFence1.jpg");
@@ -107,6 +124,8 @@ public class FinalProject extends Application{
 	
 	static final Image Railings1 = new Image("Ralings1.jpg");
 	static final Image Railings2 = new Image("Ralings2.jpg");
+	
+	
 
 	public static void main(String[] args) {
 		launch(args);
