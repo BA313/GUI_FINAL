@@ -191,19 +191,21 @@ public class FinalProject extends Application {
             + " Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com";
 
     //Gate and Fence Images
-    static final Image AlFence1 = new Image("file:AluminumFence1.jpg");
-    static final Image AlFence2 = new Image("file:AluminumFence2.jpg");
+    static final Image Header = new Image("Header.jpg");
     
-    static final Image AlGate1 = new Image("file:AluminumGate1.jpg");
-    static final Image AlGate2 = new Image("file:AluminumGate2.jpg");
-    static final Image AlGate3 = new Image("file:AluminumGate3.jpg");
+    static final Image AlFence1 = new Image("AluminumFence1.jpg");
+    static final Image AlFence2 = new Image("AluminumFence2.jpg");
+    
+    static final Image AlGate1 = new Image("AluminumGate1.jpg");
+    static final Image AlGate2 = new Image("AluminumGate2.jpg");
+    static final Image AlGate3 = new Image("AluminumGate3.jpg");
 
-    static final Image GardGate1 = new Image("file:GardenGate1.jpg");
-    static final Image GardGate2 = new Image("file:GardenGate2.jpg");
-    static final Image GardGate3 = new Image("file:GardenGate3.jpg");
+    static final Image GardGate1 = new Image("GardenGate1.jpg");
+    static final Image GardGate2 = new Image("GardenGate2.jpg");
+    static final Image GardGate3 = new Image("GardenGate3.jpg");
 
-    static final Image Railings1 = new Image("file:Ralings1.jpg");
-    static final Image Railings2 = new Image("file:Ralings2.jpg");
+    static final Image Railings1 = new Image("Ralings1.jpg");
+    static final Image Railings2 = new Image("Ralings2.jpg");
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -224,6 +226,11 @@ public class FinalProject extends Application {
          */
         Button searchBtn = new Button("Search");
         Button homeBtn = new Button("Home");
+        
+        ImageView HeaderHolder = new ImageView(Header);
+        HeaderHolder.setPreserveRatio(true);
+//        HeaderHolder.setFitWidth(400);
+//        HeaderHolder.setFitHeight(250);
         
         
         //imageviews for pictures
