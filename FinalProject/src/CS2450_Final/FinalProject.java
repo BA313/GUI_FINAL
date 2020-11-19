@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
 
     //window size
-    private static final double WIDTH = 1000.0, HEIGHT = 1500.0;
+    private static final double WIDTH = 1000.0, HEIGHT = 1800.0;
 
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
@@ -50,20 +50,20 @@ public class FinalProject extends Application {
     //about section text
     private static final String ABOUT_SEC1 = "All of our Aluminum or Wrought Iron "
             + "Gates, or Fences are designed and manufactured to withstand a"
-            + " range of outdoor conditions. Our\r\n commitment to our "
+            + " range of outdoor conditions. Our commitment to our "
             + "customers and dedication to produce quality gates has earned"
             + " us thousands of satisfied customers.";
     private static final String ABOUT_SEC2 = "Although we offer a wide selection or "
             + "Ornamental Designs or Decorative Designs, we can design and "
-            + "manufacture any style in aluminum or\r\n wrought iron metals. "
+            + "manufacture any style in aluminum or wrought iron metals. "
             + "L. A. Ornamental & Rack Corp also offers Fences, Garden or Walk "
-            + "Thru Gates to match your driveway  gates. With over\r\n "
+            + "Thru Gates to match your driveway  gates. With over "
             + "thirty five years of experience in manufacturing and designing"
             + " elegant, custom, or exotic Aluminum Driveway Gates and Fences,"
-            + " our past and\r\n future customers can have peace of mind that"
+            + " our past and future customers can have peace of mind that"
             + " they are receiving quality workmanship.  We are a Fence Company "
-            + "that gives our customers\r\n 110% of dedication to manufacture "
-            + "quality driveway gates and fences.\r\n For a quote please send an"
+            + "that gives our customers 110% of dedication to manufacture "
+            + "quality driveway gates and fences. For a quote please send an"
             + " e-mail to LAOrnamental@aol.com";
     private static final String ABOUT_SEC3 = "";
 
@@ -191,21 +191,21 @@ public class FinalProject extends Application {
             + " Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com";
 
     //Gate and Fence Images
-    static final Image Header = new Image("Header.jpg");
+    static final Image Header = new Image("PageHeader.jpg");
     
     static final Image AlFence1 = new Image("AluminumFence1.jpg");
-    static final Image AlFence2 = new Image("AluminumFence2.jpg");
+    static final Image AlFence2 = new Image("file:AluminumFence2.jpg");
     
-    static final Image AlGate1 = new Image("AluminumGate1.jpg");
-    static final Image AlGate2 = new Image("AluminumGate2.jpg");
-    static final Image AlGate3 = new Image("AluminumGate3.jpg");
+    static final Image AlGate1 = new Image("file:AluminumGate1.jpg");
+    static final Image AlGate2 = new Image("file:AluminumGate2.jpg");
+    static final Image AlGate3 = new Image("file:AluminumGate3.jpg");
 
-    static final Image GardGate1 = new Image("GardenGate1.jpg");
-    static final Image GardGate2 = new Image("GardenGate2.jpg");
-    static final Image GardGate3 = new Image("GardenGate3.jpg");
+    static final Image GardGate1 = new Image("file:GardenGate1.jpg");
+    static final Image GardGate2 = new Image("file:GardenGate2.jpg");
+    static final Image GardGate3 = new Image("file:GardenGate3.jpg");
 
-    static final Image Railings1 = new Image("Ralings1.jpg");
-    static final Image Railings2 = new Image("Ralings2.jpg");
+    static final Image Railings1 = new Image("file:Ralings1.jpg");
+    static final Image Railings2 = new Image("file:Ralings2.jpg");
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -229,9 +229,8 @@ public class FinalProject extends Application {
         
         ImageView HeaderHolder = new ImageView(Header);
         HeaderHolder.setPreserveRatio(true);
-//        HeaderHolder.setFitWidth(400);
-//        HeaderHolder.setFitHeight(250);
-        
+        HeaderHolder.setFitWidth(600);
+        HeaderHolder.setFitHeight(300);
         
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
@@ -292,12 +291,15 @@ public class FinalProject extends Application {
 
         Label subLabel = new Label(SUBHEADER); //figure out way to put it under header but not in the way of the business info
 
+        
         Label locationLabel = new Label(BUSINESS_INFO);
-        locationLabel.setStyle("-fx-font-size: 18pt");
+        locationLabel.setStyle("-fx-font-size: 15pt");
         locationLabel.setWrapText(true);
 
         Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2);
         businessLabel.setWrapText(true);
+        businessLabel.setMaxWidth(600);
+        businessLabel.setPadding(new Insets(0,10,0,10));
         businessLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
         Label reasonsLabel = new Label(REASONS_SEC1 + "\n" + REASONS_SEC2);
@@ -313,7 +315,7 @@ public class FinalProject extends Application {
         
         Label addtInfoLabel = new Label(ADDITIONAL_INFO);
         addtInfoLabel.setWrapText(true);
-        addtInfoLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        addtInfoLabel.setTextAlignment(TextAlignment.CENTER);
 
         //ComboBox or Listview will probably look better than a string of buttons
         ComboBox<String> linksComboBox = new ComboBox<>();
@@ -340,32 +342,38 @@ public class FinalProject extends Application {
          */
         
         //hbox for the header and initial information
-        HBox headerHbox = new HBox(20, headerLabel, locationLabel);
-        headerHbox.setAlignment(Pos.TOP_CENTER);
+        HBox headerHbox = new HBox(20, HeaderHolder, locationLabel);
+        headerHbox.setAlignment(Pos.TOP_LEFT);
+        headerHbox.setPadding(new Insets(10));
         
         //hbox for the links
         HBox linksHbox = new HBox(10, homeBtn, linksComboBox, searchBar, searchBtn);
-        linksHbox.setAlignment(Pos.TOP_CENTER);
+        linksHbox.setAlignment(Pos.TOP_LEFT);
+        linksHbox.setPadding(new Insets(10));
 
         //hbox with business desciption text and gate picture
         HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
-        descriptionHbox.setAlignment(Pos.TOP_CENTER);
+        descriptionHbox.setAlignment(Pos.TOP_LEFT);
         
         //hbox for reasons for use
         HBox reasonsHbox = new HBox(10, reasonsLabel);
-        reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        reasonsHbox.setAlignment(Pos.BOTTOM_LEFT);
+        reasonsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
-        typesHbox.setAlignment(Pos.BOTTOM_CENTER);
+        typesHbox.setAlignment(Pos.BOTTOM_LEFT);
+        typesHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for brand links
         HBox brandsHbox = new HBox(10, brandsLabel);
-        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        brandsHbox.setAlignment(Pos.BOTTOM_LEFT);
+        brandsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for additional site bs
         HBox infoHbox = new HBox(10, addtInfoLabel);
-        infoHbox.setAlignment(Pos.BOTTOM_CENTER);
+        infoHbox.setAlignment(Pos.BOTTOM_LEFT);
+        infoHbox.setPadding(new Insets(0,10,0,10));
 
         //vbox to order everything vertically
         VBox vbox = new VBox(10, headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
@@ -373,12 +381,13 @@ public class FinalProject extends Application {
 
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
-        scrollPane.setFitToHeight(true);
+        scrollPane.setPadding(new Insets(10));
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         BorderPane root = new BorderPane(scrollPane);
         root.setPadding(new Insets(10));
         
         Scene scene = new Scene(root, WIDTH, HEIGHT, Color.GRAY);
+        scene.getStylesheets().add("Style.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
