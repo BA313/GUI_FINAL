@@ -249,9 +249,9 @@ public class FinalProject extends Application {
     static final Image AlFence1 = new Image("AluminumFence1.jpg");
     static final Image AlFence2 = new Image("AluminumFence2.jpg");
     
-    static final Image AlGate1 = new Image("file:AluminumGate1.jpg");
-    static final Image AlGate2 = new Image("file:AluminumGate2.jpg");
-    static final Image AlGate3 = new Image("file:AluminumGate3.jpg");
+    static final Image AlGate1 = new Image("AluminumGate1.jpg");
+    static final Image AlGate2 = new Image("AluminumGate2.jpg");
+    static final Image AlGate3 = new Image("AluminumGate3.jpg");
 
     static final Image GardGate1 = new Image("GardenGate1.jpg");
     static final Image GardGate2 = new Image("GardenGate2.jpg");
@@ -432,6 +432,9 @@ public class FinalProject extends Application {
         HBox imagesHbox = new HBox(10, AF2View, AG1View, AG2View, AG3View);
         imagesHbox.setAlignment(Pos.TOP_CENTER);
         
+        HBox imagesHbox2 = new HBox(10, GG1View, GG2View, GG3View,R1View,R2View);
+        imagesHbox2.setAlignment(Pos.TOP_CENTER);
+        
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
         typesHbox.setAlignment(Pos.BOTTOM_CENTER);
@@ -449,7 +452,7 @@ public class FinalProject extends Application {
 
         //vbox to order everything vertically
         VBox vbox = new VBox(10,headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
-                typesHbox, infoHbox);
+        		imagesHbox,typesHbox, infoHbox);
         
         
         //VBox headerVbox = new VBox();
