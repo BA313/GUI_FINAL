@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -285,10 +286,6 @@ public class FinalProject extends Application {
         HeaderHolder.setFitWidth(600);
         HeaderHolder.setFitHeight(300);
         
-        //Header background color
-        Rectangle headerBkgrnd = new Rectangle(0, 0, 1000, 200);
-        headerBkgrnd.setFill(Color.TEAL);
-        headerBkgrnd.autosize();
         
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
@@ -447,11 +444,11 @@ public class FinalProject extends Application {
         infoHbox.setPadding(new Insets(0,10,0,10));
 
         //vbox to order everything vertically
-        VBox vbox = new VBox(10, descriptionHbox, reasonsHbox, 
+        VBox vbox = new VBox(10,headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
                 typesHbox, infoHbox);
         
         
-        VBox headerVbox = new VBox(headerHbox, linksHbox);
+        //VBox headerVbox = new VBox();
         
         //added a scroll bar in case its too long, restyle later
 //        ScrollPane scrollPane = new ScrollPane(vbox);
