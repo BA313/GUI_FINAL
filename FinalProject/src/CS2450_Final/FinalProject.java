@@ -16,7 +16,12 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -30,7 +35,7 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
 
     //window size
-    private static final double WIDTH = 1000.0, HEIGHT = 1500.0;
+    private static final double WIDTH = 950.0, HEIGHT = 1800.0;
 
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
@@ -50,20 +55,20 @@ public class FinalProject extends Application {
     //about section text
     private static final String ABOUT_SEC1 = "All of our Aluminum or Wrought Iron "
             + "Gates, or Fences are designed and manufactured to withstand a"
-            + " range of outdoor conditions. Our\r\n commitment to our "
+            + " range of outdoor conditions. Our commitment to our "
             + "customers and dedication to produce quality gates has earned"
             + " us thousands of satisfied customers.";
     private static final String ABOUT_SEC2 = "Although we offer a wide selection or "
             + "Ornamental Designs or Decorative Designs, we can design and "
-            + "manufacture any style in aluminum or\r\n wrought iron metals. "
+            + "manufacture any style in aluminum or wrought iron metals. "
             + "L. A. Ornamental & Rack Corp also offers Fences, Garden or Walk "
-            + "Thru Gates to match your driveway  gates. With over\r\n "
+            + "Thru Gates to match your driveway  gates. With over "
             + "thirty five years of experience in manufacturing and designing"
             + " elegant, custom, or exotic Aluminum Driveway Gates and Fences,"
-            + " our past and\r\n future customers can have peace of mind that"
+            + " our past and future customers can have peace of mind that"
             + " they are receiving quality workmanship.  We are a Fence Company "
-            + "that gives our customers\r\n 110% of dedication to manufacture "
-            + "quality driveway gates and fences.\r\n For a quote please send an"
+            + "that gives our customers 110% of dedication to manufacture "
+            + "quality driveway gates and fences. For a quote please send an"
             + " e-mail to LAOrnamental@aol.com";
     private static final String ABOUT_SEC3 = "";
 
@@ -191,7 +196,9 @@ public class FinalProject extends Application {
             + " Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com";
 
     //Gate and Fence Images
-    static final Image AlFence1 = new Image("file:AluminumFence1.jpg");
+    static final Image Header = new Image("PageHeader.jpg");
+    
+    static final Image AlFence1 = new Image("AluminumFence1.jpg");
     static final Image AlFence2 = new Image("file:AluminumFence2.jpg");
     
     static final Image AlGate1 = new Image("file:AluminumGate1.jpg");
@@ -225,6 +232,10 @@ public class FinalProject extends Application {
         Button searchBtn = new Button("Search");
         Button homeBtn = new Button("Home");
         
+        ImageView HeaderHolder = new ImageView(Header);
+        HeaderHolder.setPreserveRatio(true);
+        HeaderHolder.setFitWidth(600);
+        HeaderHolder.setFitHeight(300);
         
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
@@ -285,12 +296,15 @@ public class FinalProject extends Application {
 
         Label subLabel = new Label(SUBHEADER); //figure out way to put it under header but not in the way of the business info
 
+        
         Label locationLabel = new Label(BUSINESS_INFO);
-        locationLabel.setStyle("-fx-font-size: 18pt");
+        locationLabel.setStyle("-fx-font-size: 15pt");
         locationLabel.setWrapText(true);
 
         Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2);
         businessLabel.setWrapText(true);
+        businessLabel.setMaxWidth(600);
+        businessLabel.setPadding(new Insets(0,10,0,10));
         businessLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
         Label reasonsLabel = new Label(REASONS_SEC1 + "\n" + REASONS_SEC2);
@@ -306,20 +320,32 @@ public class FinalProject extends Application {
         
         Label addtInfoLabel = new Label(ADDITIONAL_INFO);
         addtInfoLabel.setWrapText(true);
-        addtInfoLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        addtInfoLabel.setTextAlignment(TextAlignment.CENTER);
 
         //ComboBox or Listview will probably look better than a string of buttons
         ComboBox<String> linksComboBox = new ComboBox<>();
-        linksComboBox.getItems().addAll("Driveway Gates", "Garden Gates", "Fencing",
+        linksComboBox.getItems().addAll("SELECT PAGE","Driveway Gates", "Garden Gates", "Fencing",
                 "Railings", "Openers - Operators", "Main Control Boards",
                 "Remote Controls", "Receivers", "Telephone Entry",
                 "Safety Equipment", "Gate Accessories", "Gate Operator Parts");
-        linksComboBox.setValue("Driveway Gates");
+        linksComboBox.setValue("SELECT PAGE");
 
         //Search bar text field, make it larger and more prominent than original website
         TextArea searchBar = new TextArea();
+        searchBar.setMaxSize(430, 40);
         searchBar.setPrefRowCount(1);
-
+        
+        //search on Enter Key Pressed
+        searchBar.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    searchBar.setText("");
+                    ke.consume(); 
+                }
+            }
+        });
+        
         
 
         /*This hbox will hold all the button links and search bar for the site
@@ -333,32 +359,38 @@ public class FinalProject extends Application {
          */
         
         //hbox for the header and initial information
-        HBox headerHbox = new HBox(20, headerLabel, locationLabel);
-        headerHbox.setAlignment(Pos.TOP_CENTER);
+        HBox headerHbox = new HBox(20, HeaderHolder, locationLabel);
+        headerHbox.setAlignment(Pos.TOP_LEFT);
+        headerHbox.setPadding(new Insets(10));
         
         //hbox for the links
         HBox linksHbox = new HBox(10, homeBtn, linksComboBox, searchBar, searchBtn);
-        linksHbox.setAlignment(Pos.TOP_CENTER);
+        linksHbox.setAlignment(Pos.TOP_LEFT);
+        linksHbox.setPadding(new Insets(10));
 
         //hbox with business desciption text and gate picture
         HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
-        descriptionHbox.setAlignment(Pos.TOP_CENTER);
+        descriptionHbox.setAlignment(Pos.TOP_LEFT);
         
         //hbox for reasons for use
         HBox reasonsHbox = new HBox(10, reasonsLabel);
-        reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        reasonsHbox.setAlignment(Pos.BOTTOM_LEFT);
+        reasonsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
-        typesHbox.setAlignment(Pos.BOTTOM_CENTER);
+        typesHbox.setAlignment(Pos.BOTTOM_LEFT);
+        typesHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for brand links
         HBox brandsHbox = new HBox(10, brandsLabel);
-        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        brandsHbox.setAlignment(Pos.BOTTOM_LEFT);
+        brandsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for additional site bs
         HBox infoHbox = new HBox(10, addtInfoLabel);
-        infoHbox.setAlignment(Pos.BOTTOM_CENTER);
+        infoHbox.setAlignment(Pos.BOTTOM_LEFT);
+        infoHbox.setPadding(new Insets(0,10,0,10));
 
         //vbox to order everything vertically
         VBox vbox = new VBox(10, headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
@@ -366,12 +398,15 @@ public class FinalProject extends Application {
 
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
-        scrollPane.setFitToHeight(true);
+        scrollPane.setPadding(new Insets(10));
+        scrollPane.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         BorderPane root = new BorderPane(scrollPane);
+        root.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
         root.setPadding(new Insets(10));
         
-        Scene scene = new Scene(root, WIDTH, HEIGHT, Color.GRAY);
+        Scene scene = new Scene(root, WIDTH, HEIGHT);
+        scene.getStylesheets().add("Style.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
