@@ -16,7 +16,12 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -30,7 +35,7 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
 
     //window size
-    private static final double WIDTH = 1000.0, HEIGHT = 1800.0;
+    private static final double WIDTH = 950.0, HEIGHT = 1800.0;
 
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
@@ -319,16 +324,28 @@ public class FinalProject extends Application {
 
         //ComboBox or Listview will probably look better than a string of buttons
         ComboBox<String> linksComboBox = new ComboBox<>();
-        linksComboBox.getItems().addAll("Driveway Gates", "Garden Gates", "Fencing",
+        linksComboBox.getItems().addAll("SELECT PAGE","Driveway Gates", "Garden Gates", "Fencing",
                 "Railings", "Openers - Operators", "Main Control Boards",
                 "Remote Controls", "Receivers", "Telephone Entry",
                 "Safety Equipment", "Gate Accessories", "Gate Operator Parts");
-        linksComboBox.setValue("Driveway Gates");
+        linksComboBox.setValue("SELECT PAGE");
 
         //Search bar text field, make it larger and more prominent than original website
         TextArea searchBar = new TextArea();
+        searchBar.setMaxSize(430, 40);
         searchBar.setPrefRowCount(1);
-
+        
+        //search on Enter Key Pressed
+        searchBar.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    searchBar.setText("");
+                    ke.consume(); 
+                }
+            }
+        });
+        
         
 
         /*This hbox will hold all the button links and search bar for the site
@@ -382,11 +399,13 @@ public class FinalProject extends Application {
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
         scrollPane.setPadding(new Insets(10));
+        scrollPane.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         BorderPane root = new BorderPane(scrollPane);
+        root.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
         root.setPadding(new Insets(10));
         
-        Scene scene = new Scene(root, WIDTH, HEIGHT, Color.GRAY);
+        Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.getStylesheets().add("Style.css");
         primaryStage.setScene(scene);
         primaryStage.show();
