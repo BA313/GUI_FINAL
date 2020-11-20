@@ -1,19 +1,19 @@
 package CS2450_Final;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -23,14 +23,18 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Nate
+/** Nate C/Ben A
+ *  CS2450
+ *  Final Project
  */
 public class FinalProject extends Application {
 
@@ -39,9 +43,9 @@ public class FinalProject extends Application {
 
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
-    private static final String SUBHEADER = "Designed to Enhance the Entry"
-            + " of your home with Custom Ornamental Decorative Driveway "
-            + "Gates while bringing Safety, Security and convenience.";
+    private static final String SUBHEADER = "Enhance the entry of your home with"
+            + " custom, decorative gates and fences!";
+    //Enhance the entry of your home with custom, decorative gates and fences!
     
     //Cut down on the text cause this site says so much fucking information
     
@@ -53,113 +57,153 @@ public class FinalProject extends Application {
             + "LAOrnamental@Aol.com";
 
     //about section text
-    private static final String ABOUT_SEC1 = "All of our Aluminum or Wrought Iron "
-            + "Gates, or Fences are designed and manufactured to withstand a"
-            + " range of outdoor conditions. Our commitment to our "
+    private static final String ABOUT_SEC1 = "All of our aluminum or wrought iron "
+            + "gates or fences are designed and manufactured to withstand a"
+            + " range of outdoor conditions. Our\r\ncommitment to our "
             + "customers and dedication to produce quality gates has earned"
             + " us thousands of satisfied customers.";
-    private static final String ABOUT_SEC2 = "Although we offer a wide selection or "
-            + "Ornamental Designs or Decorative Designs, we can design and "
-            + "manufacture any style in aluminum or wrought iron metals. "
-            + "L. A. Ornamental & Rack Corp also offers Fences, Garden or Walk "
-            + "Thru Gates to match your driveway  gates. With over "
-            + "thirty five years of experience in manufacturing and designing"
-            + " elegant, custom, or exotic Aluminum Driveway Gates and Fences,"
-            + " our past and future customers can have peace of mind that"
-            + " they are receiving quality workmanship.  We are a Fence Company "
-            + "that gives our customers 110% of dedication to manufacture "
-            + "quality driveway gates and fences. For a quote please send an"
-            + " e-mail to LAOrnamental@aol.com";
-    private static final String ABOUT_SEC3 = "";
+    private static final String ABOUT_SEC2 = "We offer a wide selection of decorative"
+            + " designs in either aluminum or wrought iron.\r\nWith over "
+            + "35 years of experience, we seek to provide the highest quality and"
+            + " service to our customers.";
+    //We offer a wide selection of decorative designs in either aluminum or wrought iron.\r\n We have over 35 years of experience and seek to provide the highest quality and service to our customers.
+    
+//    private static final String ABOUT_SEC3 = "If your looking For Privacy with "
+//            + "your Driveway Gates ,Garden Gates, or Walk Thru Gates, we offer "
+//            + "a Solid Backing with your choice of\r\n"
+//            + "Aluminium, Steel, Plexiglas or Plastic.  All solid backing are"
+//            + " offered in many different colors to choose from. Privacy Gates";
+//    //This section might be unecessary
 
     //reasons to buy section
-    private static final String REASONS_SEC1 = "Why our Custom Made Aluminum "
-            + "Driveway Gates are Awsome looking, stronger, better material and "
-            + "workmanship is just part of our success";
+    private static final String REASONS_SEC1 = "Take a look at some of our custom"
+            + " driveway gates and fences!\r\n ";
+    //Take a look at some of our custom driveway gates and fences!\r\n 
+    
     private static final String REASONS_SEC2 = "Aluminum driveway gates are "
             + "becoming more and more popular because of how strong and durable "
             + "they are. The wide choices for design and style is also\r\n"
             + "another reason why this type of gate is preferred by many people "
             + "over wooden or iron gates.\r\n"
-            + "\r\n"
-            + "Here are the reasons why a lot of homeowners choose to put up "
-            + "custom made gates made of aluminum.\r\n"
-            + "\r\n"
-            + "1. Cost : Aluminum gates are less costly than steel gates at"
-            + " least nowadays as 10 years ago they were allot more expensive "
-            + "than Steel gates. If you like an\r\n"
-            + "elaborate and very decorative gate, the cost of wrought steel "
-            + "would be more, but with aluminum, the same design can be within "
-            + "your allotted budget.\r\n"
-            + "\r\n"
-            + "2. Weight: Aluminum custom made gates are very light compare to "
-            + "Steel gates, making them a lot easier to open compared to those "
-            + "made of iron. This may be\r\n"
-            + "just as important point when it comes to automatic gates, "
-            + "aluminum only lets minimal tear and ware on the rollers and "
-            + "hinges sliding gates. Because materials\r\n"
-            + "are not heavy, the automated opening system will surely stay in "
-            + "good condition for a longer time period and in some cases "
-            + "extending the life of the gate\r\n"
-            + "openers by 50%.\r\n"
-            + "\r\n"
-            + "3. Durability:Since aluminum is not damaged by rust or corrosion,"
-            + " your gate can serve you well for many years. All our gates "
-            + "designs are made from solid plate\r\n"
-            + "aluminum that is 1/2 to 1\" inch thick. A gate made of solid "
-            + "aluminum rods are a bit heavier but way lighter and so we are able"
-            + " to use thick material which makes\r\n"
-            + "our work stand out.\r\n"
-            + "\r\n"
-            + "4. Appearance and Options. When talking about sheer beauty, Our "
-            + "aluminum gate are so elegant as the materials that we use in most"
-            + " cases are TWICE thick than\r\n"
-            + "a metal gate . You also have a wide choice in terms of colors as "
-            + "we offer one of the largest select of Powder Coat Oven Baked in the net, larger selection\r\n"
-            + "styles, and custom sizes.\r\n"
-            + "\r\n"
-            + "5. Maintenance: Maintenance is out of the question Aluminum is "
-            + "the way to go, since it does not corrode, unlike with wrought "
-            + "Iron ( steel ), you are not required\r\n"
-            + "the Maintenance to up keep your gate no sanding,priming,re-painting"
-            + " for many ,many,many years to come. With aluminum custom made gates,"
-            + " you can save\r\n"
-            + "time, money, and effort in maintenance This gates are capable of "
-            + "enduring different types of elements without flaking, chipping, or cracking.";
-
+            + "\r\n" +
+            // 
+            
+//            + "Here are the reasons why a lot of homeowners choose to put up "
+//            + "custom made gates made of aluminum.\r\n"
+//            + "\r\n"
+            "Here are some reasons why our customers choose us for their "
+             + "aluminum gates!\r\n" +
+            
+//            + "1. Cost : Aluminum gates are less costly than steel gates at"
+//            + " least nowadays as 10 years ago they were allot more expensive "
+//            + "than Steel gates. If you like an\r\n"
+//            + "elaborate and very decorative gate, the cost of wrought steel "
+//            + "would be more, but with aluminum, the same design can be within "
+//            + "your allotted budget.\r\n"
+//            + "\r\n"
+            "1. Aluminum gates are much more cost effective than steel gates.\r\n "
+            + "Save money while still having a beautiful gate for your driveway!\r\n" +
+            
+//            + "2. Weight: Aluminum custom made gates are very light compare to "
+//            + "Steel gates, making them a lot easier to open compared to those "
+//            + "made of iron. This may be\r\n"
+//            + "just as important point when it comes to automatic gates, "
+//            + "aluminum only lets minimal tear and ware on the rollers and "
+//            + "hinges sliding gates. Because materials\r\n"
+//            + "are not heavy, the automated opening system will surely stay in "
+//            + "good condition for a longer time period and in some cases "
+//            + "extending the life of the gate\r\n"
+//            + "openers by 50%.\r\n"
+//            + "\r\n"
+            "2. Aluminum gates weigh less compared to steel gates and the rollers"
+            + " and hinges will receive less wear and tear.\r\n" +
+            
+//            + "3. Durability:Since aluminum is not damaged by rust or corrosion,"
+//            + " your gate can serve you well for many years. All our gates "
+//            + "designs are made from solid plate\r\n"
+//            + "aluminum that is 1/2 to 1\" inch thick. A gate made of solid "
+//            + "aluminum rods are a bit heavier but way lighter and so we are able"
+//            + " to use thick material which makes\r\n"
+//            + "our work stand out.\r\n"
+//            + "\r\n"
+            "3. Our aluminum fences and gates will withstand rust or corrosion "
+            + "and are very durable.\r\n Our gates are made with 1/2 to 1 inch "
+            + "thick aluminum plating.\r\n" +
+            
+//            + "4. Appearance and Options. When talking about sheer beauty, Our "
+//            + "aluminum gate are so elegant as the materials that we use in most"
+//            + " cases are TWICE thick than\r\n"
+//            + "a metal gate . You also have a wide choice in terms of colors as "
+//            + "we offer one of the largest select of Powder Coat Oven Baked in the net, larger selection\r\n"
+//            + "styles, and custom sizes.\r\n"
+//            + "\r\n"
+            "4. We offer a wide variety of styles, sizes, and paint colors for "
+            + "our gates or fences.\r\n We promise that your home will standout from"
+            + " the rest.\r\n" +
+            
+//            + "5. Maintenance: Maintenance is out of the question Aluminum is "
+//            + "the way to go, since it does not corrode, unlike with wrought "
+//            + "Iron ( steel ), you are not required\r\n"
+//            + "the Maintenance to up keep your gate no sanding,priming,re-painting"
+//            + " for many ,many,many years to come. With aluminum custom made gates,"
+//            + " you can save\r\n"
+//            + "time, money, and effort in maintenance This gates are capable of "
+//            + "enduring different types of elements without flaking, chipping, or cracking.";
+            "5. Aluminum gates need almost no maintenance when compared to a steel"
+            + " gate.\r\n Our gates and fences will last for years without any "
+            + "flaking or cracking.\r\n";
+    
     //Gate and Fence Descriptions
-    private static final String OPEN_AND_OPS_DES = "We offer a large selection of "
-            + " Gate Openers and Gate Operators for Residential Driveway Gates, "
-            + "Light or Heavy Commercial Gates, or industrial\r\n"
-            + "locations. If your not sure the style or size of the Gate opener"
-            + " / gate operator  you need, please e-mail or contact us so we can"
-            + " gladly help guide\r\n"
-            + "you to the correct choice. We offer all type of Gate Openers / "
-            + "Gate Operator, Sliding Gate Openers / Gate Operator, Swing Gate "
-            + "Openers / Gate\r\n"
-            + "Operator, Hydraulic Gate Openers / Gate Operator. We also have a "
-            + "wide selection of replacement Main Circuit Boards for all brands, and\r\n"
-            + "Remote Controls  for Visors or Keychains.";
-    private static final String RAILING_DES = "Railings - L. A. Ornamental Rack "
-            + "Corp offers top quality Balcony Railings, Front Porch Railings, "
-            + "Deck Railings in Metal, Aluminum, or Wrought\r\n"
-            + "Iron Steel.  We offer rails for residential or commercial "
-            + "locations for either Interior or Exterior locations. We also "
-            + "offer Custom Made Railings,\r\n"
-            + "Decorative Railings, or HandRails that are powder coated paint "
-            + "for low maintenance and long last Balcony Rails, Porch Rails, "
-            + "or Deck Rails";
-    private static final String GARDEN_DES = "Garden Gates or Walk Gates can be"
-            + " designed to match any existing or ordered driveway gate.  "
-            + "Customers can choose between wrought iron\r\n"
-            + "or aluminum as material  and choose from our wide selection"
-            + " of powder coated colors.  Garden or Walk Gates are custom made "
-            + "that can give\r\n your home that special and elegant look.";
+    private static final String OPEN_AND_OPS_DES = 
+//            "We offer a large selection of "
+//            + " Gate Openers and Gate Operators for Residential Driveway Gates, "
+//            + "Light or Heavy Commercial Gates, or industrial\r\n"
+//            + "locations. If your not sure the style or size of the Gate opener"
+//            + " / gate operator  you need, please e-mail or contact us so we can"
+//            + " gladly help guide\r\n"
+//            + "you to the correct choice. We offer all type of Gate Openers / "
+//            + "Gate Operator, Sliding Gate Openers / Gate Operator, Swing Gate "
+//            + "Openers / Gate\r\n"
+//            + "Operator, Hydraulic Gate Openers / Gate Operator. We also have a "
+//            + "wide selection of replacement Main Circuit Boards for all brands, and\r\n"
+//            + "Remote Controls  for Visors or Keychains.";
+            "We offer a large selection of gate openers and operators in many "
+            + "styles and sizes. If you need circuit boards or remote controls,"
+            + " we have got you covered!\r\n";
+    
+    private static final String RAILING_DES = 
+//            "Railings - L. A. Ornamental Rack "
+//            + "Corp offers top quality Balcony Railings, Front Porch Railings, "
+//            + "Deck Railings in Metal, Aluminum, or Wrought\r\n"
+//            + "Iron Steel.  We offer rails for residential or commercial "
+//            + "locations for either Interior or Exterior locations. We also "
+//            + "offer Custom Made Railings,\r\n"
+//            + "Decorative Railings, or HandRails that are powder coated paint "
+//            + "for low maintenance and long last Balcony Rails, Porch Rails, "
+//            + "or Deck Rails";
+            "If you need railings then look no further. We have a range of "
+            + "railings for all your needs: interior/exterior, "
+            + "residential/commerical, aluminum/wrought iron.\r\n"; 
+    
+    private static final String GARDEN_DES = 
+//            "Garden Gates or Walk Gates can be"
+//            + " designed to match any existing or ordered driveway gate.  "
+//            + "Customers can choose between wrought iron\r\n"
+//            + "or aluminum as material  and choose from our wide selection"
+//            + " of powder coated colors.  Garden or Walk Gates are custom made "
+//            + "that can give\r\n your home that special and elegant look.";
+            "Our garden gates and walkway gates are custom made to match the "
+            + "look of your home. We can match any preexisting gates you have "
+            + "and we have a variety of powder coated colors. These gates will "
+            + "really give your home that elegant look.\r\n";
 
     //Brand Name Section
-    private static final String NAME_BRAND_SEC1 = "Top Brands of Gate Openers "
-            + "and Operators, Commercial, Residential, Industrial, Swing, Slide,"
-            + " Rack & Pinion, Barrier";
+    private static final String NAME_BRAND_SEC1 = 
+//            "Top Brands of Gate Openers "
+//            + "and Operators, Commercial, Residential, Industrial, Swing, Slide,"
+//            + " Rack & Pinion, Barrier";
+            "Here are some of our top brands!\r\n";
+    
     private static final String NAME_BRAND_SEC2 = "BFT Gate Openers\r\n"
             + "PowerMaster Gate Openers\r\n"
             + "Eagle Gate Operators\r\n"
@@ -183,9 +227,11 @@ public class FinalProject extends Application {
             + "Ditek Surge Protector  -- Transformers\r\n"
             + "Revere\r\n"
             + "Aiphone Intercom";
+            //clean this up a bit/shorter the list
 
     //final about section and legal information
-    static final String ADDITIONAL_INFO = "About Us  |   Contact Us   |   "
+    //probably remove doesnt change effectiveness of website/presentation
+    static final String ADDITIONAL_INFO = "\t\t\t\t\t|  About Us  |   Contact Us   |   "
             + "Our Policies   |   FAQ   |   Manufactures   |   Links   |   \r\n"
             + "Copyright Protected 2004-2008 - L. A. Ornamental & Rack Corp.  "
             + "All rights reserved. No part of this site can be reproduced in "
@@ -208,7 +254,7 @@ public class FinalProject extends Application {
     static final Image GardGate1 = new Image("file:GardenGate1.jpg");
     static final Image GardGate2 = new Image("file:GardenGate2.jpg");
     static final Image GardGate3 = new Image("file:GardenGate3.jpg");
-
+    //railings don't load in for some reason
     static final Image Railings1 = new Image("file:Ralings1.jpg");
     static final Image Railings2 = new Image("file:Ralings2.jpg");
 
@@ -230,12 +276,19 @@ public class FinalProject extends Application {
          * Button partsBtn = new Button("Gate Operator Parts");
          */
         Button searchBtn = new Button("Search");
+//        searchBtn.setScaleX(1.5);
+//        searchBtn.setScaleY(1.5);
         Button homeBtn = new Button("Home");
         
         ImageView HeaderHolder = new ImageView(Header);
         HeaderHolder.setPreserveRatio(true);
         HeaderHolder.setFitWidth(600);
         HeaderHolder.setFitHeight(300);
+        
+        //Header background color
+        Rectangle headerBkgrnd = new Rectangle(0, 0, 1000, 200);
+        headerBkgrnd.setFill(Color.TEAL);
+        headerBkgrnd.autosize();
         
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
@@ -291,7 +344,8 @@ public class FinalProject extends Application {
         //lables for descriptions and stuff
         //Temp labels for header and business location/info
         Label headerLabel = new Label(HEADER);
-        headerLabel.setStyle("-fx-font-size: 30pt");
+       // headerLabel.setStyle("-fx-font-size: 30pt");
+        headerLabel.setFont(Font.font("Cambria", 50));
         headerLabel.setWrapText(true);
 
         Label subLabel = new Label(SUBHEADER); //figure out way to put it under header but not in the way of the business info
@@ -313,7 +367,7 @@ public class FinalProject extends Application {
         
         Label typesLabel = new Label(OPEN_AND_OPS_DES + RAILING_DES + GARDEN_DES);
         typesLabel.setWrapText(true);
-        typesLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        typesLabel.setTextAlignment(TextAlignment.CENTER);
         
         Label brandsLabel = new Label(NAME_BRAND_SEC1 + NAME_BRAND_SEC2);
         brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
@@ -393,8 +447,16 @@ public class FinalProject extends Application {
         infoHbox.setPadding(new Insets(0,10,0,10));
 
         //vbox to order everything vertically
-        VBox vbox = new VBox(10, headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
-                typesHbox, brandsHbox, infoHbox);
+        VBox vbox = new VBox(10, descriptionHbox, reasonsHbox, 
+                typesHbox, infoHbox);
+        
+        
+        VBox headerVbox = new VBox(headerHbox, linksHbox);
+        
+        //added a scroll bar in case its too long, restyle later
+//        ScrollPane scrollPane = new ScrollPane(vbox);
+//        scrollPane.setFitToHeight(true);
+//        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
