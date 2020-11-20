@@ -1,30 +1,32 @@
 .button {
-    -fx-font-size: 12pt;
+    -fx-font-size: 14pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
 .combo-box {
-    -fx-font-size: 12pt;
+    -fx-font-size: 14pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
     -fx-cell-size: 1.66667em;
 }
 .combo-box .list-cell {
-    -fx-font-size: 12pt;
+    -fx-font-size: 14pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
 .text-area .content{
-    -fx-font-size: 9pt;
+    -fx-font-size: 10pt;
     -fx-font-stye: underlined;
 }
 VBox {
     -fx-background-color: #FFEBCD;
 }
 .root {
-    -fx-font-size: 10pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Courier New";
     -fx-text-fill: rgb(51, 25, 0);
+    -fx-background-color: #FFEBCD;
 }
+
 
 
