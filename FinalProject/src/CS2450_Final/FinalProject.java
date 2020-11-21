@@ -200,6 +200,8 @@ public class FinalProject extends Application {
     //Gate and Fence Images
     static final Image Header = new Image("PageHeader.jpg");
     
+    static final Image PageNotFound = new Image("PageNotFound.jpg");
+    
     static final Image AlFence1 = new Image("AluminumFence1.jpg");
     static final Image AlFence2 = new Image("AluminumFence2.jpg");
     static final Image AlFence3 = new Image("AluminumFence3.jpg");
@@ -217,7 +219,18 @@ public class FinalProject extends Application {
     static final Image GardGate4 = new Image("GardenGate4.jfif");
     static final Image GardGate5 = new Image("GardenGate5.jpg");
     static final Image GardGate6 = new Image("GardenGate6.jfif");
-    static final Image PageNotFound = new Image("PageNotFound.jpg");
+    
+
+    static final Image Railings1 = new Image("Railings1.jpg");
+    static final Image Railings2 = new Image("Railings2.jpg");
+    
+    static final Image DrivewayGate1 = new Image("Drivewaygate1.jfif");
+    static final Image DrivewayGate2 = new Image("Drivewaygate2.jpg");
+    static final Image DrivewayGate3 = new Image("Drivewaygate3.jpg");
+    static final Image DrivewayGate4 = new Image("Drivewaygate4.jfif");
+    static final Image DrivewayGate5 = new Image("Drivewaygate5.jpg");
+    static final Image DrivewayGate6 = new Image("Drivewaygate6.jpg");
+    
     //holds All different Vboxes to display
     static VBox mainVbox;
     
@@ -234,16 +247,6 @@ public class FinalProject extends Application {
     static VBox FAQVbox;
     static VBox ManufacturesVbox;
     static VBox LinksVbox;
-
-    static final Image Railings1 = new Image("Railings1.jpg");
-    static final Image Railings2 = new Image("Railings2.jpg");
-    
-    static final Image DrivewayGate1 = new Image("Drivewaygate1.jfif");
-    static final Image DrivewayGate2 = new Image("Drivewaygate2.jpg");
-    static final Image DrivewayGate3 = new Image("Drivewaygate3.jpg");
-    static final Image DrivewayGate4 = new Image("Drivewaygate4.jfif");
-    static final Image DrivewayGate5 = new Image("Drivewaygate5.jpg");
-    static final Image DrivewayGate6 = new Image("Drivewaygate6.jpg");
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -586,15 +589,15 @@ public class FinalProject extends Application {
         Label seallbl = new Label("Royal Seal");
         Label romanlbl = new Label("Roman Timess");
         
-        ScrollPane scrollPane2 = new ScrollPane(vbox2);
-        scrollPane2.setPadding(new Insets(10));
-        scrollPane2.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-        scrollPane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        BorderPane root2 = new BorderPane(scrollPane2);
-        root2.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-        root2.setPadding(new Insets(10));
-        Scene dgScene = new Scene(root2, WIDTH, HEIGHT);
-        dgScene.getStylesheets().add("Style.css");
+//        ScrollPane scrollPane2 = new ScrollPane(vbox2);
+//        scrollPane2.setPadding(new Insets(10));
+//        scrollPane2.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+//        scrollPane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+//        BorderPane root2 = new BorderPane(scrollPane2);
+//        root2.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+//        root2.setPadding(new Insets(10));
+//        Scene dgScene = new Scene(root2, WIDTH, HEIGHT);
+//        dgScene.getStylesheets().add("Style.css");
         
         GridPane gridpane = new GridPane();
         gridpane.setVgap(10);
@@ -616,15 +619,15 @@ public class FinalProject extends Application {
         Label archlbl = new Label("Arch Vine");
         Label oasislbl = new Label("Oasis");
         
-        ScrollPane scrollPane3 = new ScrollPane(vbox3);
-        scrollPane3.setPadding(new Insets(10));
-        scrollPane3.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-        scrollPane3.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        BorderPane root3 = new BorderPane(scrollPane3);
-        root3.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-        root3.setPadding(new Insets(10));
-        Scene ggScene = new Scene(root3, WIDTH, HEIGHT);
-        ggScene.getStylesheets().add("Style.css");
+//        ScrollPane scrollPane3 = new ScrollPane(vbox3);
+//        scrollPane3.setPadding(new Insets(10));
+//        scrollPane3.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+//        scrollPane3.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+//        BorderPane root3 = new BorderPane(scrollPane3);
+//        root3.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+//        root3.setPadding(new Insets(10));
+//        Scene ggScene = new Scene(root3, WIDTH, HEIGHT);
+//        ggScene.getStylesheets().add("Style.css");
         
         GridPane gridpane2 = new GridPane();
         gridpane2.setVgap(10);
@@ -637,16 +640,16 @@ public class FinalProject extends Application {
         gridpane2.add(GG6View, 2, 1);
 
         //Fencing scene
-        VBox vbox4 = new VBox(10);
-        ScrollPane scrollPane4 = new ScrollPane(vbox4);
-        scrollPane4.setPadding(new Insets(10));
-        scrollPane4.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-        scrollPane4.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        BorderPane root4 = new BorderPane(scrollPane3);
-        root4.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-        root4.setPadding(new Insets(10));
-        Scene fScene = new Scene(root4, WIDTH, HEIGHT);
-        fScene.getStylesheets().add("Style.css");
+//        VBox vbox4 = new VBox(10);
+//        ScrollPane scrollPane4 = new ScrollPane(vbox4);
+//        scrollPane4.setPadding(new Insets(10));
+//        scrollPane4.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+//        scrollPane4.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+//        BorderPane root4 = new BorderPane(scrollPane3);
+//        root4.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+//        root4.setPadding(new Insets(10));
+//        Scene fScene = new Scene(root4, WIDTH, HEIGHT);
+//        fScene.getStylesheets().add("Style.css");
         
         GridPane gridpane3 = new GridPane();
         gridpane3.setVgap(10);
@@ -658,33 +661,30 @@ public class FinalProject extends Application {
         gridpane3.add(AF5View, 2, 0);
         gridpane3.add(AF6View, 2, 1);
 
-        linksComboBox.setOnAction(e -> {
-            switch (linksComboBox.getValue()) {
-                case "Driveway Gates": primaryStage.setScene(dgScene);
-                    vbox2.getChildren().addAll(headerHbox, linksHbox, gridpane,
-                            infoHbox);
-                    linksComboBox.setValue("Driveway Gates");
-                    break;
-                    
-                case "Garden Gates": primaryStage.setScene(ggScene);
-                    vbox3.getChildren().addAll(headerHbox, linksHbox, gridpane2,
-                            infoHbox);
-                    linksComboBox.setValue("Garden Gates");
-                    break;
-                    
-                case "Fencing": primaryStage.setScene(fScene);
-                    vbox4.getChildren().addAll(headerHbox, linksHbox, gridpane3,
-                            infoHbox);
-                    linksComboBox.setValue("Fencing");
-                    break;
-                    
-                default:
-                    break;
-            }
-        });
-        
-        //Return home if off default scene
-        homeBtn.setOnAction(e -> primaryStage.setScene(scene));
+//        linksComboBox.setOnAction(e -> {
+//            switch (linksComboBox.getValue()) {
+//                case "Driveway Gates": primaryStage.setScene(dgScene);
+//                    vbox2.getChildren().addAll(headerHbox, linksHbox, gridpane,
+//                            infoHbox);
+//                    linksComboBox.setValue("Driveway Gates");
+//                    break;
+//                    
+//                case "Garden Gates": primaryStage.setScene(ggScene);
+//                    vbox3.getChildren().addAll(headerHbox, linksHbox, gridpane2,
+//                            infoHbox);
+//                    linksComboBox.setValue("Garden Gates");
+//                    break;
+//                    
+//                case "Fencing": primaryStage.setScene(fScene);
+//                    vbox4.getChildren().addAll(headerHbox, linksHbox, gridpane3,
+//                            infoHbox);
+//                    linksComboBox.setValue("Fencing");
+//                    break;
+//                    
+//                default:
+//                    break;
+//            }
+//        });
         
         
         primaryStage.setScene(scene);
