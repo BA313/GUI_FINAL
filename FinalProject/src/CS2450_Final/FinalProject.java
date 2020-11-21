@@ -244,6 +244,47 @@ public class FinalProject extends Application {
             + "written consent of L. A. Ornamental & Rack Corp."
             + "3708 NW 82nd Street  Miami  Florida  33147, Office: 305-696-0419 "
             + " Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com\n\n\n\n";
+    
+    static final String ABOUT_PAGE = "Aluminum The Material of choice\r\n" + 
+    		"Aluminum: Aluminium is a soft and lightweight metal with a dull silver-gray appearance.  Aluminium is about one-third as dense as steel or copper is\r\n" + 
+    		"malleable ductile, and easily machined and cast; and has excellent corrosion resistance and durability due to the protective oxide layer. It is also\r\n" + 
+    		"nonmagnetic and nonsparking and is the second most malleable metal (most being gold) and the sixth most ductile. Whether measured in terms of\r\n" + 
+    		"quantity or value, the use of aluminium exceeds that of any other metal except iron and it is important in virtually all segments of the world economy.\r\n" + 
+    		"Aluminium alloys form vital components of aircrafts and rockets as a result of their high strength to weight ratio. Aluminium was selected as the material\r\n" + 
+    		"to be used for the apex of the Washington Monument, at a time when one ounce cost twice the daily wages of a labourer.\r\n" + 
+    		"\r\n" + 
+    		"Aluminium was, when it was first discovered, extremely difficult to separate from the rocks it was part of. Since the whole of Earth's aluminium was\r\n" + 
+    		"bound up in the form of compounds, it was the most difficult metal on earth to get, despite the fact that it is one of the planet's most common. The reason\r\n" + 
+    		"is that aluminium is oxidized very rapidly and that its oxide is an extremely stable compound that, unlike rust on steel, does not flake off. The very reason\r\n" + 
+    		"for which aluminium is used in many applications is why it is so hard to produce.\r\n" + 
+    		"\r\n" + 
+    		"Recovery of this metal from scrap (via recycling) has become an important component of the aluminium industry. Recycling involves simply melting the\r\n" + 
+    		"metal, which is far less expensive than creating it from ore. Refining aluminium requires enormous amounts of electricity; recycling it requires only 5% of\r\n" + 
+    		"the energy to produce it. A common practice since the early 1900's, aluminium recycling is not new. It was, however, a low-profile activity until the late\r\n" + 
+    		"1960's when the exploding popularity of aluminium beverage can finally placed recycling into the public consciousness.\r\n" + 
+    		"\r\n" + 
+    		"Electric power represents about 20 to 40% of the cost of producing aluminium, depending on the location of the aluminium smelter. Smelters tend to be\r\n" + 
+    		"located where electric power is plentiful and inexpensive, China is currently (2004) the top world producer of aluminium.\r\n" + 
+    		"\r\n" + 
+    		"After peaking in popularity in the lavish homes of the 1920s then nearly disappearing from new construction during the whimsical vinyl-sided cottage era,\r\n" + 
+    		"Wrought Aluminum is making a phenomenal come back over wrought iron, now that Aluminum is cheaper to produce and the new techniques available\r\n" + 
+    		"to make it look like wrought iron with the benefit of maintenance free .\r\n" + 
+    		"Designers and builders attribute the re-surging demand to current trends in architecture featuring Mediterranean, Southwestern, and French country\r\n" + 
+    		"style homes. Also credited are improved production methods that render the metal applications more durable\r\n" + 
+    		"\r\n" + 
+    		"The topic of gating is increasing. The blur between the public space and the private realm of the homeowners' association and its management is\r\n" + 
+    		"surfacing. However, land developers are very aware that gating is assumed to favor increased property values, and the town officials are aware of the\r\n" + 
+    		"associated increases in the town's property tax base.\r\n" + 
+    		"\r\n" + 
+    		"There are more than seven million households (about 6 percent of the national total) behind fences or walls, according to the Census Bureau's 2001\r\n" + 
+    		"American Housing Survey. The Census Bureau estimated the percentage of people living in gated communities had shot up by 11 percent in the West.\r\n" + 
+    		"The homes behind the walls, the survey revealed, were \"upscale,\" and \"mostly white developments.\"\r\n" + 
+    		"\r\n" + 
+    		"Built in the early 1930s, the first gated communities in Los Angeles were upper-scale developments in Rolling Hills and Bradbury. Now, gated\r\n" + 
+    		"communities represent almost 50 percent of the market in the desert resort areas near Palm Springs.\r\n" + 
+    		"\r\n" + 
+    		"\"As real-estate commodities, they are tailored to fit to specific prospective buyers. Gated communities are located within every kind of middle class and\r\n" + 
+    		"upper-class neighborhoods, and are now available for every market segment continuing to increase.";
 
     //Gate and Fence Images
     static final Image Header = new Image("PageHeader.jpg");
@@ -261,6 +302,25 @@ public class FinalProject extends Application {
     //railings don't load in for some reason
     static final Image Railings1 = new Image("Railings1.jpg");
     static final Image Railings2 = new Image("Railings2.jpg");
+    
+    static final Image PageNotFound = new Image("PageNotFound.jpg");
+    
+    //holds All different Vboxes to display
+    static VBox mainVbox;
+    
+    //Holds Home Screen Attributes
+    static VBox BodyVbox;
+    
+    //Vbox to fill page we didnt make
+    static VBox NoPageVbox;
+    
+    //VBoxes for all bottom of page Links
+    static VBox AboutVbox;
+    static VBox ContactVbox;
+    static VBox PoliciesVbox;
+    static VBox FAQVbox;
+    static VBox ManufacturesVbox;
+    static VBox LinksVbox;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -338,6 +398,11 @@ public class FinalProject extends Application {
         R2View.setPreserveRatio(true);
         R2View.setFitWidth(250);
         R2View.setFitHeight(250);
+        
+        ImageView PageNotFoundView = new ImageView(PageNotFound);
+        R2View.setPreserveRatio(true);
+        R2View.setFitWidth(900);
+        R2View.setFitHeight(900);
 
         Label subLabel = new Label(SUBHEADER);
         subLabel.setFont(Font.font("Cambria, 12"));
@@ -367,6 +432,8 @@ public class FinalProject extends Application {
         brandsLabel.setMaxWidth(950);
         brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
+        Hyperlink hyperlink;
+        
         TextFlow addtInfoTextFlow = new TextFlow();
         for (String word : ADDITIONAL_INFO.split("\\|")) {
             //make some words hyperlinks:
@@ -375,38 +442,38 @@ public class FinalProject extends Application {
             	switch(word) {
             		case "  About Us  ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
-            			Hyperlink hyperlink = new Hyperlink(word);
-		                hyperlink.setOnAction(e -> System.out.println("Click on "+word));
+            			hyperlink = new Hyperlink(word);
+		                hyperlink.setOnAction(new HyperLinkClickHandler("About"));
 		                addtInfoTextFlow.getChildren().add(hyperlink);
             		break;
             		case "   Contact Us   ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
             			Hyperlink hyperlink2 = new Hyperlink(word);
-		                hyperlink2.setOnAction(e -> System.out.println("Click on "+word));
+		                hyperlink2.setOnAction(new HyperLinkClickHandler("Contact"));
 		                addtInfoTextFlow.getChildren().add(hyperlink2);
             		break;
             		case "   Our Policies   ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
             			Hyperlink hyperlink3 = new Hyperlink(word);
-		                hyperlink3.setOnAction(e -> System.out.println("Click on "+word));
+		                hyperlink3.setOnAction(new HyperLinkClickHandler("Policies"));
 		                addtInfoTextFlow.getChildren().add(hyperlink3);
             		break;
             		case "   FAQ   ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
             			Hyperlink hyperlink4 = new Hyperlink(word);
-		                hyperlink4.setOnAction(e -> System.out.println("Click on "+word));
+		                hyperlink4.setOnAction(new HyperLinkClickHandler("FAQ"));
 		                addtInfoTextFlow.getChildren().add(hyperlink4);
             		break;
             		case "   Manufactures   ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
             			Hyperlink hyperlink5 = new Hyperlink(word);
-		                hyperlink5.setOnAction(e -> System.out.println("Click on "+word));
+		                hyperlink5.setOnAction(new HyperLinkClickHandler("Manufactures"));
 		                addtInfoTextFlow.getChildren().add(hyperlink5);
             		break;
             		case "   Links   ":
             			addtInfoTextFlow.getChildren().add(new Text("|"));
             			Hyperlink hyperlink6 = new Hyperlink(word);
-		                hyperlink6.setOnAction(e -> System.out.println("Click on "+word));
+		                hyperlink6.setOnAction(new HyperLinkClickHandler("Links"));
 		                addtInfoTextFlow.getChildren().add(hyperlink6);
             		break;
             		
@@ -422,7 +489,10 @@ public class FinalProject extends Application {
         addtInfoTextFlow.setTextAlignment(TextAlignment.CENTER);
         addtInfoTextFlow.setStyle("-fx-font-size: 8pt");
         
-        
+        Label aboutLabel = new Label(ABOUT_PAGE);
+        aboutLabel.setWrapText(true);
+        aboutLabel.setMaxWidth(TEXT_WIDTH);
+        aboutLabel.setTextAlignment(TextAlignment.JUSTIFY);
 
         //ComboBox or Listview will probably look better than a string of buttons
         ComboBox<String> linksComboBox = new ComboBox<>();
@@ -490,15 +560,44 @@ public class FinalProject extends Application {
         infoHbox.setAlignment(Pos.BOTTOM_CENTER);
         infoHbox.setPadding(new Insets(0,10,0,10));
         
+        HBox aboutHbox = new HBox(10, aboutLabel);
+        aboutHbox.setAlignment(Pos.TOP_CENTER);
+        aboutHbox.setPadding(new Insets(0,10,0,10));
+        
+        HBox NoPageHbox = new HBox(10, PageNotFoundView);
+        NoPageHbox.setAlignment(Pos.TOP_CENTER);
+        
         VBox headerVbox = new VBox(10,headerHbox, linksHbox);
-        VBox BodyVbox = new VBox(10,descriptionHbox, reasonsHbox, 
+        BodyVbox = new VBox(10,descriptionHbox, reasonsHbox, 
         		imagesHbox,typesHbox);
-
+        AboutVbox = new VBox(10, aboutHbox);
+        NoPageVbox = new VBox(10, NoPageHbox);
         //vbox to order everything vertically
-        VBox vbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
+        mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
+        
+        
+        //Code to change what Vbox Shows when button is pressed
+        homeBtn.setOnAction(new EventHandler<ActionEvent>() {
+    		public void handle(ActionEvent event) {
+    			mainVbox.getChildren().set(1, BodyVbox);
+            }
+ 		});
+        
+        linksComboBox.setOnAction(new EventHandler<ActionEvent>() {
+    		public void handle(ActionEvent event) {
+    			switch(linksComboBox.getValue().toString()) {
+    			case "SELECT PAGE":
+    				mainVbox.getChildren().set(1, BodyVbox);
+    				break;
+    			default:
+					mainVbox.getChildren().set(1, NoPageVbox);
+					break;
+           }
+            }
+ 		});
         
         //added a scroll bar in case its too long, restyle later
-        ScrollPane scrollPane = new ScrollPane(vbox);
+        ScrollPane scrollPane = new ScrollPane(mainVbox);
         scrollPane.setPadding(new Insets(10));
         scrollPane.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -519,5 +618,42 @@ public class FinalProject extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
+    class HyperLinkClickHandler implements EventHandler<ActionEvent>{
+    	
+    	private String type;
+
+		public HyperLinkClickHandler(String string) {
+			type = string;
+		}
+
+		@Override
+		public void handle(ActionEvent event) {
+			switch(type) {
+				case "About":
+					mainVbox.getChildren().set(1, AboutVbox);
+					break;
+				case "Contact":
+					mainVbox.getChildren().set(1, ContactVbox);
+					break;
+				case "Policies":
+					mainVbox.getChildren().set(1, PoliciesVbox);
+					break;
+				case "FAQ":
+					mainVbox.getChildren().set(1, FAQVbox);
+					break;
+				case "Manufactures":
+					mainVbox.getChildren().set(1, ManufacturesVbox);
+					break;
+				case "Links":
+					mainVbox.getChildren().set(1, LinksVbox);
+					break;
+				default:
+					mainVbox.getChildren().set(1, NoPageVbox);
+					break;
+			}
+		}
+		
+	}
 
 }
