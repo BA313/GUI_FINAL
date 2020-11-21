@@ -156,53 +156,51 @@ public class FinalProject extends Application {
             + "3708 NW 82nd Street  Miami  Florida  33147, Office: 305-696-0419 "
             + " Fax: 305-696-0461 E-Mail: LAOrnamental@Aol.com\n\n\n\n";
     
+    //About Section 
+    static final String ABOUT_HEADER = "A Brief History of Aluminum and Gating";
+    
     static final String ABOUT_PAGE = "Aluminum The Material of choice\r\n" + 
-    		"Aluminum: Aluminium is a soft and lightweight metal with a dull silver-gray appearance.  Aluminium is about one-third as dense as steel or copper is\r\n" + 
-    		"malleable ductile, and easily machined and cast; and has excellent corrosion resistance and durability due to the protective oxide layer. It is also\r\n" + 
-    		"nonmagnetic and nonsparking and is the second most malleable metal (most being gold) and the sixth most ductile. Whether measured in terms of\r\n" + 
-    		"quantity or value, the use of aluminium exceeds that of any other metal except iron and it is important in virtually all segments of the world economy.\r\n" + 
-    		"Aluminium alloys form vital components of aircrafts and rockets as a result of their high strength to weight ratio. Aluminium was selected as the material\r\n" + 
-    		"to be used for the apex of the Washington Monument, at a time when one ounce cost twice the daily wages of a labourer.\r\n" + 
+    		"Aluminum: Aluminium is a soft and lightweight metal with a dull silver-gray appearance.  Aluminium is about one-third as dense as steel or copper is " + 
+    		"malleable ductile, and easily machined and cast; and has excellent corrosion resistance and durability due to the protective oxide layer. It is also " + 
+    		"nonmagnetic and nonsparking and is the second most malleable metal (most being gold) and the sixth most ductile. Whether measured in terms of " + 
+    		"quantity or value, the use of aluminium exceeds that of any other metal except iron and it is important in virtually all segments of the world economy. " + 
+    		"Aluminium alloys form vital components of aircrafts and rockets as a result of their high strength to weight ratio. Aluminium was selected as the material " + 
+    		"to be used for the apex of the Washington Monument, at a time when one ounce cost twice the daily wages of a labourer." + 
+    		"\r\n" +
+    		"After peaking in popularity in the lavish homes of the 1920s then nearly disappearing from new construction during the whimsical vinyl-sided cottage era, " + 
+    		"Wrought Aluminum is making a phenomenal come back over wrought iron, now that Aluminum is cheaper to produce and the new techniques available " + 
+    		"to make it look like wrought iron with the benefit of maintenance free . " + 
+    		"Designers and builders attribute the re-surging demand to current trends in architecture featuring Mediterranean, Southwestern, and French country " + 
+    		"style homes. Also credited are improved production methods that render the metal applications more durable " + 
     		"\r\n" + 
-    		"Aluminium was, when it was first discovered, extremely difficult to separate from the rocks it was part of. Since the whole of Earth's aluminium was\r\n" + 
-    		"bound up in the form of compounds, it was the most difficult metal on earth to get, despite the fact that it is one of the planet's most common. The reason\r\n" + 
-    		"is that aluminium is oxidized very rapidly and that its oxide is an extremely stable compound that, unlike rust on steel, does not flake off. The very reason\r\n" + 
-    		"for which aluminium is used in many applications is why it is so hard to produce.\r\n" + 
+    		"The topic of gating is increasing. The blur between the public space and the private realm of the homeowners' association and its management is " + 
+    		"surfacing. However, land developers are very aware that gating is assumed to favor increased property values, and the town officials are aware of the " + 
+    		"associated increases in the town's property tax base. " + 
     		"\r\n" + 
-    		"Recovery of this metal from scrap (via recycling) has become an important component of the aluminium industry. Recycling involves simply melting the\r\n" + 
-    		"metal, which is far less expensive than creating it from ore. Refining aluminium requires enormous amounts of electricity; recycling it requires only 5% of\r\n" + 
-    		"the energy to produce it. A common practice since the early 1900's, aluminium recycling is not new. It was, however, a low-profile activity until the late\r\n" + 
-    		"1960's when the exploding popularity of aluminium beverage can finally placed recycling into the public consciousness.\r\n" + 
+    		"There are more than seven million households (about 6 percent of the national total) behind fences or walls, according to the Census Bureau's 2001 " + 
+    		"American Housing Survey. The Census Bureau estimated the percentage of people living in gated communities had shot up by 11 percent in the West. " + 
+    		"The homes behind the walls, the survey revealed, were \"upscale,\" and \"mostly white developments.\" " + 
     		"\r\n" + 
-    		"Electric power represents about 20 to 40% of the cost of producing aluminium, depending on the location of the aluminium smelter. Smelters tend to be\r\n" + 
-    		"located where electric power is plentiful and inexpensive, China is currently (2004) the top world producer of aluminium.\r\n" + 
+    		"Built in the early 1930s, the first gated communities in Los Angeles were upper-scale developments in Rolling Hills and Bradbury. Now, gated " + 
+    		"communities represent almost 50 percent of the market in the desert resort areas near Palm Springs. " + 
     		"\r\n" + 
-    		"After peaking in popularity in the lavish homes of the 1920s then nearly disappearing from new construction during the whimsical vinyl-sided cottage era,\r\n" + 
-    		"Wrought Aluminum is making a phenomenal come back over wrought iron, now that Aluminum is cheaper to produce and the new techniques available\r\n" + 
-    		"to make it look like wrought iron with the benefit of maintenance free .\r\n" + 
-    		"Designers and builders attribute the re-surging demand to current trends in architecture featuring Mediterranean, Southwestern, and French country\r\n" + 
-    		"style homes. Also credited are improved production methods that render the metal applications more durable\r\n" + 
-    		"\r\n" + 
-    		"The topic of gating is increasing. The blur between the public space and the private realm of the homeowners' association and its management is\r\n" + 
-    		"surfacing. However, land developers are very aware that gating is assumed to favor increased property values, and the town officials are aware of the\r\n" + 
-    		"associated increases in the town's property tax base.\r\n" + 
-    		"\r\n" + 
-    		"There are more than seven million households (about 6 percent of the national total) behind fences or walls, according to the Census Bureau's 2001\r\n" + 
-    		"American Housing Survey. The Census Bureau estimated the percentage of people living in gated communities had shot up by 11 percent in the West.\r\n" + 
-    		"The homes behind the walls, the survey revealed, were \"upscale,\" and \"mostly white developments.\"\r\n" + 
-    		"\r\n" + 
-    		"Built in the early 1930s, the first gated communities in Los Angeles were upper-scale developments in Rolling Hills and Bradbury. Now, gated\r\n" + 
-    		"communities represent almost 50 percent of the market in the desert resort areas near Palm Springs.\r\n" + 
-    		"\r\n" + 
-    		"\"As real-estate commodities, they are tailored to fit to specific prospective buyers. Gated communities are located within every kind of middle class and\r\n" + 
+    		"\"As real-estate commodities, they are tailored to fit to specific prospective buyers. Gated communities are located within every kind of middle class and " + 
     		"upper-class neighborhoods, and are now available for every market segment continuing to increase.";
 
+    //Contact Section
+    static final String CONTACT_HEADER = "Contact Us! For all your Fence and Gate Needs";
+    static final String CONTACT_PRIVACYHEADER = "Privacy Statement:";
+    static final String CONTACT_PRIVACYSTATEMENT = "In the process of placing an order we collect customer e-mail and home address. This is strictly used for"
+    		+ " billing, shipping, and newsletter purposes (see opt out option below). We do not sell, distribute, or share that information with anyone. "
+    		+ "Your information is held in a secure file in our main office.";
+    static final String CONTACT_PRIVACYDISCLAIMER = "All required sections are marked with a *. Please fill out all these sections to help us with your inquiry.";
+    
     //Gate and Fence Images
     static final Image Header = new Image("PageHeader.jpg");
     
     static final Image PageNotFound = new Image("PageNotFound.jpg");
     
-    static final Image AlFence1 = new Image("AluminumFence1.jpg");
+    static final Image AlFence1 = new Image("AluminumFence.jpg");
     static final Image AlFence2 = new Image("AluminumFence2.jpg");
     static final Image AlFence3 = new Image("AluminumFence3.jpg");
     static final Image AlFence4 = new Image("AluminumFence4.jpg");
@@ -259,11 +257,17 @@ public class FinalProject extends Application {
         HeaderHolder.setFitWidth(700);
         HeaderHolder.setFitHeight(300);
         
+        ImageView PageNotFoundView = new ImageView(PageNotFound);
+        PageNotFoundView.setPreserveRatio(true);
+        PageNotFoundView.setFitWidth(950);
+        PageNotFoundView.setFitHeight(950);
+        
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
         AF1View.setPreserveRatio(true);
         AF1View.setFitWidth(300);
         AF1View.setFitHeight(250);
+        
         
         ImageView AF2View = new ImageView(AlFence2);
         AF2View.setPreserveRatio(true);
@@ -345,11 +349,7 @@ public class FinalProject extends Application {
         R2View.setFitWidth(250);
         R2View.setFitHeight(250);
         
-        ImageView PageNotFoundView = new ImageView(PageNotFound);
-        R2View.setPreserveRatio(true);
-        R2View.setFitWidth(900);
-        R2View.setFitHeight(900);
-        
+       
         ImageView DG1View = new ImageView(DrivewayGate1);
         DG1View.setFitWidth(300);
         DG1View.setFitHeight(250);
@@ -358,8 +358,6 @@ public class FinalProject extends Application {
         DG2View.setFitWidth(300);
         DG2View.setFitHeight(250);
 
-        Label subLabel = new Label(SUBHEADER);
-        subLabel.setFont(Font.font("Cambria, 12"));
         ImageView DG3View = new ImageView(DrivewayGate3);
         DG3View.setFitWidth(300);
         DG3View.setFitHeight(250);
@@ -376,6 +374,8 @@ public class FinalProject extends Application {
         DG6View.setFitWidth(300);
         DG6View.setFitHeight(250);
         
+        Label subLabel = new Label(SUBHEADER);
+        subLabel.setFont(Font.font("Cambria, 12"));
         
         Label locationLabel = new Label(BUSINESS_INFO);
         locationLabel.setStyle("-fx-font-size: 15pt");
@@ -383,7 +383,7 @@ public class FinalProject extends Application {
 
         Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2);
         businessLabel.setWrapText(true);
-        businessLabel.setMaxWidth(750);
+        businessLabel.setMaxWidth(650);
         businessLabel.setPadding(new Insets(0,10,0,10));
         businessLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
@@ -395,7 +395,7 @@ public class FinalProject extends Application {
         Label typesLabel = new Label(OPEN_AND_OPS_DES + RAILING_DES + GARDEN_DES);
         typesLabel.setWrapText(true);
         typesLabel.setMaxWidth(TEXT_WIDTH);
-        typesLabel.setTextAlignment(TextAlignment.CENTER);
+        typesLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
         Label brandsLabel = new Label(NAME_BRAND_SEC1 + NAME_BRAND_SEC2);
         brandsLabel.setMaxWidth(950);
@@ -458,10 +458,88 @@ public class FinalProject extends Application {
         addtInfoTextFlow.setTextAlignment(TextAlignment.CENTER);
         addtInfoTextFlow.setStyle("-fx-font-size: 8pt");
         
+        //about section labels
+        Label aboutHeaderLabel = new Label(ABOUT_HEADER);
+        aboutHeaderLabel.setStyle("-fx-font-size: 15pt");
+        aboutHeaderLabel.setWrapText(true);
+        
         Label aboutLabel = new Label(ABOUT_PAGE);
         aboutLabel.setWrapText(true);
         aboutLabel.setMaxWidth(TEXT_WIDTH);
         aboutLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        
+        //contact section labels
+        Label contactHeaderLabel = new Label(CONTACT_HEADER);
+        contactHeaderLabel.setWrapText(true);
+        contactHeaderLabel.setTextAlignment(TextAlignment.CENTER);
+        contactHeaderLabel.setId("contactHeader");
+        
+        Label contactPrivHeadLabel = new Label(CONTACT_PRIVACYHEADER);
+        contactPrivHeadLabel.setTextAlignment(TextAlignment.LEFT);
+        contactPrivHeadLabel.setId("contactPriv");
+        
+        Label contactPrivStateLabel = new Label(CONTACT_PRIVACYSTATEMENT);
+        contactPrivStateLabel.setWrapText(true);
+        contactPrivStateLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        contactPrivStateLabel.setMaxWidth(TEXT_WIDTH);
+        
+        Label contactPrivDisclaimLabel = new Label(CONTACT_PRIVACYDISCLAIMER);
+        contactPrivDisclaimLabel.setWrapText(true);
+        contactPrivDisclaimLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        contactPrivDisclaimLabel.setMaxWidth(TEXT_WIDTH);
+        
+        Label contactFirstLabel = new Label("*First Name: ");
+        contactFirstLabel.setPrefWidth(300);
+        Label contactLastLabel = new Label("*Last Name: ");
+        Label contactAddressLabel = new Label("*Street Address: ");
+        Label contactCityLabel = new Label("*City: ");
+        Label contactStateLabel = new Label("*State: ");
+        Label contactZipCodeLabel = new Label("*Zip Code: ");
+        Label contactEmailLabel = new Label("*Email Address: ");
+        Label contactPhoneLabel = new Label("*Phone Number: ");
+        
+        
+        TextField contactFirstTextField = new TextField();
+        contactFirstTextField.addEventFilter(KeyEvent.ANY,new RequirementHandler(contactFirstLabel, contactFirstTextField));
+        contactFirstTextField.setPrefWidth(600);
+        TextField contactLastTextField = new TextField();
+        contactLastTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactLastLabel, contactLastTextField));
+        TextField contactAddressTextField = new TextField();
+        contactAddressTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactAddressLabel, contactAddressTextField));
+        TextField contactCityTextField = new TextField();
+        contactCityTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactCityLabel, contactCityTextField));
+        TextField contactZipCodeTextField = new TextField();
+        contactZipCodeTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactZipCodeLabel, contactZipCodeTextField));
+        
+        ComboBox<String> statesComboBox = new ComboBox<>();
+        statesComboBox.getItems().addAll("SELECT STATE","Alabama", "Alaska", "Arizona", "Arkansas", "California"
+        		, "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho"
+        		, "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine"
+        		, "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri"
+        		, "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York"
+        		, "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania" 
+        		, "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah"
+        		, "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming");
+        statesComboBox.setValue("SELECT STATE");
+        statesComboBox.setPrefWidth(600);
+        statesComboBox.setOnAction(new EventHandler<ActionEvent>() {
+    		public void handle(ActionEvent event) {
+    			if(statesComboBox.getValue().toString() == "SELECT STATE" && !star(contactStateLabel)) {
+    				addStar(contactStateLabel);
+    			}else if(!(statesComboBox.getValue().toString() == "SELECT STATE") && star(contactStateLabel)) {
+    				subStar(contactStateLabel);
+    			}
+            }
+ 		});
+
+        
+        TextField contactEmailTextField = new TextField();
+        contactEmailTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactEmailLabel, contactEmailTextField));
+        TextField contactPhoneTextField = new TextField();
+        contactPhoneTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactPhoneLabel, contactPhoneTextField));
+        
+        //TODO work on contact us page
+        //TODO write a clear function for all contact us inputs
 
         //ComboBox or Listview will probably look better than a string of buttons
         ComboBox<String> linksComboBox = new ComboBox<>();
@@ -473,7 +551,6 @@ public class FinalProject extends Application {
 
         //Search bar text field, make it larger and more prominent than original website
         TextArea searchBar = new TextArea();
-        searchBar.setMaxSize(500, 40);
         searchBar.setPrefRowCount(1);
         
         //search on Enter Key Pressed
@@ -489,6 +566,29 @@ public class FinalProject extends Application {
         
         VBox headerVBox = new VBox(10, HeaderHolder, subLabel);
         
+        VBox contactHeaderVbox = new VBox(10, contactHeaderLabel, contactPrivHeadLabel, contactPrivStateLabel, contactPrivDisclaimLabel);
+        contactHeaderVbox.setAlignment(Pos.TOP_CENTER);
+        
+        GridPane contactGridPane = new GridPane();
+        contactGridPane.setPadding(new Insets(10));
+        contactGridPane.setAlignment(Pos.TOP_CENTER);
+        contactGridPane.setVgap(10);
+        contactGridPane.setHgap(10);
+        contactGridPane.add(contactFirstLabel, 0, 0, 3, 1);
+        contactGridPane.add(contactFirstTextField, 4,0,7,1);
+        contactGridPane.add(contactLastLabel, 0, 1, 3, 1);
+        contactGridPane.add(contactLastTextField, 4,1,7,1);
+        contactGridPane.add(contactAddressLabel, 0, 2, 3, 1);
+        contactGridPane.add(contactAddressTextField, 4,2,7,1);
+        contactGridPane.add(contactCityLabel, 0, 3, 3, 1);
+        contactGridPane.add(contactCityTextField, 4,3,7,1);
+        contactGridPane.add(contactStateLabel, 0, 4, 3, 1);
+        contactGridPane.add(statesComboBox, 4,4,7,1);
+        contactGridPane.add(contactEmailLabel, 0, 5, 3, 1);
+        contactGridPane.add(contactEmailTextField, 4,5,7,1);
+        contactGridPane.add(contactPhoneLabel, 0, 6, 3, 1);
+        contactGridPane.add(contactPhoneTextField, 4,6,7,1);
+        
         //hbox for the header and initial information
         HBox headerHbox = new HBox(20, headerVBox, locationLabel);
         headerHbox.setAlignment(Pos.TOP_CENTER);
@@ -502,17 +602,16 @@ public class FinalProject extends Application {
         //hbox with business desciption text and gate picture
         HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
         descriptionHbox.setAlignment(Pos.TOP_CENTER);
+        descriptionHbox.setPadding(new Insets(10,0,0,0));
         
         //hbox for reasons for use
         HBox reasonsHbox = new HBox(10, reasonsLabel);
         reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
         reasonsHbox.setPadding(new Insets(0,10,0,10));
         
-        HBox imagesHbox = new HBox(10, AF2View, AG1View, AG2View, AG3View);
+        HBox imagesHbox = new HBox(75, AG1View, GG1View, R1View);
         imagesHbox.setAlignment(Pos.TOP_CENTER);
         
-        HBox imagesHbox2 = new HBox(10, GG1View, GG2View, GG3View,R1View,R2View);
-        imagesHbox2.setAlignment(Pos.TOP_CENTER);
         
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
@@ -529,18 +628,34 @@ public class FinalProject extends Application {
         infoHbox.setAlignment(Pos.BOTTOM_CENTER);
         infoHbox.setPadding(new Insets(0,10,0,10));
         
-        HBox aboutHbox = new HBox(10, aboutLabel);
+        //About Page Holders
+        HBox aboutHbox = new HBox(10, aboutHeaderLabel);
         aboutHbox.setAlignment(Pos.TOP_CENTER);
         aboutHbox.setPadding(new Insets(0,10,0,10));
         
+        HBox aboutHbox2 = new HBox(10, aboutLabel);
+        aboutHbox2.setAlignment(Pos.TOP_CENTER);
+        aboutHbox2.setPadding(new Insets(0,10,0,10));
+        
+        //No Page Default Holder
         HBox NoPageHbox = new HBox(10, PageNotFoundView);
         NoPageHbox.setAlignment(Pos.TOP_CENTER);
         
+        
         VBox headerVbox = new VBox(10,headerHbox, linksHbox);
+        
+        //Blank No Page
+        NoPageVbox = new VBox(10, NoPageHbox);
+        
+        //Home Page 
         BodyVbox = new VBox(10,descriptionHbox, reasonsHbox, 
         		imagesHbox,typesHbox);
-        AboutVbox = new VBox(10, aboutHbox);
-        NoPageVbox = new VBox(10, NoPageHbox);
+        //About Page
+        AboutVbox = new VBox(10, aboutHbox, aboutHbox2);
+        
+        //Contact Page
+        ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane);
+        
         //vbox to order everything vertically
         mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
         
@@ -629,15 +744,15 @@ public class FinalProject extends Application {
 //        Scene ggScene = new Scene(root3, WIDTH, HEIGHT);
 //        ggScene.getStylesheets().add("Style.css");
         
-        GridPane gridpane2 = new GridPane();
-        gridpane2.setVgap(10);
-        gridpane2.setHgap(10);
-        gridpane2.add(GG1View, 0, 0);
-        gridpane2.add(GG2View, 0, 1);
-        gridpane2.add(GG3View, 1, 0);
-        gridpane2.add(GG4View, 1, 1);
-        gridpane2.add(GG5View, 2, 0);
-        gridpane2.add(GG6View, 2, 1);
+//        GridPane gridpane2 = new GridPane();
+//        gridpane2.setVgap(10);
+//        gridpane2.setHgap(10);
+//        gridpane2.add(GG1View, 0, 0);
+//        gridpane2.add(GG2View, 0, 1);
+//        gridpane2.add(GG3View, 1, 0);
+//        gridpane2.add(GG4View, 1, 1);
+//        gridpane2.add(GG5View, 2, 0);
+//        gridpane2.add(GG6View, 2, 1);
 
         //Fencing scene
 //        VBox vbox4 = new VBox(10);
@@ -651,15 +766,15 @@ public class FinalProject extends Application {
 //        Scene fScene = new Scene(root4, WIDTH, HEIGHT);
 //        fScene.getStylesheets().add("Style.css");
         
-        GridPane gridpane3 = new GridPane();
-        gridpane3.setVgap(10);
-        gridpane3.setHgap(10);
-        gridpane3.add(AF1View, 0, 0);
-        gridpane3.add(AF2View, 0, 1);
-        gridpane3.add(AF3View, 1, 0);
-        gridpane3.add(AF4View, 1, 1);
-        gridpane3.add(AF5View, 2, 0);
-        gridpane3.add(AF6View, 2, 1);
+//        GridPane gridpane3 = new GridPane();
+//        gridpane3.setVgap(10);
+//        gridpane3.setHgap(10);
+//        gridpane3.add(AF1View, 0, 0);
+//        gridpane3.add(AF2View, 0, 1);
+//        gridpane3.add(AF3View, 1, 0);
+//        gridpane3.add(AF4View, 1, 1);
+//        gridpane3.add(AF5View, 2, 0);
+//        gridpane3.add(AF6View, 2, 1);
 
 //        linksComboBox.setOnAction(e -> {
 //            switch (linksComboBox.getValue()) {
@@ -690,6 +805,19 @@ public class FinalProject extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    
+    //functions for star addition and removal
+    public static boolean star(Label l) {
+    	return l.getText().charAt(0) == '*';
+    }
+    
+    public static void addStar(Label l) {
+    	l.setText("*"+l.getText().toString());
+    }
+    
+    public static void subStar(Label l) {
+    	l.setText(l.getText().substring(1));
+    }
 
     /**
      * @param args the command line arguments
@@ -698,6 +826,7 @@ public class FinalProject extends Application {
         launch(args);
     }
     
+    //handles links hyperlink pages at bottom of every page
     class HyperLinkClickHandler implements EventHandler<ActionEvent>{
     	
     	private String type;
@@ -715,18 +844,18 @@ public class FinalProject extends Application {
 				case "Contact":
 					mainVbox.getChildren().set(1, ContactVbox);
 					break;
-				case "Policies":
-					mainVbox.getChildren().set(1, PoliciesVbox);
-					break;
-				case "FAQ":
-					mainVbox.getChildren().set(1, FAQVbox);
-					break;
-				case "Manufactures":
-					mainVbox.getChildren().set(1, ManufacturesVbox);
-					break;
-				case "Links":
-					mainVbox.getChildren().set(1, LinksVbox);
-					break;
+//				case "Policies":
+//					mainVbox.getChildren().set(1, PoliciesVbox);
+//					break;
+//				case "FAQ":
+//					mainVbox.getChildren().set(1, FAQVbox);
+//					break;
+//				case "Manufactures":
+//					mainVbox.getChildren().set(1, ManufacturesVbox);
+//					break;
+//				case "Links":
+//					mainVbox.getChildren().set(1, LinksVbox);
+//					break;
 				default:
 					mainVbox.getChildren().set(1, NoPageVbox);
 					break;
@@ -734,5 +863,27 @@ public class FinalProject extends Application {
 		}
 		
 	}
+    //Handles signifier for requirements met on textfields for contact us page
+    class RequirementHandler implements EventHandler<KeyEvent>{
+    	
+    	Label selectedLabel;
+    	TextField currentTextField;
+    	
+    	public RequirementHandler(Label l, TextField f) {
+    		selectedLabel = l;
+    		currentTextField = f;
+    	}
+
+		@Override
+		public void handle(KeyEvent event) {
+			if (!(currentTextField.getText() == null || currentTextField.getText().trim().isEmpty()) && star(selectedLabel)) {
+				subStar(selectedLabel);
+            }else if((currentTextField.getText() == null || currentTextField.getText().trim().isEmpty()) && !star(selectedLabel)) {
+            	addStar(selectedLabel);
+            }
+			
+		}
+    	
+    }
 
 }

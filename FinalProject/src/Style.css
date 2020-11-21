@@ -24,12 +24,28 @@
     -fx-background-color: rgb(110, 54, 0);
 }
 
+#contactHeader {
+    -fx-font-size: 18pt;
+    -fx-font-family: "Courier New";
+    -fx-text-fill: rgb(51, 25, 0);
+}
+
+#contactPriv {
+    -fx-font-size: 15pt;
+    -fx-font-family: "Courier New";
+    -fx-text-fill: red;
+}
+
 .text-area .content{
     -fx-font-size: 10pt;
     -fx-font-stye: underlined;
 }
 VBox {
     -fx-background-color: #FFEBCD;
+    -fx-border-color: #696969;
+    -fx-border-insets: 5;
+    -fx-border-width: 5;
+    
 }
 .root {
     -fx-font-size: 12pt;
