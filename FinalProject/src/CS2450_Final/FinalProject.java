@@ -10,6 +10,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
@@ -32,6 +33,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 /** Nate C/Ben A
@@ -257,8 +259,8 @@ public class FinalProject extends Application {
     static final Image GardGate2 = new Image("GardenGate2.jpg");
     static final Image GardGate3 = new Image("GardenGate3.jpg");
     //railings don't load in for some reason
-    static final Image Railings1 = new Image("file:Ralings1.jpg");
-    static final Image Railings2 = new Image("file:Ralings2.jpg");
+    static final Image Railings1 = new Image("Railings1.jpg");
+    static final Image Railings2 = new Image("Railings2.jpg");
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -365,11 +367,61 @@ public class FinalProject extends Application {
         brandsLabel.setMaxWidth(950);
         brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
-        Label addtInfoLabel = new Label(ADDITIONAL_INFO);
-        addtInfoLabel.setWrapText(true);
-        addtInfoLabel.setMaxWidth(TEXT_WIDTH);
-        addtInfoLabel.setTextAlignment(TextAlignment.CENTER);
-        addtInfoLabel.setStyle("-fx-font-size: 8pt");
+        TextFlow addtInfoTextFlow = new TextFlow();
+        for (String word : ADDITIONAL_INFO.split("\\|")) {
+            //make some words hyperlinks:
+            if (word.length() < 20) {
+            	String temp = word;
+            	switch(word) {
+            		case "  About Us  ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink = new Hyperlink(word);
+		                hyperlink.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink);
+            		break;
+            		case "   Contact Us   ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink2 = new Hyperlink(word);
+		                hyperlink2.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink2);
+            		break;
+            		case "   Our Policies   ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink3 = new Hyperlink(word);
+		                hyperlink3.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink3);
+            		break;
+            		case "   FAQ   ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink4 = new Hyperlink(word);
+		                hyperlink4.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink4);
+            		break;
+            		case "   Manufactures   ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink5 = new Hyperlink(word);
+		                hyperlink5.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink5);
+            		break;
+            		case "   Links   ":
+            			addtInfoTextFlow.getChildren().add(new Text("|"));
+            			Hyperlink hyperlink6 = new Hyperlink(word);
+		                hyperlink6.setOnAction(e -> System.out.println("Click on "+word));
+		                addtInfoTextFlow.getChildren().add(hyperlink6);
+            		break;
+            		
+            		
+            	}
+                
+            } else {
+            	addtInfoTextFlow.getChildren().add(new Text("|"+word));
+            }
+        }
+        addtInfoTextFlow.setMaxWidth(TEXT_WIDTH);
+        addtInfoTextFlow.setMaxWidth(TEXT_WIDTH);
+        addtInfoTextFlow.setTextAlignment(TextAlignment.CENTER);
+        addtInfoTextFlow.setStyle("-fx-font-size: 8pt");
+        
         
 
         //ComboBox or Listview will probably look better than a string of buttons
@@ -395,18 +447,6 @@ public class FinalProject extends Application {
                 }
             }
         });
-        
-        
-
-        /*This hbox will hold all the button links and search bar for the site
-        Fix the organization of buttons later, its too long and clunky
-        Probably delete this because combobox looks much cleaner
-        
-        HBox btnHbox = new HBox(10, homeBtn, drivewayBtn, gardenBtn, 
-                fenceBtn, railBtn, openerBtn, mainCtrlBtn, remoteBtn, receiverBtn,
-                telephoneBtn, safetyBtn, accessoryBtn, partsBtn, searchBar, searchBtn);
-        btnHbox.setAlignment(Pos.TOP_CENTER);
-         */
         
         VBox headerVBox = new VBox(10, HeaderHolder, subLabel);
         
@@ -446,16 +486,16 @@ public class FinalProject extends Application {
         brandsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for additional site bs
-        HBox infoHbox = new HBox(10, addtInfoLabel);
+        HBox infoHbox = new HBox(10, addtInfoTextFlow);
         infoHbox.setAlignment(Pos.BOTTOM_CENTER);
         infoHbox.setPadding(new Insets(0,10,0,10));
+        
+        VBox headerVbox = new VBox(10,headerHbox, linksHbox);
+        VBox BodyVbox = new VBox(10,descriptionHbox, reasonsHbox, 
+        		imagesHbox,typesHbox);
 
         //vbox to order everything vertically
-        VBox vbox = new VBox(10,headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
-        		imagesHbox,typesHbox, infoHbox);
-        
-        
-        //VBox headerVbox = new VBox();
+        VBox vbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
         
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
