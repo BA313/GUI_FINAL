@@ -3,6 +3,9 @@
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
+.button:hover {
+    -fx-background-color: rgb(110, 54, 0);
+}
 .combo-box {
     -fx-font-size: 12pt;
     -fx-background-color: rgb(51, 25, 0);
@@ -14,6 +17,13 @@
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
+.combo-box:hover {
+    -fx-background-color: rgb(110, 54, 0);
+}
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: rgb(110, 54, 0);
+}
+
 .text-area .content{
     -fx-font-size: 9pt;
     -fx-font-stye: underlined;

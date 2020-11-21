@@ -23,6 +23,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -46,7 +47,6 @@ public class FinalProject extends Application {
     private static final String HEADER = "Welcome To: Gates N Fences";
     private static final String SUBHEADER = "Enhance the entry of your home with"
             + " custom, decorative gates and fences!";
-    //Enhance the entry of your home with custom, decorative gates and fences!
     
     //Cut down on the text cause this site says so much fucking information
     
@@ -67,14 +67,6 @@ public class FinalProject extends Application {
             + " designs in either aluminum or wrought iron.\r\nWith over "
             + "35 years of experience, we seek to provide the highest quality and"
             + " service to our customers.";
-    //We offer a wide selection of decorative designs in either aluminum or wrought iron.\r\n We have over 35 years of experience and seek to provide the highest quality and service to our customers.
-    
-//    private static final String ABOUT_SEC3 = "If your looking For Privacy with "
-//            + "your Driveway Gates ,Garden Gates, or Walk Thru Gates, we offer "
-//            + "a Solid Backing with your choice of\r\n"
-//            + "Aluminium, Steel, Plexiglas or Plastic.  All solid backing are"
-//            + " offered in many different colors to choose from. Privacy Gates";
-//    //This section might be unecessary
 
     //reasons to buy section
     private static final String REASONS_SEC1 = "Take a look at some of our custom"
@@ -86,124 +78,43 @@ public class FinalProject extends Application {
             + "they are. The wide choices for design and style is also\r\n"
             + "another reason why this type of gate is preferred by many people "
             + "over wooden or iron gates.\r\n"
-            + "\r\n" +
-            // 
+            + "\r\n Here are some reasons why our customers choose us for their "
+            + "aluminum gates!\r\n" +
             
-//            + "Here are the reasons why a lot of homeowners choose to put up "
-//            + "custom made gates made of aluminum.\r\n"
-//            + "\r\n"
-            "Here are some reasons why our customers choose us for their "
-             + "aluminum gates!\r\n" +
-            
-//            + "1. Cost : Aluminum gates are less costly than steel gates at"
-//            + " least nowadays as 10 years ago they were allot more expensive "
-//            + "than Steel gates. If you like an\r\n"
-//            + "elaborate and very decorative gate, the cost of wrought steel "
-//            + "would be more, but with aluminum, the same design can be within "
-//            + "your allotted budget.\r\n"
-//            + "\r\n"
             "1. Aluminum gates are much more cost effective than steel gates.\r\n "
             + "Save money while still having a beautiful gate for your driveway!\r\n" +
             
-//            + "2. Weight: Aluminum custom made gates are very light compare to "
-//            + "Steel gates, making them a lot easier to open compared to those "
-//            + "made of iron. This may be\r\n"
-//            + "just as important point when it comes to automatic gates, "
-//            + "aluminum only lets minimal tear and ware on the rollers and "
-//            + "hinges sliding gates. Because materials\r\n"
-//            + "are not heavy, the automated opening system will surely stay in "
-//            + "good condition for a longer time period and in some cases "
-//            + "extending the life of the gate\r\n"
-//            + "openers by 50%.\r\n"
-//            + "\r\n"
             "2. Aluminum gates weigh less compared to steel gates and the rollers"
             + " and hinges will receive less wear and tear.\r\n" +
             
-//            + "3. Durability:Since aluminum is not damaged by rust or corrosion,"
-//            + " your gate can serve you well for many years. All our gates "
-//            + "designs are made from solid plate\r\n"
-//            + "aluminum that is 1/2 to 1\" inch thick. A gate made of solid "
-//            + "aluminum rods are a bit heavier but way lighter and so we are able"
-//            + " to use thick material which makes\r\n"
-//            + "our work stand out.\r\n"
-//            + "\r\n"
             "3. Our aluminum fences and gates will withstand rust or corrosion "
             + "and are very durable.\r\n Our gates are made with 1/2 to 1 inch "
             + "thick aluminum plating.\r\n" +
             
-//            + "4. Appearance and Options. When talking about sheer beauty, Our "
-//            + "aluminum gate are so elegant as the materials that we use in most"
-//            + " cases are TWICE thick than\r\n"
-//            + "a metal gate . You also have a wide choice in terms of colors as "
-//            + "we offer one of the largest select of Powder Coat Oven Baked in the net, larger selection\r\n"
-//            + "styles, and custom sizes.\r\n"
-//            + "\r\n"
             "4. We offer a wide variety of styles, sizes, and paint colors for "
             + "our gates or fences.\r\n We promise that your home will standout from"
             + " the rest.\r\n" +
             
-//            + "5. Maintenance: Maintenance is out of the question Aluminum is "
-//            + "the way to go, since it does not corrode, unlike with wrought "
-//            + "Iron ( steel ), you are not required\r\n"
-//            + "the Maintenance to up keep your gate no sanding,priming,re-painting"
-//            + " for many ,many,many years to come. With aluminum custom made gates,"
-//            + " you can save\r\n"
-//            + "time, money, and effort in maintenance This gates are capable of "
-//            + "enduring different types of elements without flaking, chipping, or cracking.";
             "5. Aluminum gates need almost no maintenance when compared to a steel"
             + " gate.\r\n Our gates and fences will last for years without any "
             + "flaking or cracking.\r\n";
     
     //Gate and Fence Descriptions
-    private static final String OPEN_AND_OPS_DES = 
-//            "We offer a large selection of "
-//            + " Gate Openers and Gate Operators for Residential Driveway Gates, "
-//            + "Light or Heavy Commercial Gates, or industrial\r\n"
-//            + "locations. If your not sure the style or size of the Gate opener"
-//            + " / gate operator  you need, please e-mail or contact us so we can"
-//            + " gladly help guide\r\n"
-//            + "you to the correct choice. We offer all type of Gate Openers / "
-//            + "Gate Operator, Sliding Gate Openers / Gate Operator, Swing Gate "
-//            + "Openers / Gate\r\n"
-//            + "Operator, Hydraulic Gate Openers / Gate Operator. We also have a "
-//            + "wide selection of replacement Main Circuit Boards for all brands, and\r\n"
-//            + "Remote Controls  for Visors or Keychains.";
-            "We offer a large selection of gate openers and operators in many "
-            + "styles and sizes. If you need circuit boards or remote controls,"
-            + " we have got you covered!\r\n";
+    private static final String OPEN_AND_OPS_DES = "We offer a large selection "
+            + "of gate openers and operators in many styles and sizes. If you need"
+            + " circuit boards or remote controls, we have got you covered!\r\n";
     
-    private static final String RAILING_DES = 
-//            "Railings - L. A. Ornamental Rack "
-//            + "Corp offers top quality Balcony Railings, Front Porch Railings, "
-//            + "Deck Railings in Metal, Aluminum, or Wrought\r\n"
-//            + "Iron Steel.  We offer rails for residential or commercial "
-//            + "locations for either Interior or Exterior locations. We also "
-//            + "offer Custom Made Railings,\r\n"
-//            + "Decorative Railings, or HandRails that are powder coated paint "
-//            + "for low maintenance and long last Balcony Rails, Porch Rails, "
-//            + "or Deck Rails";
-            "If you need railings then look no further. We have a range of "
-            + "railings for all your needs: interior/exterior, "
-            + "residential/commerical, aluminum/wrought iron.\r\n"; 
+    private static final String RAILING_DES = "If you need railings then look no"
+            + " further. We have a range of railings for all your needs: "
+            + "interior/exterior, residential/commerical, aluminum/wrought iron.\r\n"; 
     
-    private static final String GARDEN_DES = 
-//            "Garden Gates or Walk Gates can be"
-//            + " designed to match any existing or ordered driveway gate.  "
-//            + "Customers can choose between wrought iron\r\n"
-//            + "or aluminum as material  and choose from our wide selection"
-//            + " of powder coated colors.  Garden or Walk Gates are custom made "
-//            + "that can give\r\n your home that special and elegant look.";
-            "Our garden gates and walkway gates are custom made to match the "
-            + "look of your home. We can match any preexisting gates you have "
-            + "and we have a variety of powder coated colors. These gates will "
-            + "really give your home that elegant look.\r\n";
+    private static final String GARDEN_DES = "Our garden gates and walkway gates"
+            + " are custom made to match the look of your home. We can match any"
+            + " preexisting gates you have and we have a variety of powder coated"
+            + " colors. These gates will really give your home that elegant look.\r\n";
 
     //Brand Name Section
-    private static final String NAME_BRAND_SEC1 = 
-//            "Top Brands of Gate Openers "
-//            + "and Operators, Commercial, Residential, Industrial, Swing, Slide,"
-//            + " Rack & Pinion, Barrier";
-            "Here are some of our top brands!\r\n";
+    private static final String NAME_BRAND_SEC1 = "Here are some of our top brands!\r\n";
     
     private static final String NAME_BRAND_SEC2 = "BFT Gate Openers\r\n"
             + "PowerMaster Gate Openers\r\n"
@@ -246,39 +157,37 @@ public class FinalProject extends Application {
     static final Image Header = new Image("PageHeader.jpg");
     
     static final Image AlFence1 = new Image("AluminumFence1.jpg");
-    static final Image AlFence2 = new Image("file:AluminumFence2.jpg");
+    static final Image AlFence2 = new Image("AluminumFence2.jpg");
+    static final Image AlFence3 = new Image("AluminumFence3.jpg");
+    static final Image AlFence4 = new Image("AluminumFence4.jpg");
+    static final Image AlFence5 = new Image("AluminumFence5.jpg");
+    static final Image AlFence6 = new Image("AluminumFence6.jpg");
     
-    static final Image AlGate1 = new Image("file:AluminumGate1.jpg");
-    static final Image AlGate2 = new Image("file:AluminumGate2.jpg");
-    static final Image AlGate3 = new Image("file:AluminumGate3.jpg");
+    static final Image AlGate1 = new Image("AluminumGate1.jpg");
+    static final Image AlGate2 = new Image("AluminumGate2.jpg");
+    static final Image AlGate3 = new Image("AluminumGate3.jpg");
 
-    static final Image GardGate1 = new Image("file:GardenGate1.jpg");
-    static final Image GardGate2 = new Image("file:GardenGate2.jpg");
-    static final Image GardGate3 = new Image("file:GardenGate3.jpg");
-    //railings don't load in for some reason
-    static final Image Railings1 = new Image("file:Ralings1.jpg");
-    static final Image Railings2 = new Image("file:Ralings2.jpg");
+    static final Image GardGate1 = new Image("GardenGate1.jfif");
+    static final Image GardGate2 = new Image("GardenGate2.jpg");
+    static final Image GardGate3 = new Image("GardenGate3.jpg");
+    static final Image GardGate4 = new Image("GardenGate4.jfif");
+    static final Image GardGate5 = new Image("GardenGate5.jpg");
+    static final Image GardGate6 = new Image("GardenGate6.jfif");
 
+    static final Image Railings1 = new Image("Railings1.jpg");
+    static final Image Railings2 = new Image("Railings2.jpg");
+    
+    static final Image DrivewayGate1 = new Image("Drivewaygate1.jfif");
+    static final Image DrivewayGate2 = new Image("Drivewaygate2.jpg");
+    static final Image DrivewayGate3 = new Image("Drivewaygate3.jpg");
+    static final Image DrivewayGate4 = new Image("Drivewaygate4.jfif");
+    static final Image DrivewayGate5 = new Image("Drivewaygate5.jpg");
+    static final Image DrivewayGate6 = new Image("Drivewaygate6.jpg");
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         
-        /**
-         * Create buttons for all the main links. Cut down on the buttons and
-         * simplify into categories Maybe provide a short description label??
-         *
-         * Button drivewayBtn = new Button("Driveway Gates"); Button gardenBtn =
-         * new Button("Garden Gates"); Button fenceBtn = new Button("Fencing");
-         * Button railBtn = new Button("Railings"); Button openerBtn = new
-         * Button("Openers - Operators"); Button mainCtrlBtn = new Button("Main
-         * Control Boards"); Button remoteBtn = new Button("Remote Controls");
-         * Button receiverBtn = new Button("Receivers"); Button telephoneBtn =
-         * new Button("Telephone Entry"); Button safetyBtn = new Button("Safety
-         * Equipment"); Button accessoryBtn = new Button("Gate Accessories");
-         * Button partsBtn = new Button("Gate Operator Parts");
-         */
         Button searchBtn = new Button("Search");
-//        searchBtn.setScaleX(1.5);
-//        searchBtn.setScaleY(1.5);
         Button homeBtn = new Button("Home");
         
         ImageView HeaderHolder = new ImageView(Header);
@@ -286,47 +195,81 @@ public class FinalProject extends Application {
         HeaderHolder.setFitWidth(600);
         HeaderHolder.setFitHeight(300);
         
-        
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
         AF1View.setPreserveRatio(true);
-        AF1View.setFitWidth(250);
+        AF1View.setFitWidth(300);
         AF1View.setFitHeight(250);
         
         ImageView AF2View = new ImageView(AlFence2);
         AF2View.setPreserveRatio(true);
-        AF2View.setFitWidth(250);
+        AF2View.setFitWidth(300);
         AF2View.setFitHeight(250);
+        
+        ImageView AF3View = new ImageView(AlFence3);
+        AF3View.setPreserveRatio(true);
+        AF3View.setFitWidth(300);
+        AF3View.setFitHeight(250);
+        
+        ImageView AF4View = new ImageView(AlFence4);
+        AF4View.setPreserveRatio(true);
+        AF4View.setFitWidth(300);
+        AF4View.setFitHeight(250);
+        
+        ImageView AF5View = new ImageView(AlFence5);
+        AF5View.setPreserveRatio(true);
+        AF5View.setFitWidth(300);
+        AF5View.setFitHeight(250);
+        
+        ImageView AF6View = new ImageView(AlFence6);
+        AF6View.setPreserveRatio(true);
+        AF6View.setFitWidth(300);
+        AF6View.setFitHeight(250);
         
         ImageView AG1View = new ImageView(AlGate1);
         AG1View.setPreserveRatio(true);
-        AG1View.setFitWidth(250);
+        AG1View.setFitWidth(300);
         AG1View.setFitHeight(250);
         
         ImageView AG2View = new ImageView(AlGate2);
         AG2View.setPreserveRatio(true);
-        AG2View.setFitWidth(250);
+        AG2View.setFitWidth(300);
         AG2View.setFitHeight(250);
         
         ImageView AG3View = new ImageView(AlGate3);
         AG3View.setPreserveRatio(true);
-        AG3View.setFitWidth(250);
+        AG3View.setFitWidth(300);
         AG3View.setFitHeight(250);
         
         ImageView GG1View = new ImageView(GardGate1);
         GG1View.setPreserveRatio(true);
-        GG1View.setFitWidth(250);
+        GG1View.setFitWidth(300);
         GG1View.setFitHeight(250);
         
         ImageView GG2View = new ImageView(GardGate2);
         GG2View.setPreserveRatio(true);
-        GG2View.setFitWidth(250);
+        GG2View.setFitWidth(300);
         GG2View.setFitHeight(250);
         
         ImageView GG3View = new ImageView(GardGate3);
         GG3View.setPreserveRatio(true);
         GG3View.setFitWidth(250);
         GG3View.setFitHeight(250);
+        
+        ImageView GG4View = new ImageView(GardGate4);
+        GG4View.setPreserveRatio(true);
+        GG4View.setFitWidth(300);
+        GG4View.setFitHeight(250);
+        
+        ImageView GG5View = new ImageView(GardGate5);
+        GG5View.setPreserveRatio(true);
+        GG5View.setFitWidth(300);
+        GG5View.setFitHeight(250);
+        
+        ImageView GG6View = new ImageView(GardGate6);
+        GG6View.setPreserveRatio(true);
+        GG6View.setFitWidth(300);
+        GG6View.setFitHeight(250);
         
         ImageView R1View = new ImageView(Railings1);
         R1View.setPreserveRatio(true);
@@ -337,13 +280,37 @@ public class FinalProject extends Application {
         R2View.setPreserveRatio(true);
         R2View.setFitWidth(250);
         R2View.setFitHeight(250);
+        
+        ImageView DG1View = new ImageView(DrivewayGate1);
+        DG1View.setFitWidth(300);
+        DG1View.setFitHeight(250);
+        
+        ImageView DG2View = new ImageView(DrivewayGate2);
+        DG2View.setFitWidth(300);
+        DG2View.setFitHeight(250);
 
+        ImageView DG3View = new ImageView(DrivewayGate3);
+        DG3View.setFitWidth(300);
+        DG3View.setFitHeight(250);
+
+        ImageView DG4View = new ImageView(DrivewayGate4);
+        DG4View.setFitWidth(300);
+        DG4View.setFitHeight(250);
+        
+        ImageView DG5View = new ImageView(DrivewayGate5);
+        DG5View.setFitWidth(300);
+        DG5View.setFitHeight(250);
+        
+        ImageView DG6View = new ImageView(DrivewayGate6);
+        DG6View.setFitWidth(300);
+        DG6View.setFitHeight(250);
+        
+        
         //lables for descriptions and stuff
         //Temp labels for header and business location/info
-        Label headerLabel = new Label(HEADER);
-       // headerLabel.setStyle("-fx-font-size: 30pt");
-        headerLabel.setFont(Font.font("Cambria", 50));
-        headerLabel.setWrapText(true);
+//        Label headerLabel = new Label(HEADER);
+//        headerLabel.setFont(Font.font("Cambria", 50));
+//        headerLabel.setWrapText(true);
 
         Label subLabel = new Label(SUBHEADER); //figure out way to put it under header but not in the way of the business info
 
@@ -397,18 +364,6 @@ public class FinalProject extends Application {
             }
         });
         
-        
-
-        /*This hbox will hold all the button links and search bar for the site
-        Fix the organization of buttons later, its too long and clunky
-        Probably delete this because combobox looks much cleaner
-        
-        HBox btnHbox = new HBox(10, homeBtn, drivewayBtn, gardenBtn, 
-                fenceBtn, railBtn, openerBtn, mainCtrlBtn, remoteBtn, receiverBtn,
-                telephoneBtn, safetyBtn, accessoryBtn, partsBtn, searchBar, searchBtn);
-        btnHbox.setAlignment(Pos.TOP_CENTER);
-         */
-        
         //hbox for the header and initial information
         HBox headerHbox = new HBox(20, HeaderHolder, locationLabel);
         headerHbox.setAlignment(Pos.TOP_LEFT);
@@ -444,16 +399,9 @@ public class FinalProject extends Application {
         infoHbox.setPadding(new Insets(0,10,0,10));
 
         //vbox to order everything vertically
-        VBox vbox = new VBox(10,headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
+        VBox vbox = new VBox(10, headerHbox, linksHbox, descriptionHbox, reasonsHbox, 
                 typesHbox, infoHbox);
         
-        
-        //VBox headerVbox = new VBox();
-        
-        //added a scroll bar in case its too long, restyle later
-//        ScrollPane scrollPane = new ScrollPane(vbox);
-//        scrollPane.setFitToHeight(true);
-//        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(vbox);
@@ -466,6 +414,119 @@ public class FinalProject extends Application {
         
         Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.getStylesheets().add("Style.css");
+        
+        
+        //Driveway Gates scene
+        VBox vbox2 = new VBox(10);
+        
+        Label edenlbl = new Label("Entrance of Eden");
+        Label spearlbl = new Label("Spaer of the Ocean");
+        Label miralbl = new Label("Mirabela");
+        Label wavelbl = new Label("Wave of Elegance");
+        Label seallbl = new Label("Royal Seal");
+        Label romanlbl = new Label("Roman Timess");
+        
+        ScrollPane scrollPane2 = new ScrollPane(vbox2);
+        scrollPane2.setPadding(new Insets(10));
+        scrollPane2.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+        scrollPane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        BorderPane root2 = new BorderPane(scrollPane2);
+        root2.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        root2.setPadding(new Insets(10));
+        Scene dgScene = new Scene(root2, WIDTH, HEIGHT);
+        dgScene.getStylesheets().add("Style.css");
+        
+        GridPane gridpane = new GridPane();
+        gridpane.setVgap(10);
+        gridpane.setHgap(10);
+        gridpane.add(DG1View, 0, 0);
+        gridpane.add(DG2View, 0, 1);
+        gridpane.add(DG3View, 1, 0);
+        gridpane.add(DG4View, 1, 1);
+        gridpane.add(DG5View, 2, 0);
+        gridpane.add(DG6View, 2, 1);
+        
+        //Garden Gates scene
+        VBox vbox3 = new VBox(10);
+        
+        Label gemlbl = new Label("Gem Stone");
+        Label sealbl = new Label("Sea Shell");
+        Label medlbl = new Label("Mediterranean");
+        Label roselbl = new Label("Morning Rose");
+        Label archlbl = new Label("Arch Vine");
+        Label oasislbl = new Label("Oasis");
+        
+        ScrollPane scrollPane3 = new ScrollPane(vbox3);
+        scrollPane3.setPadding(new Insets(10));
+        scrollPane3.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+        scrollPane3.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        BorderPane root3 = new BorderPane(scrollPane3);
+        root3.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        root3.setPadding(new Insets(10));
+        Scene ggScene = new Scene(root3, WIDTH, HEIGHT);
+        ggScene.getStylesheets().add("Style.css");
+        
+        GridPane gridpane2 = new GridPane();
+        gridpane2.setVgap(10);
+        gridpane2.setHgap(10);
+        gridpane2.add(GG1View, 0, 0);
+        gridpane2.add(GG2View, 0, 1);
+        gridpane2.add(GG3View, 1, 0);
+        gridpane2.add(GG4View, 1, 1);
+        gridpane2.add(GG5View, 2, 0);
+        gridpane2.add(GG6View, 2, 1);
+
+        //Fencing scene
+        VBox vbox4 = new VBox(10);
+        ScrollPane scrollPane4 = new ScrollPane(vbox4);
+        scrollPane4.setPadding(new Insets(10));
+        scrollPane4.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+        scrollPane4.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        BorderPane root4 = new BorderPane(scrollPane3);
+        root4.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        root4.setPadding(new Insets(10));
+        Scene fScene = new Scene(root4, WIDTH, HEIGHT);
+        fScene.getStylesheets().add("Style.css");
+        
+        GridPane gridpane3 = new GridPane();
+        gridpane3.setVgap(10);
+        gridpane3.setHgap(10);
+        gridpane3.add(AF1View, 0, 0);
+        gridpane3.add(AF2View, 0, 1);
+        gridpane3.add(AF3View, 1, 0);
+        gridpane3.add(AF4View, 1, 1);
+        gridpane3.add(AF5View, 2, 0);
+        gridpane3.add(AF6View, 2, 1);
+
+        linksComboBox.setOnAction(e -> {
+            switch (linksComboBox.getValue()) {
+                case "Driveway Gates": primaryStage.setScene(dgScene);
+                    vbox2.getChildren().addAll(headerHbox, linksHbox, gridpane,
+                            infoHbox);
+                    linksComboBox.setValue("Driveway Gates");
+                    break;
+                    
+                case "Garden Gates": primaryStage.setScene(ggScene);
+                    vbox3.getChildren().addAll(headerHbox, linksHbox, gridpane2,
+                            infoHbox);
+                    linksComboBox.setValue("Garden Gates");
+                    break;
+                    
+                case "Fencing": primaryStage.setScene(fScene);
+                    vbox4.getChildren().addAll(headerHbox, linksHbox, gridpane3,
+                            infoHbox);
+                    linksComboBox.setValue("Fencing");
+                    break;
+                    
+                default:
+                    break;
+            }
+        });
+        
+        //Return home if off default scene
+        homeBtn.setOnAction(e -> primaryStage.setScene(scene));
+        
+        
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -476,5 +537,4 @@ public class FinalProject extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
