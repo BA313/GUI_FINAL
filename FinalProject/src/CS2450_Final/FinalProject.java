@@ -51,9 +51,6 @@ public class FinalProject extends Application {
     //window size
     private static final double WIDTH = 1100.0, HEIGHT = 1800.0,
     		TEXT_WIDTH = 1000.0, TEXT_FIELD_WIDTH = 600.0;
-
-    private static boolean ableGate = false, ableFence = false,
-    		ableGarden = false, ableMatch = false;
     
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
@@ -247,8 +244,8 @@ public class FinalProject extends Application {
     //Vbox to fill page we didnt make
     static VBox NoPageVbox;
     
-    static VBox AboutVbox;
     //VBoxes for all bottom of page Links
+    static VBox AboutVbox;
     static VBox ContactVbox;
     static VBox PoliciesVbox;
     static VBox FAQVbox;
@@ -276,7 +273,6 @@ public class FinalProject extends Application {
         AF1View.setPreserveRatio(true);
         AF1View.setFitWidth(300);
         AF1View.setFitHeight(250);
-        
         
         ImageView AF2View = new ImageView(AlFence2);
         AF2View.setPreserveRatio(true);
@@ -467,6 +463,72 @@ public class FinalProject extends Application {
         addtInfoTextFlow.setTextAlignment(TextAlignment.CENTER);
         addtInfoTextFlow.setStyle("-fx-font-size: 8pt");
         
+        //ComboBox or Listview will probably look better than a string of buttons
+        ComboBox<String> linksComboBox = new ComboBox<>();
+        linksComboBox.getItems().addAll("SELECT PAGE","Driveway Gates", "Garden Gates", "Fencing",
+                "Railings", "Openers - Operators", "Main Control Boards",
+                "Remote Controls", "Receivers", "Telephone Entry",
+                "Safety Equipment", "Gate Accessories", "Gate Operator Parts");
+        linksComboBox.setValue("SELECT PAGE");
+
+        //Search bar text field, make it larger and more prominent than original website
+        TextArea searchBar = new TextArea();
+        searchBar.setPrefRowCount(1);
+        
+        //search on Enter Key Pressed
+        searchBar.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    searchBar.setText("");
+                    ke.consume(); 
+                }
+            }
+        });
+        
+        VBox subHeaderVBox = new VBox(10, HeaderHolder, subLabel);
+        
+        //hbox for the header and initial information
+        HBox headerHbox = new HBox(20, subHeaderVBox, locationLabel);
+        headerHbox.setAlignment(Pos.TOP_CENTER);
+        headerHbox.setPadding(new Insets(10));
+        
+        //hbox for the links
+        HBox linksHbox = new HBox(10, homeBtn, linksComboBox, searchBar, searchBtn);
+        linksHbox.setAlignment(Pos.TOP_CENTER);
+        linksHbox.setPadding(new Insets(10));
+
+        //hbox with business desciption text and gate picture
+        HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
+        descriptionHbox.setAlignment(Pos.TOP_CENTER);
+        descriptionHbox.setPadding(new Insets(10,0,0,0));
+        
+        //hbox for reasons for use
+        HBox reasonsHbox = new HBox(10, reasonsLabel);
+        reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        reasonsHbox.setPadding(new Insets(0,10,0,10));
+        
+        HBox imagesHbox = new HBox(75, AG1View, GG1View, R1View);
+        imagesHbox.setAlignment(Pos.TOP_CENTER);
+        
+        
+        //hbox for gate types
+        HBox typesHbox = new HBox(10, typesLabel);
+        typesHbox.setAlignment(Pos.BOTTOM_CENTER);
+        typesHbox.setPadding(new Insets(0,10,0,10));
+        
+        //hbox for brand links
+        HBox brandsHbox = new HBox(10, brandsLabel);
+        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
+        brandsHbox.setPadding(new Insets(0,10,0,10));
+        
+        //hbox for additional site bs
+        HBox infoHbox = new HBox(10, addtInfoTextFlow);
+        infoHbox.setAlignment(Pos.BOTTOM_CENTER);
+        infoHbox.setPadding(new Insets(0,10,0,10));
+        
+        VBox headerVbox = new VBox(10,headerHbox, linksHbox);
+        
         //about section labels
         Label aboutHeaderLabel = new Label(ABOUT_HEADER);
         aboutHeaderLabel.setStyle("-fx-font-size: 15pt");
@@ -476,6 +538,15 @@ public class FinalProject extends Application {
         aboutLabel.setWrapText(true);
         aboutLabel.setMaxWidth(TEXT_WIDTH);
         aboutLabel.setTextAlignment(TextAlignment.JUSTIFY);
+        
+        //About Page Holders
+        HBox aboutHbox = new HBox(10, aboutHeaderLabel);
+        aboutHbox.setAlignment(Pos.TOP_CENTER);
+        aboutHbox.setPadding(new Insets(0,10,0,10));
+        
+        HBox aboutHbox2 = new HBox(10, aboutLabel);
+        aboutHbox2.setAlignment(Pos.TOP_CENTER);
+        aboutHbox2.setPadding(new Insets(0,10,0,10));
         
         //contact section labels
         Label contactHeaderLabel = new Label(CONTACT_HEADER);
@@ -619,24 +690,88 @@ public class FinalProject extends Application {
         RadioButton contactMatchFenceNoRB = new RadioButton();
         contactMatchFenceNoRB.setToggleGroup(contactMatchFenceGroup);
         
+        
+        Label contactGateSSLabel = new Label("Gate Single Swing");
+        CheckBox contactGateSSCheckBox = new CheckBox();
+        contactGateSSCheckBox.setDisable(true);
+        
+        Label contactGateDSLabel = new Label("Gate Double Swing");
+        CheckBox contactGateDSCheckBox = new CheckBox();
+        contactGateDSCheckBox.setDisable(true);
+        
+        Label contactGateSSLLabel = new Label("Gate Single Slide");
+        CheckBox contactGateSSLCheckBox = new CheckBox();
+        contactGateSSLCheckBox.setDisable(true);
+        
+        Label contactGateDSLLabel = new Label("Gate Double Slide");
+        CheckBox contactGateDSLCheckBox = new CheckBox();
+        contactGateDSLCheckBox.setDisable(true);
+        
+        Label contactColorsLabel = new Label("Include Some Colors ");
+        contactColorsLabel.setPrefWidth(300);
+        Label contactSHeightLabel = new Label("Start Height");
+        contactSHeightLabel.setPrefWidth(250);
+        Label contactFHeightLabel = new Label("Finish Height");
+        contactFHeightLabel.setPrefWidth(250);
+        Label contactAdditonalLabel = new Label("Additional Fence or Gate Specifications and any other Inquiries");
+        contactAdditonalLabel.setWrapText(true);
+        contactAdditonalLabel.setPrefWidth(300);
+        
+        TextField contactColorsTextField = new TextField();
+        contactFirstTextField.setPrefWidth(600);
+        contactColorsTextField.setDisable(true);
+        
+        ComboBox<String> startComboBox = new ComboBox<>();
+        startComboBox.getItems().addAll("3ft", "4ft", "5ft", "6ft");
+        startComboBox.setValue("SELECT HEIGHT");
+        startComboBox.setPrefWidth(250);
+        startComboBox.setDisable(true);
+        
+        ComboBox<String> finishComboBox = new ComboBox<>();
+        finishComboBox.getItems().addAll("5ft", "6ft", "7ft", "8ft");
+        finishComboBox.setValue("SELECT HEIGHT");
+        finishComboBox.setPrefWidth(250);
+        finishComboBox.setDisable(true);
+        
+        TextArea contactAdditioalTextArea = new TextArea();
+        contactAdditioalTextArea.setPrefColumnCount(4);
+        contactAdditioalTextArea.setPrefHeight(100);
+        
+        
+        //TODO work on contact us page
+        //TODO write a clear function for all contact us inputs
+        
+        //handles enabling and disabling radio groups on check box clicks
         disableGroup(contactGateGroup);
         contactGateCheckBox.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 	               if(contactGateCheckBox.isSelected()) {
-	            	   enableGroup(contactGateGroup, ableGate);
-	            	   ableGate = !ableGate;
-	            	   enableGroup(contactGardenGateGroup, ableGarden);
-	            	   ableGarden = !ableGarden;
-	                   enableGroup(contactMatchFenceGroup, ableMatch);
+	            	   enableGroup(contactGateGroup);
+	            	   enableGroup(contactGardenGateGroup);
+	                   enableGroup(contactMatchFenceGroup);
+	                   contactGateSSCheckBox.setDisable(false);
+	            	   contactGateDSCheckBox.setDisable(false);
+	            	   contactGateSSLCheckBox.setDisable(false);
+	            	   contactGateDSLCheckBox.setDisable(false);
+	            	   contactColorsTextField.setDisable(false);
+	            	   startComboBox.setDisable(false);
+	            	   finishComboBox.setDisable(false);
 	               }else {
-	            	   disableGroup(contactGateGroup, ableGate);
-	            	   ableGate = !ableGate;
-	            	   disableGroup(contactMatchFenceGroup, ableMatch);
-	            	   ableMatch = !ableMatch;
+	            	   disableGroup(contactGateGroup);
+	            	   disableGroup(contactMatchFenceGroup);
+	            	   fullDisable(contactGateSSCheckBox);
+	            	   fullDisable(contactGateDSCheckBox);
+	            	   fullDisable(contactGateSSLCheckBox);
+	            	   fullDisable(contactGateDSLCheckBox);
+	            	   
 	            	   if(!contactFenceCheckBox.isSelected()) {
-	            		   disableGroup(contactGardenGateGroup,ableGarden);
-	            		   ableGarden = !ableGarden;
-		            	   
+	            		   disableGroup(contactGardenGateGroup);
+	            		   contactColorsTextField.setDisable(true);
+	            		   contactColorsTextField.setText("");
+		            	   startComboBox.setDisable(true);
+		            	   startComboBox.setValue("SELECT HEIGHT");
+		            	   finishComboBox.setDisable(true);
+		            	   finishComboBox.setValue("SELECT HEIGHT");
 	            	   }
 	               }
 	            }
@@ -646,18 +781,22 @@ public class FinalProject extends Application {
         contactFenceCheckBox.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 	               if(contactFenceCheckBox.isSelected()) {
-	            	   enableGroup(contactFenceGroup,ableFence);
-	            	   ableFence = !ableFence;
-	            	   enableGroup(contactGardenGateGroup, ableGarden);
-	            	   ableGarden = !ableGarden;
+	            	   enableGroup(contactFenceGroup);
+	            	   enableGroup(contactGardenGateGroup);
+	            	   contactColorsTextField.setDisable(false);
+	            	   startComboBox.setDisable(false);
+	            	   finishComboBox.setDisable(false);
 	               }else {
-	            	   disableGroup(contactFenceGroup,ableFence);
-	            	   ableFence = !ableFence;
+	            	   disableGroup(contactFenceGroup);
 	            	   if(!contactGateCheckBox.isSelected()) {
-	            		   disableGroup(contactGardenGateGroup, ableGarden);
-	            		   ableGarden = !ableGarden;
-		            	   disableGroup(contactMatchFenceGroup,ableMatch);
-		            	   ableMatch = !ableMatch;
+	            		   disableGroup(contactGardenGateGroup);
+		            	   disableGroup(contactMatchFenceGroup);
+		            	   contactColorsTextField.setDisable(true);
+		            	   contactColorsTextField.setText("");
+		            	   startComboBox.setDisable(true);
+		            	   startComboBox.setValue("SELECT HEIGHT");
+		            	   finishComboBox.setDisable(true);
+		            	   finishComboBox.setValue("SELECT HEIGHT");
 	            	   }
 	               }
 	            }
@@ -665,31 +804,29 @@ public class FinalProject extends Application {
         disableGroup(contactGardenGateGroup);
         disableGroup(contactMatchFenceGroup);
         
-        //TODO work on contact us page
-        //TODO write a clear function for all contact us inputs
-
-        //ComboBox or Listview will probably look better than a string of buttons
-        ComboBox<String> linksComboBox = new ComboBox<>();
-        linksComboBox.getItems().addAll("SELECT PAGE","Driveway Gates", "Garden Gates", "Fencing",
-                "Railings", "Openers - Operators", "Main Control Boards",
-                "Remote Controls", "Receivers", "Telephone Entry",
-                "Safety Equipment", "Gate Accessories", "Gate Operator Parts");
-        linksComboBox.setValue("SELECT PAGE");
-
-        //Search bar text field, make it larger and more prominent than original website
-        TextArea searchBar = new TextArea();
-        searchBar.setPrefRowCount(1);
         
-        //search on Enter Key Pressed
-        searchBar.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent ke) {
-                if (ke.getCode().equals(KeyCode.ENTER)) {
-                    searchBar.setText("");
-                    ke.consume(); 
-                }
-            }
-        });
+        //Contact Page Holders
+        HBox contactQuoteHeadHbox = new HBox(10,contactQuoteLabel);
+        contactQuoteHeadHbox.setAlignment(Pos.TOP_CENTER);
+        contactQuoteHeadHbox.setPadding(new Insets(10));
+        
+        HBox contactGateRailingHbox = new HBox(10, contactGateLabel, contactGateCheckBox, contactRailingLabel, contactRailingCheckBox);
+        contactGateRailingHbox.setAlignment(Pos.TOP_CENTER);
+        contactGateRailingHbox.setPadding(new Insets(10));
+        
+        HBox contactFenceOpenerHbox = new HBox(10, contactFenceLabel, contactFenceCheckBox, contactOpenerLabel, contactOpenerCheckBox);
+        contactFenceOpenerHbox.setAlignment(Pos.TOP_CENTER);
+        contactFenceOpenerHbox.setPadding(new Insets(10));
+        
+        HBox contactOtherHbox = new HBox(10, contactOtherLabel, contactOtherCheckBox);
+        contactOtherHbox.setAlignment(Pos.BOTTOM_CENTER);
+        contactOtherHbox.setPadding(new Insets(10));
+        
+        VBox contactHeaderVbox = new VBox(10, contactHeaderLabel, contactPrivHeadLabel, contactPrivStateLabel, contactPrivDisclaimLabel);
+        contactHeaderVbox.setAlignment(Pos.TOP_CENTER);
+        
+        VBox contactQuoteVbox = new VBox(10, contactQuoteHeadHbox, contactGateRailingHbox, contactFenceOpenerHbox, contactOtherHbox);
+        contactQuoteVbox.setAlignment(Pos.TOP_LEFT);
         
         //Gridpane for Contact Information
         GridPane contactGridPane = new GridPane();
@@ -736,88 +873,53 @@ public class FinalProject extends Application {
         contactOptionsGridPane.add(contactMatchFenceYesRB, 4,5,1,1);
         contactOptionsGridPane.add(contactMatchFenceNoRB, 5,5,1,1);
         
-        VBox subHeaderVBox = new VBox(10, HeaderHolder, subLabel);
-        
-        //hbox for the header and initial information
-        HBox headerHbox = new HBox(20, subHeaderVBox, locationLabel);
-        headerHbox.setAlignment(Pos.TOP_CENTER);
-        headerHbox.setPadding(new Insets(10));
-        
-        //hbox for the links
-        HBox linksHbox = new HBox(10, homeBtn, linksComboBox, searchBar, searchBtn);
-        linksHbox.setAlignment(Pos.TOP_CENTER);
-        linksHbox.setPadding(new Insets(10));
-
-        //hbox with business desciption text and gate picture
-        HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
-        descriptionHbox.setAlignment(Pos.TOP_CENTER);
-        descriptionHbox.setPadding(new Insets(10,0,0,0));
-        
-        //hbox for reasons for use
-        HBox reasonsHbox = new HBox(10, reasonsLabel);
-        reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
-        reasonsHbox.setPadding(new Insets(0,10,0,10));
-        
-        HBox imagesHbox = new HBox(75, AG1View, GG1View, R1View);
-        imagesHbox.setAlignment(Pos.TOP_CENTER);
-        
-        
-        //hbox for gate types
-        HBox typesHbox = new HBox(10, typesLabel);
-        typesHbox.setAlignment(Pos.BOTTOM_CENTER);
-        typesHbox.setPadding(new Insets(0,10,0,10));
-        
-        //hbox for brand links
-        HBox brandsHbox = new HBox(10, brandsLabel);
-        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
-        brandsHbox.setPadding(new Insets(0,10,0,10));
-        
-        //hbox for additional site bs
-        HBox infoHbox = new HBox(10, addtInfoTextFlow);
-        infoHbox.setAlignment(Pos.BOTTOM_CENTER);
-        infoHbox.setPadding(new Insets(0,10,0,10));
-        
-        //About Page Holders
-        HBox aboutHbox = new HBox(10, aboutHeaderLabel);
-        aboutHbox.setAlignment(Pos.TOP_CENTER);
-        aboutHbox.setPadding(new Insets(0,10,0,10));
-        
-        HBox aboutHbox2 = new HBox(10, aboutLabel);
-        aboutHbox2.setAlignment(Pos.TOP_CENTER);
-        aboutHbox2.setPadding(new Insets(0,10,0,10));
-        
-        //Contact Page Holders
-        HBox contactQuoteHeadHbox = new HBox(10,contactQuoteLabel);
-        contactQuoteHeadHbox.setAlignment(Pos.TOP_CENTER);
-        contactQuoteHeadHbox.setPadding(new Insets(10));
-        
-        HBox contactGateRailingHbox = new HBox(10, contactGateLabel, contactGateCheckBox, contactRailingLabel, contactRailingCheckBox);
-        contactGateRailingHbox.setAlignment(Pos.TOP_CENTER);
-        contactGateRailingHbox.setPadding(new Insets(10));
-        
-        HBox contactFenceOpenerHbox = new HBox(10, contactFenceLabel, contactFenceCheckBox, contactOpenerLabel, contactOpenerCheckBox);
-        contactFenceOpenerHbox.setAlignment(Pos.TOP_CENTER);
-        contactFenceOpenerHbox.setPadding(new Insets(10));
-        
-        HBox contactOtherHbox = new HBox(10, contactOtherLabel, contactOtherCheckBox);
-        contactOtherHbox.setAlignment(Pos.BOTTOM_CENTER);
-        contactOtherHbox.setPadding(new Insets(10));
-        
-        //No Page Default Holder
-        HBox NoPageHbox = new HBox(10, PageNotFoundView);
-        NoPageHbox.setAlignment(Pos.TOP_CENTER);
-        
-        VBox headerVbox = new VBox(10,headerHbox, linksHbox);
-        
-        VBox contactHeaderVbox = new VBox(10, contactHeaderLabel, contactPrivHeadLabel, contactPrivStateLabel, contactPrivDisclaimLabel);
-        contactHeaderVbox.setAlignment(Pos.TOP_CENTER);
-        
-        VBox contactQuoteVbox = new VBox(10, contactQuoteHeadHbox, contactGateRailingHbox, contactFenceOpenerHbox, contactOtherHbox);
-        contactQuoteVbox.setAlignment(Pos.TOP_LEFT);
+        GridPane contactGOptions = new GridPane();
+        contactGOptions.setPrefWidth(900);
+        contactGOptions.setPadding(new Insets(10));
+        contactGOptions.setAlignment(Pos.BOTTOM_CENTER);
+        contactGOptions.setVgap(10);
+        contactGOptions.setHgap(10);
+        contactGOptions.add(contactColorsLabel, 0, 0,4,1);
+        contactGOptions.add(contactFirstTextField, 4,0,8,1);
+        contactGOptions.add(contactSHeightLabel, 0, 1, 2, 1);
+        contactGOptions.add(startComboBox, 2,1,4,1);
+        contactGOptions.add(contactFHeightLabel, 6, 1, 2, 1);
+        contactGOptions.add(finishComboBox, 8,1,4,1);
+        contactGOptions.add(contactAdditonalLabel, 0, 3, 4, 2);
+        contactGOptions.add(contactAdditioalTextArea, 4,3,8,3);
         
         HBox contactQuoteHbox = new HBox(10, contactQuoteVbox, contactOptionsGridPane);
         contactQuoteHbox.setAlignment(Pos.TOP_CENTER);
         
+        HBox contactGSSHbox = new HBox(10, contactGateSSLabel, contactGateSSCheckBox);
+        HBox contactGDSHbox = new HBox(10, contactGateDSLabel, contactGateDSCheckBox);
+        
+        HBox contactGSSLHbox = new HBox(10, contactGateSSLLabel, contactGateSSLCheckBox );
+        HBox contactGDSLHbox = new HBox(10, contactGateDSLLabel, contactGateDSLCheckBox);
+        
+        contactGSSHbox.setAlignment(Pos.TOP_CENTER);
+        contactGDSHbox.setAlignment(Pos.TOP_CENTER);
+        contactGSSLHbox.setAlignment(Pos.TOP_CENTER);
+        contactGDSLHbox.setAlignment(Pos.TOP_CENTER);
+        
+        contactGSSHbox.setPadding(new Insets(10,0,10,0));
+        contactGDSHbox.setPadding(new Insets(10,0,10,0));
+        contactGSSLHbox.setPadding(new Insets(10,0,10,0));
+        contactGDSLHbox.setPadding(new Insets(10,0,10,0));
+        
+        VBox contactSwingVbox = new VBox(10, contactGSSHbox, contactGDSHbox);
+        contactSwingVbox.setPrefWidth(400);
+        VBox contactSlideVbox = new VBox(10, contactGSSLHbox, contactGDSLHbox);
+        contactSlideVbox.setPrefWidth(400);
+        
+        HBox contactGateOptionsHbox = new HBox(10,contactSwingVbox, contactSlideVbox);
+        contactGateOptionsHbox.setAlignment(Pos.TOP_CENTER);
+        
+        
+        //No Page Default Holder
+        HBox NoPageHbox = new HBox(10, PageNotFoundView);
+        NoPageHbox.setAlignment(Pos.TOP_CENTER);
+
         //Blank No Page
         NoPageVbox = new VBox(10, NoPageHbox);
         
@@ -828,7 +930,8 @@ public class FinalProject extends Application {
         AboutVbox = new VBox(10, aboutHbox, aboutHbox2);
         
         //Contact Page
-        ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane, contactQuoteHbox);
+        ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane, 
+        		contactQuoteHbox, contactGateOptionsHbox, contactGOptions);
         
         //vbox to order everything vertically
         mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
@@ -993,7 +1096,8 @@ public class FinalProject extends Application {
     	l.setText(l.getText().substring(1));
     }
     
-    public static void disableGroup(ToggleGroup toggleGroup, boolean able) {
+    //functions for enabling and disabling toggle groups
+    public static void disableGroup(ToggleGroup toggleGroup) {
     	if(toggleGroup.getSelectedToggle() != null) {
     		toggleGroup.getSelectedToggle().setSelected(false);
     	}
@@ -1003,18 +1107,19 @@ public class FinalProject extends Application {
 	    	});
     }
     
-    public static void disableGroup(ToggleGroup toggleGroup) {
-    	toggleGroup.getToggles().forEach(toggle -> {
-    	    Node node = (Node) toggle ;
-    	    node.setDisable(true);
-    	});
-}
-    
-    public static void enableGroup(ToggleGroup toggleGroup, boolean able) {
+    public static void enableGroup(ToggleGroup toggleGroup) {
 	    	toggleGroup.getToggles().forEach(toggle -> {
 	    	    Node node = (Node) toggle ;
 	    	    node.setDisable(false);
 	    	});
+    }
+    
+    public static void fullDisable(CheckBox cb) {
+       if(cb.isSelected()) {
+ 		   cb.setSelected(false);
+ 	   }
+       cb.setDisable(true);
+ 	   
     }
 
     /**
