@@ -7,16 +7,21 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -44,8 +49,12 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
 
     //window size
-    private static final double WIDTH = 1100.0, HEIGHT = 1800.0, TEXT_WIDTH = 1000.0;
+    private static final double WIDTH = 1100.0, HEIGHT = 1800.0,
+    		TEXT_WIDTH = 1000.0, TEXT_FIELD_WIDTH = 600.0;
 
+    private static boolean ableGate = false, ableFence = false,
+    		ableGarden = false, ableMatch = false;
+    
     //greeting header
     private static final String HEADER = "Welcome To: Gates N Fences";
     private static final String SUBHEADER = "Enhance the entry of your home with"
@@ -538,6 +547,124 @@ public class FinalProject extends Application {
         TextField contactPhoneTextField = new TextField();
         contactPhoneTextField.addEventFilter(KeyEvent.ANY, new RequirementHandler(contactPhoneLabel, contactPhoneTextField));
         
+        Label contactQuoteLabel = new Label ("Please Select every option you want a Quote for.");
+        contactQuoteLabel.setWrapText(true);
+        contactQuoteLabel.setMaxWidth(300);
+        
+        Label contactGateLabel = new Label("Gate");
+        CheckBox contactGateCheckBox = new CheckBox();
+        
+        Label contactFenceLabel = new Label("Fence");
+        CheckBox contactFenceCheckBox = new CheckBox();
+        
+        Label contactRailingLabel = new Label("Railing");
+        CheckBox contactRailingCheckBox = new CheckBox();
+        
+        Label contactOpenerLabel = new Label("Opener");
+        CheckBox contactOpenerCheckBox = new CheckBox();
+        
+        Label contactOtherLabel = new Label("Other");
+        CheckBox contactOtherCheckBox = new CheckBox();
+        
+        Label contactYes = new Label("Yes");
+        Label contactNo = new Label("No");
+        Label contactIdk = new Label("Do not Know");
+        contactIdk.setWrapText(true);
+        
+        Label contactGatePostLabel = new Label("Will your Gates require Posts?");
+        Label contactFencePostLabel = new Label("Will your Fence require Posts?");
+        Label contactGardenGateLabel = new Label("Need matching Garden Gates?");
+        Label contactMatchFenceLabel = new Label("Need matching Fence?");
+        
+        //Gate Options
+        ToggleGroup contactGateGroup = new ToggleGroup();
+
+        RadioButton contactGateYesRB = new RadioButton();
+        contactGateYesRB.setToggleGroup(contactGateGroup);
+
+        RadioButton contactGateNoRB = new RadioButton();
+        contactGateNoRB.setToggleGroup(contactGateGroup);
+         
+        RadioButton contactGateIdkRB = new RadioButton();
+        contactGateIdkRB.setToggleGroup(contactGateGroup);
+        
+        
+        //Fence Options
+        ToggleGroup contactFenceGroup = new ToggleGroup();
+
+        RadioButton contactFenceYesRB = new RadioButton();
+        contactFenceYesRB.setToggleGroup(contactFenceGroup);
+
+        RadioButton contactFenceNoRB = new RadioButton();
+        contactFenceNoRB.setToggleGroup(contactFenceGroup);
+         
+        RadioButton contactFenceIdkRB = new RadioButton();
+        contactFenceIdkRB.setToggleGroup(contactFenceGroup);
+        
+        //Garden Options
+        ToggleGroup contactGardenGateGroup = new ToggleGroup();
+
+        RadioButton contactGardenGateYesRB = new RadioButton();
+        contactGardenGateYesRB.setToggleGroup(contactGardenGateGroup);
+
+        RadioButton contactGardenGateNoRB = new RadioButton();
+        contactGardenGateNoRB.setToggleGroup(contactGardenGateGroup);
+        
+        //Matching Fence Option
+        ToggleGroup contactMatchFenceGroup = new ToggleGroup();
+
+        RadioButton contactMatchFenceYesRB = new RadioButton();
+        contactMatchFenceYesRB.setToggleGroup(contactMatchFenceGroup);
+
+        RadioButton contactMatchFenceNoRB = new RadioButton();
+        contactMatchFenceNoRB.setToggleGroup(contactMatchFenceGroup);
+        
+        disableGroup(contactGateGroup);
+        contactGateCheckBox.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+	               if(contactGateCheckBox.isSelected()) {
+	            	   enableGroup(contactGateGroup, ableGate);
+	            	   ableGate = !ableGate;
+	            	   enableGroup(contactGardenGateGroup, ableGarden);
+	            	   ableGarden = !ableGarden;
+	                   enableGroup(contactMatchFenceGroup, ableMatch);
+	               }else {
+	            	   disableGroup(contactGateGroup, ableGate);
+	            	   ableGate = !ableGate;
+	            	   disableGroup(contactMatchFenceGroup, ableMatch);
+	            	   ableMatch = !ableMatch;
+	            	   if(!contactFenceCheckBox.isSelected()) {
+	            		   disableGroup(contactGardenGateGroup,ableGarden);
+	            		   ableGarden = !ableGarden;
+		            	   
+	            	   }
+	               }
+	            }
+			});
+        
+        disableGroup(contactFenceGroup);
+        contactFenceCheckBox.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+	               if(contactFenceCheckBox.isSelected()) {
+	            	   enableGroup(contactFenceGroup,ableFence);
+	            	   ableFence = !ableFence;
+	            	   enableGroup(contactGardenGateGroup, ableGarden);
+	            	   ableGarden = !ableGarden;
+	               }else {
+	            	   disableGroup(contactFenceGroup,ableFence);
+	            	   ableFence = !ableFence;
+	            	   if(!contactGateCheckBox.isSelected()) {
+	            		   disableGroup(contactGardenGateGroup, ableGarden);
+	            		   ableGarden = !ableGarden;
+		            	   disableGroup(contactMatchFenceGroup,ableMatch);
+		            	   ableMatch = !ableMatch;
+	            	   }
+	               }
+	            }
+			});
+        disableGroup(contactGardenGateGroup);
+        disableGroup(contactMatchFenceGroup);
+        
         //TODO work on contact us page
         //TODO write a clear function for all contact us inputs
 
@@ -564,11 +691,7 @@ public class FinalProject extends Application {
             }
         });
         
-        VBox headerVBox = new VBox(10, HeaderHolder, subLabel);
-        
-        VBox contactHeaderVbox = new VBox(10, contactHeaderLabel, contactPrivHeadLabel, contactPrivStateLabel, contactPrivDisclaimLabel);
-        contactHeaderVbox.setAlignment(Pos.TOP_CENTER);
-        
+        //Gridpane for Contact Information
         GridPane contactGridPane = new GridPane();
         contactGridPane.setPadding(new Insets(10));
         contactGridPane.setAlignment(Pos.TOP_CENTER);
@@ -589,8 +712,34 @@ public class FinalProject extends Application {
         contactGridPane.add(contactPhoneLabel, 0, 6, 3, 1);
         contactGridPane.add(contactPhoneTextField, 4,6,7,1);
         
+        GridPane contactOptionsGridPane = new GridPane();
+        contactOptionsGridPane.setPrefWidth(600);
+        contactOptionsGridPane.setPadding(new Insets(10));
+        contactOptionsGridPane.setAlignment(Pos.TOP_CENTER);
+        contactOptionsGridPane.setVgap(10);
+        contactOptionsGridPane.setHgap(10);
+        contactOptionsGridPane.add(contactYes, 4,0,1,2);
+        contactOptionsGridPane.add(contactNo, 5,0,1,2);
+        contactOptionsGridPane.add(contactIdk, 6,0,4,2);
+        contactOptionsGridPane.add(contactGatePostLabel, 0,2,3,1);
+        contactOptionsGridPane.add(contactGateYesRB, 4,2,1,1);
+        contactOptionsGridPane.add(contactGateNoRB, 5,2,1,1);
+        contactOptionsGridPane.add(contactGateIdkRB, 9,2,1,1);
+        contactOptionsGridPane.add(contactFencePostLabel, 0,3,3,1);
+        contactOptionsGridPane.add(contactFenceYesRB, 4,3,1,1);
+        contactOptionsGridPane.add(contactFenceNoRB, 5,3,1,1);
+        contactOptionsGridPane.add(contactFenceIdkRB, 9,3,1,1);
+        contactOptionsGridPane.add(contactGardenGateLabel, 0,4,3,1);
+        contactOptionsGridPane.add(contactGardenGateYesRB, 4,4,1,1);
+        contactOptionsGridPane.add(contactGardenGateNoRB, 5,4,1,1);
+        contactOptionsGridPane.add(contactMatchFenceLabel, 0,5,3,1);
+        contactOptionsGridPane.add(contactMatchFenceYesRB, 4,5,1,1);
+        contactOptionsGridPane.add(contactMatchFenceNoRB, 5,5,1,1);
+        
+        VBox subHeaderVBox = new VBox(10, HeaderHolder, subLabel);
+        
         //hbox for the header and initial information
-        HBox headerHbox = new HBox(20, headerVBox, locationLabel);
+        HBox headerHbox = new HBox(20, subHeaderVBox, locationLabel);
         headerHbox.setAlignment(Pos.TOP_CENTER);
         headerHbox.setPadding(new Insets(10));
         
@@ -637,12 +786,37 @@ public class FinalProject extends Application {
         aboutHbox2.setAlignment(Pos.TOP_CENTER);
         aboutHbox2.setPadding(new Insets(0,10,0,10));
         
+        //Contact Page Holders
+        HBox contactQuoteHeadHbox = new HBox(10,contactQuoteLabel);
+        contactQuoteHeadHbox.setAlignment(Pos.TOP_CENTER);
+        contactQuoteHeadHbox.setPadding(new Insets(10));
+        
+        HBox contactGateRailingHbox = new HBox(10, contactGateLabel, contactGateCheckBox, contactRailingLabel, contactRailingCheckBox);
+        contactGateRailingHbox.setAlignment(Pos.TOP_CENTER);
+        contactGateRailingHbox.setPadding(new Insets(10));
+        
+        HBox contactFenceOpenerHbox = new HBox(10, contactFenceLabel, contactFenceCheckBox, contactOpenerLabel, contactOpenerCheckBox);
+        contactFenceOpenerHbox.setAlignment(Pos.TOP_CENTER);
+        contactFenceOpenerHbox.setPadding(new Insets(10));
+        
+        HBox contactOtherHbox = new HBox(10, contactOtherLabel, contactOtherCheckBox);
+        contactOtherHbox.setAlignment(Pos.BOTTOM_CENTER);
+        contactOtherHbox.setPadding(new Insets(10));
+        
         //No Page Default Holder
         HBox NoPageHbox = new HBox(10, PageNotFoundView);
         NoPageHbox.setAlignment(Pos.TOP_CENTER);
         
-        
         VBox headerVbox = new VBox(10,headerHbox, linksHbox);
+        
+        VBox contactHeaderVbox = new VBox(10, contactHeaderLabel, contactPrivHeadLabel, contactPrivStateLabel, contactPrivDisclaimLabel);
+        contactHeaderVbox.setAlignment(Pos.TOP_CENTER);
+        
+        VBox contactQuoteVbox = new VBox(10, contactQuoteHeadHbox, contactGateRailingHbox, contactFenceOpenerHbox, contactOtherHbox);
+        contactQuoteVbox.setAlignment(Pos.TOP_LEFT);
+        
+        HBox contactQuoteHbox = new HBox(10, contactQuoteVbox, contactOptionsGridPane);
+        contactQuoteHbox.setAlignment(Pos.TOP_CENTER);
         
         //Blank No Page
         NoPageVbox = new VBox(10, NoPageHbox);
@@ -654,7 +828,7 @@ public class FinalProject extends Application {
         AboutVbox = new VBox(10, aboutHbox, aboutHbox2);
         
         //Contact Page
-        ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane);
+        ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane, contactQuoteHbox);
         
         //vbox to order everything vertically
         mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
@@ -817,6 +991,30 @@ public class FinalProject extends Application {
     
     public static void subStar(Label l) {
     	l.setText(l.getText().substring(1));
+    }
+    
+    public static void disableGroup(ToggleGroup toggleGroup, boolean able) {
+    	if(toggleGroup.getSelectedToggle() != null) {
+    		toggleGroup.getSelectedToggle().setSelected(false);
+    	}
+	    	toggleGroup.getToggles().forEach(toggle -> {
+	    	    Node node = (Node) toggle ;
+	    	    node.setDisable(true);
+	    	});
+    }
+    
+    public static void disableGroup(ToggleGroup toggleGroup) {
+    	toggleGroup.getToggles().forEach(toggle -> {
+    	    Node node = (Node) toggle ;
+    	    node.setDisable(true);
+    	});
+}
+    
+    public static void enableGroup(ToggleGroup toggleGroup, boolean able) {
+	    	toggleGroup.getToggles().forEach(toggle -> {
+	    	    Node node = (Node) toggle ;
+	    	    node.setDisable(false);
+	    	});
     }
 
     /**
