@@ -4,19 +4,14 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -27,11 +22,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
@@ -47,7 +39,6 @@ public class FinalProject extends Application {
     private static final double WIDTH = 1100.0, HEIGHT = 1800.0, TEXT_WIDTH = 1000.0;
 
     //greeting header
-    private static final String HEADER = "Welcome To: Gates N Fences";
     private static final String SUBHEADER = "Enhance the entry of your home with"
             + " custom, decorative gates and fences!";
     
@@ -74,7 +65,6 @@ public class FinalProject extends Application {
     //reasons to buy section
     private static final String REASONS_SEC1 = "Take a look at some of our custom"
             + " driveway gates and fences!\r\n ";
-    //Take a look at some of our custom driveway gates and fences!\r\n 
     
     private static final String REASONS_SEC2 = "Aluminum driveway gates are "
             + "becoming more and more popular because of how strong and durable "
@@ -82,7 +72,6 @@ public class FinalProject extends Application {
             + "another reason why this type of gate is preferred by many people "
             + "over wooden or iron gates."
             + "\r\n" +
-            // 
             
             "1. Aluminum gates are much more cost effective than steel gates.\r\n "
             + "Save money while still having a beautiful gate for your driveway!\r\n" +
@@ -116,33 +105,33 @@ public class FinalProject extends Application {
             + " preexisting gates you have and we have a variety of powder coated"
             + " colors. These gates will really give your home that elegant look.\r\n";
 
-    //Brand Name Section
-    private static final String NAME_BRAND_SEC1 = "Here are some of our top brands!\r\n";
-    
-    private static final String NAME_BRAND_SEC2 = "BFT Gate Openers\r\n"
-            + "PowerMaster Gate Openers\r\n"
-            + "Eagle Gate Operators\r\n"
-            + "Elite Gate Openers\r\n"
-            + "Ramset Gate Operators\r\n"
-            + "Doorking Gate Openers\r\n"
-            + "Viking Gate Operators\r\n"
-            + "OSCO Linear Gate Openers\r\n"
-            + "Liftmaster Gate Openers\r\n"
-            + "Allstar Gate Operators\r\n"
-            + "SEA Gate Openers\r\n"
-            + "FAAC Gate Operators\r\n"
-            + "Apollo Gate Openers\r\n"
-            + "Hysecurity Barriers / Risers  Swing  Slides\r\n"
-            + "\r\n"
-            + "Residential Sliding Gate Openers\r\n"
-            + "\r\n"
-            + "Barrier Gate Vehicle Barrier Gate, Parking\r\n"
-            + "Gate, Barrier\r\n"
-            + "\r\n"
-            + "Ditek Surge Protector  -- Transformers\r\n"
-            + "Revere\r\n"
-            + "Aiphone Intercom";
-            //clean this up a bit/shorter the list
+//    //Brand Name Section
+//    private static final String NAME_BRAND_SEC1 = "Here are some of our top brands!\r\n";
+//    
+//    private static final String NAME_BRAND_SEC2 = "BFT Gate Openers\r\n"
+//            + "PowerMaster Gate Openers\r\n"
+//            + "Eagle Gate Operators\r\n"
+//            + "Elite Gate Openers\r\n"
+//            + "Ramset Gate Operators\r\n"
+//            + "Doorking Gate Openers\r\n"
+//            + "Viking Gate Operators\r\n"
+//            + "OSCO Linear Gate Openers\r\n"
+//            + "Liftmaster Gate Openers\r\n"
+//            + "Allstar Gate Operators\r\n"
+//            + "SEA Gate Openers\r\n"
+//            + "FAAC Gate Operators\r\n"
+//            + "Apollo Gate Openers\r\n"
+//            + "Hysecurity Barriers / Risers  Swing  Slides\r\n"
+//            + "\r\n"
+//            + "Residential Sliding Gate Openers\r\n"
+//            + "\r\n"
+//            + "Barrier Gate Vehicle Barrier Gate, Parking\r\n"
+//            + "Gate, Barrier\r\n"
+//            + "\r\n"
+//            + "Ditek Surge Protector  -- Transformers\r\n"
+//            + "Revere\r\n"
+//            + "Aiphone Intercom";
+//            //clean this up a bit/shorter the list
 
     //final about section and legal information
     //probably remove doesnt change effectiveness of website/presentation
@@ -220,7 +209,6 @@ public class FinalProject extends Application {
     static final Image GardGate5 = new Image("GardenGate5.jpg");
     static final Image GardGate6 = new Image("GardenGate6.jfif");
     
-
     static final Image Railings1 = new Image("Railings1.jpg");
     static final Image Railings2 = new Image("Railings2.jpg");
     
@@ -231,6 +219,9 @@ public class FinalProject extends Application {
     static final Image DrivewayGate5 = new Image("Drivewaygate5.jpg");
     static final Image DrivewayGate6 = new Image("Drivewaygate6.jpg");
     
+    static final Image Homepage1 = new Image("homepageimage1.jpg");
+    static final Image Homepage2 = new Image("homepageimage2.jpg");
+    
     //holds All different Vboxes to display
     static VBox mainVbox;
     
@@ -239,6 +230,21 @@ public class FinalProject extends Application {
     
     //Vbox to fill page we didnt make
     static VBox NoPageVbox;
+    
+    //Holds Driveway Gates page
+    static VBox dwgateVbox;
+    
+    //Holds Garden Gates page
+    static VBox ggateVbox;
+    
+    //Holds Fencing page
+    static VBox fenceVbox;
+    
+    //Holds purchase page
+    static VBox purchaseVbox;
+    
+    //Holds shopping cart page
+    static VBox shoppingcartVbox;
     
     static VBox AboutVbox;
     //VBoxes for all bottom of page Links
@@ -259,34 +265,33 @@ public class FinalProject extends Application {
         HeaderHolder.setFitWidth(700);
         HeaderHolder.setFitHeight(300);
         
+        ImageView PageNotFoundView = new ImageView(PageNotFound);
+        PageNotFoundView.setPreserveRatio(true);
+        PageNotFoundView.setFitWidth(900);
+        PageNotFoundView.setFitHeight(900);
+        
         //imageviews for pictures
         ImageView AF1View = new ImageView(AlFence1);
-        AF1View.setPreserveRatio(true);
         AF1View.setFitWidth(300);
         AF1View.setFitHeight(250);
         
         ImageView AF2View = new ImageView(AlFence2);
-        AF2View.setPreserveRatio(true);
         AF2View.setFitWidth(300);
         AF2View.setFitHeight(250);
         
         ImageView AF3View = new ImageView(AlFence3);
-        AF3View.setPreserveRatio(true);
         AF3View.setFitWidth(300);
         AF3View.setFitHeight(250);
         
         ImageView AF4View = new ImageView(AlFence4);
-        AF4View.setPreserveRatio(true);
         AF4View.setFitWidth(300);
         AF4View.setFitHeight(250);
         
         ImageView AF5View = new ImageView(AlFence5);
-        AF5View.setPreserveRatio(true);
         AF5View.setFitWidth(300);
         AF5View.setFitHeight(250);
         
         ImageView AF6View = new ImageView(AlFence6);
-        AF6View.setPreserveRatio(true);
         AF6View.setFitWidth(300);
         AF6View.setFitHeight(250);
         
@@ -306,49 +311,38 @@ public class FinalProject extends Application {
         AG3View.setFitHeight(250);
         
         ImageView GG1View = new ImageView(GardGate1);
-        GG1View.setPreserveRatio(true);
         GG1View.setFitWidth(300);
         GG1View.setFitHeight(250);
         
         ImageView GG2View = new ImageView(GardGate2);
-        GG2View.setPreserveRatio(true);
         GG2View.setFitWidth(300);
         GG2View.setFitHeight(250);
         
         ImageView GG3View = new ImageView(GardGate3);
-        GG3View.setPreserveRatio(true);
-        GG3View.setFitWidth(250);
+        GG3View.setFitWidth(300);
         GG3View.setFitHeight(250);
         
         ImageView GG4View = new ImageView(GardGate4);
-        GG4View.setPreserveRatio(true);
         GG4View.setFitWidth(300);
         GG4View.setFitHeight(250);
         
         ImageView GG5View = new ImageView(GardGate5);
-        GG5View.setPreserveRatio(true);
         GG5View.setFitWidth(300);
         GG5View.setFitHeight(250);
         
         ImageView GG6View = new ImageView(GardGate6);
-        GG6View.setPreserveRatio(true);
         GG6View.setFitWidth(300);
         GG6View.setFitHeight(250);
         
         ImageView R1View = new ImageView(Railings1);
         R1View.setPreserveRatio(true);
-        R1View.setFitWidth(250);
+        R1View.setFitWidth(300);
         R1View.setFitHeight(250);
         
         ImageView R2View = new ImageView(Railings2);
         R2View.setPreserveRatio(true);
-        R2View.setFitWidth(250);
+        R2View.setFitWidth(300);
         R2View.setFitHeight(250);
-        
-        ImageView PageNotFoundView = new ImageView(PageNotFound);
-        R2View.setPreserveRatio(true);
-        R2View.setFitWidth(900);
-        R2View.setFitHeight(900);
         
         ImageView DG1View = new ImageView(DrivewayGate1);
         DG1View.setFitWidth(300);
@@ -358,8 +352,6 @@ public class FinalProject extends Application {
         DG2View.setFitWidth(300);
         DG2View.setFitHeight(250);
 
-        Label subLabel = new Label(SUBHEADER);
-        subLabel.setFont(Font.font("Cambria, 12"));
         ImageView DG3View = new ImageView(DrivewayGate3);
         DG3View.setFitWidth(300);
         DG3View.setFitHeight(250);
@@ -376,9 +368,19 @@ public class FinalProject extends Application {
         DG6View.setFitWidth(300);
         DG6View.setFitHeight(250);
         
+        ImageView HP1View = new ImageView(Homepage1);
+        HP1View.setFitWidth(300);
+        HP1View.setFitHeight(250);
+        
+        ImageView HP2View = new ImageView(Homepage2);
+        HP2View.setFitWidth(300);
+        HP2View.setFitHeight(250);
+        
+        Label subLabel = new Label(SUBHEADER);
+        subLabel.setId("sublabel");
         
         Label locationLabel = new Label(BUSINESS_INFO);
-        locationLabel.setStyle("-fx-font-size: 15pt");
+        locationLabel.setId("locationlabel");
         locationLabel.setWrapText(true);
 
         Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2);
@@ -397,9 +399,9 @@ public class FinalProject extends Application {
         typesLabel.setMaxWidth(TEXT_WIDTH);
         typesLabel.setTextAlignment(TextAlignment.CENTER);
         
-        Label brandsLabel = new Label(NAME_BRAND_SEC1 + NAME_BRAND_SEC2);
-        brandsLabel.setMaxWidth(950);
-        brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
+//        Label brandsLabel = new Label(NAME_BRAND_SEC1 + NAME_BRAND_SEC2);
+//        brandsLabel.setMaxWidth(950);
+//        brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
         Hyperlink hyperlink;
         
@@ -456,7 +458,7 @@ public class FinalProject extends Application {
         addtInfoTextFlow.setMaxWidth(TEXT_WIDTH);
         addtInfoTextFlow.setMaxWidth(TEXT_WIDTH);
         addtInfoTextFlow.setTextAlignment(TextAlignment.CENTER);
-        addtInfoTextFlow.setStyle("-fx-font-size: 8pt");
+        addtInfoTextFlow.setId("addtinfotext");
         
         Label aboutLabel = new Label(ABOUT_PAGE);
         aboutLabel.setWrapText(true);
@@ -500,7 +502,7 @@ public class FinalProject extends Application {
         linksHbox.setPadding(new Insets(10));
 
         //hbox with business desciption text and gate picture
-        HBox descriptionHbox = new HBox(10, businessLabel, AF1View);
+        HBox descriptionHbox = new HBox(10, businessLabel, HP1View);
         descriptionHbox.setAlignment(Pos.TOP_CENTER);
         
         //hbox for reasons for use
@@ -508,21 +510,21 @@ public class FinalProject extends Application {
         reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
         reasonsHbox.setPadding(new Insets(0,10,0,10));
         
-        HBox imagesHbox = new HBox(10, AF2View, AG1View, AG2View, AG3View);
+        HBox imagesHbox = new HBox(10, HP2View, AG1View, AG2View, AG3View);
         imagesHbox.setAlignment(Pos.TOP_CENTER);
         
-        HBox imagesHbox2 = new HBox(10, GG1View, GG2View, GG3View,R1View,R2View);
-        imagesHbox2.setAlignment(Pos.TOP_CENTER);
+//        HBox imagesHbox2 = new HBox(10, GG1View, GG2View, GG3View,R1View,R2View);
+//        imagesHbox2.setAlignment(Pos.TOP_CENTER);
         
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
         typesHbox.setAlignment(Pos.BOTTOM_CENTER);
         typesHbox.setPadding(new Insets(0,10,0,10));
         
-        //hbox for brand links
-        HBox brandsHbox = new HBox(10, brandsLabel);
-        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
-        brandsHbox.setPadding(new Insets(0,10,0,10));
+//        //hbox for brand links
+//        HBox brandsHbox = new HBox(10, brandsLabel);
+//        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
+//        brandsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for additional site bs
         HBox infoHbox = new HBox(10, addtInfoTextFlow);
@@ -545,12 +547,268 @@ public class FinalProject extends Application {
         mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
         
         
+        
+        //Driveway Gates scene
+        Label edenlbl = new Label("Entrance of Eden");
+        edenlbl.setId("pagelabels");
+        Label spearlbl = new Label("Spear of the Ocean");
+        spearlbl.setId("pagelabels");
+        Label miralbl = new Label("Mirabela");
+        miralbl.setId("pagelabels");
+        Label wavelbl = new Label("Wave of Elegance");
+        wavelbl.setId("pagelabels");
+        Label seallbl = new Label("Royal Seal");
+        seallbl.setId("pagelabels");
+        Label romanlbl = new Label("Roman Times");
+        romanlbl.setId("pagelabels");
+        
+        //Label send to purchase scene
+        edenlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, purchaseVbox);
+        });
+        
+        //Labels send to no page scene
+        spearlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        miralbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        wavelbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        seallbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        romanlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        
+        VBox dwgbox1 = new VBox(DG1View, edenlbl);
+        dwgbox1.setAlignment(Pos.CENTER);
+        VBox dwgbox2 = new VBox(DG2View, spearlbl);
+        dwgbox2.setAlignment(Pos.CENTER);
+        VBox dwgbox3 = new VBox(DG3View, miralbl);
+        dwgbox3.setAlignment(Pos.CENTER);
+        VBox dwgbox4 = new VBox(DG4View, wavelbl);
+        dwgbox4.setAlignment(Pos.CENTER);
+        VBox dwgbox5 = new VBox(DG5View, seallbl);
+        dwgbox5.setAlignment(Pos.CENTER);
+        VBox dwgbox6 = new VBox(DG6View, romanlbl);
+        dwgbox6.setAlignment(Pos.CENTER);
+        
+        GridPane gridpane = new GridPane();
+        gridpane.setVgap(10);
+        gridpane.setHgap(10);
+        gridpane.setAlignment(Pos.CENTER);
+        gridpane.add(dwgbox1, 0, 0);
+        gridpane.add(dwgbox2, 0, 1);
+        gridpane.add(dwgbox3, 1, 0);
+        gridpane.add(dwgbox4, 1, 1);
+        gridpane.add(dwgbox5, 2, 0);
+        gridpane.add(dwgbox6, 2, 1);
+        dwgateVbox = new VBox(10, gridpane);
+        
+        
+        //Garden Gates scene
+        Label gemlbl = new Label("Gem Stone");
+        gemlbl.setId("pagelabels");
+        Label seashelllbl = new Label("Sea Shell");
+        seashelllbl.setId("pagelabels");
+        Label medlbl = new Label("Mediterranean");
+        medlbl.setId("pagelabels");
+        Label roselbl = new Label("Morning Rose");
+        roselbl.setId("pagelabels");
+        Label archlbl = new Label("Arch Vine");
+        archlbl.setId("pagelabels");
+        Label oasislbl = new Label("Oasis");
+        oasislbl.setId("pagelabels");
+        
+        //Labels send to no page scene
+        gemlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        seashelllbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        medlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        roselbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        archlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        oasislbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        
+        VBox ggbox1 = new VBox(GG1View, gemlbl);
+        ggbox1.setAlignment(Pos.CENTER);
+        VBox ggbox2 = new VBox(GG2View, seashelllbl);
+        ggbox2.setAlignment(Pos.CENTER);
+        VBox ggbox3 = new VBox(GG3View, medlbl);
+        ggbox3.setAlignment(Pos.CENTER);
+        VBox ggbox4 = new VBox(GG4View, roselbl);
+        ggbox4.setAlignment(Pos.CENTER);
+        VBox ggbox5 = new VBox(GG5View, archlbl);
+        ggbox5.setAlignment(Pos.CENTER);
+        VBox ggbox6 = new VBox(GG6View, oasislbl);
+        ggbox6.setAlignment(Pos.CENTER);
+        
+        GridPane gridpane2 = new GridPane();
+        gridpane2.setVgap(10);
+        gridpane2.setHgap(10);
+        gridpane2.setAlignment(Pos.CENTER);
+        gridpane2.add(ggbox1, 0, 0);
+        gridpane2.add(ggbox2, 0, 1);
+        gridpane2.add(ggbox3, 1, 0);
+        gridpane2.add(ggbox4, 1, 1);
+        gridpane2.add(ggbox5, 2, 0);
+        gridpane2.add(ggbox6, 2, 1);
+        ggateVbox = new VBox(10, gridpane2);
+        
+        
+        //Fencing scene
+        Label shellslbl = new Label("Sea Shells");
+        shellslbl.setId("pagelabels");
+        Label thornslbl = new Label("Thorns of Power II");
+        thornslbl.setId("pagelabels");
+        Label rusticlbl = new Label("Modernly Rustic");
+        rusticlbl.setId("pagelabels");
+        Label candylbl = new Label("Candy Cane");
+        candylbl.setId("pagelabels");
+        Label crescentlbl = new Label("Crescent Moon III");
+        crescentlbl.setId("pagelabels");
+        Label tidelbl = new Label("Pacific Tide");
+        tidelbl.setId("pagelabels");
+        
+        //Labels send to no page scene
+        shellslbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        thornslbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        rusticlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        candylbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        crescentlbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        tidelbl.setOnMouseClicked(e -> {
+                mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        
+        VBox fbox1 = new VBox(AF1View, shellslbl);
+        fbox1.setAlignment(Pos.CENTER);
+        VBox fbox2 = new VBox(AF2View, thornslbl);
+        fbox2.setAlignment(Pos.CENTER);
+        VBox fbox3 = new VBox(AF3View, rusticlbl);
+        fbox3.setAlignment(Pos.CENTER);
+        VBox fbox4 = new VBox(AF4View, candylbl);
+        fbox4.setAlignment(Pos.CENTER);
+        VBox fbox5 = new VBox(AF5View, crescentlbl);
+        fbox5.setAlignment(Pos.CENTER);
+        VBox fbox6 = new VBox(AF6View, tidelbl);
+        fbox6.setAlignment(Pos.CENTER);
+        
+        GridPane gridpane3 = new GridPane();
+        gridpane3.setVgap(10);
+        gridpane3.setHgap(10);
+        gridpane3.setAlignment(Pos.CENTER);
+        gridpane3.add(fbox1, 0, 0);
+        gridpane3.add(fbox2, 0, 1);
+        gridpane3.add(fbox3, 1, 0);
+        gridpane3.add(fbox4, 1, 1);
+        gridpane3.add(fbox5, 2, 0);
+        gridpane3.add(fbox6, 2, 1);
+        fenceVbox = new VBox(10, gridpane3);
+        
+        
+        //Purchasing scene
+        Button addToCartBtn = new Button("Add To Cart");
+        Button checkoutBtn = new Button("Checkout");
+        
+        Label subTotallbl = new Label();
+        subTotallbl.setId("purchaselabels");
+        Label shippinglbl = new Label();
+        shippinglbl.setId("purchaselabels");
+        Label totallbl = new Label();
+        totallbl.setId("purchaselabels");
+        
+        HBox buttonsHbox = new HBox(5, addToCartBtn, checkoutBtn);
+       
+        ImageView gatePurchaseView = new ImageView(DrivewayGate1);
+        gatePurchaseView.setFitWidth(600);
+        gatePurchaseView.setFitHeight(550);
+        
+        Label gatePurchaselbl = new Label("Entrance of Eden");
+        gatePurchaselbl.setId("purchaselabels");
+        
+        VBox gatePurchaseVbox = new VBox(10, gatePurchaseView, gatePurchaselbl);
+        gatePurchaseVbox.setAlignment(Pos.CENTER);
+        
+        ComboBox<String> purchaseOptionsComboBox = new ComboBox<>();
+        purchaseOptionsComboBox.getItems().addAll("SELECT SIZE", "10ft Wide : $5,400", "12ft Wide : $6,480", 
+                "14ft Wide : $7,560", "16ft Wide : $8,640");
+        purchaseOptionsComboBox.setValue("SELECT SIZE");
+        
+        VBox gatePurchaseVbox2 = new VBox(20, purchaseOptionsComboBox, buttonsHbox, subTotallbl, shippinglbl, totallbl);
+      
+        //Adds value to purchase
+        addToCartBtn.setOnAction(e -> { 
+            double cost = 0;
+            switch(purchaseOptionsComboBox.getValue()) {
+                case "10ft Wide : $5,400": 
+                    cost = 5400.00;
+                    break;
+                case "12ft Wide : $6,480":
+                    cost = 6480.00;
+                    break;
+                case "14ft Wide : $7,560":
+                    cost = 7560.00;
+                    break;
+                case "16ft Wide : $8,640":
+                    cost = 8640.00;
+                    break;
+                default:
+                    break;
+            }
+            double shippingPercent = .11;
+            double shipping = cost * shippingPercent;
+            double total = cost + shipping;
+            subTotallbl.setText(String.format("Subtotal: $" + "%,.2f", cost));
+            shippinglbl.setText(String.format("Shipping & Handling: $" + "%,.2f", shipping));
+            totallbl.setText(String.format("Total: $" + "%,.2f", total));
+        });
+
+        GridPane purchaseGridPane = new GridPane();
+        purchaseGridPane.setAlignment(Pos.CENTER);
+        purchaseGridPane.setHgap(25);
+        purchaseGridPane.setVgap(10);
+        purchaseGridPane.add(gatePurchaseVbox, 0, 0);
+        purchaseGridPane.add(gatePurchaseVbox2, 1, 0);
+        
+        purchaseVbox = new VBox(10, purchaseGridPane);
+        
+        checkoutBtn.setOnAction(e -> {
+            mainVbox.getChildren().set(1, NoPageVbox);
+        });
+        
+        
+        
         //Code to change what Vbox Shows when button is pressed
         homeBtn.setOnAction(new EventHandler<ActionEvent>() {
     		public void handle(ActionEvent event) {
     			mainVbox.getChildren().set(1, BodyVbox);
-            }
- 		});
+                        linksComboBox.setValue("SELECT PAGE");
+                }
+        });
         
         linksComboBox.setOnAction(new EventHandler<ActionEvent>() {
     		public void handle(ActionEvent event) {
@@ -558,12 +816,21 @@ public class FinalProject extends Application {
     			case "SELECT PAGE":
     				mainVbox.getChildren().set(1, BodyVbox);
     				break;
+                        case "Driveway Gates":
+                                mainVbox.getChildren().set(1, dwgateVbox);
+                                break;
+                        case "Garden Gates":
+                                mainVbox.getChildren().set(1, ggateVbox);
+                                break;
+                        case "Fencing":
+                                mainVbox.getChildren().set(1, fenceVbox);
+                                break;
     			default:
-					mainVbox.getChildren().set(1, NoPageVbox);
-					break;
-           }
-            }
- 		});
+                                mainVbox.getChildren().set(1, NoPageVbox);
+                                break;
+                        }
+                }
+        });
         
         //added a scroll bar in case its too long, restyle later
         ScrollPane scrollPane = new ScrollPane(mainVbox);
@@ -577,115 +844,6 @@ public class FinalProject extends Application {
         
         Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.getStylesheets().add("Style.css");
-        
-        
-        //Driveway Gates scene
-        VBox vbox2 = new VBox(10);
-        
-        Label edenlbl = new Label("Entrance of Eden");
-        Label spearlbl = new Label("Spaer of the Ocean");
-        Label miralbl = new Label("Mirabela");
-        Label wavelbl = new Label("Wave of Elegance");
-        Label seallbl = new Label("Royal Seal");
-        Label romanlbl = new Label("Roman Timess");
-        
-//        ScrollPane scrollPane2 = new ScrollPane(vbox2);
-//        scrollPane2.setPadding(new Insets(10));
-//        scrollPane2.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-//        scrollPane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-//        BorderPane root2 = new BorderPane(scrollPane2);
-//        root2.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-//        root2.setPadding(new Insets(10));
-//        Scene dgScene = new Scene(root2, WIDTH, HEIGHT);
-//        dgScene.getStylesheets().add("Style.css");
-        
-        GridPane gridpane = new GridPane();
-        gridpane.setVgap(10);
-        gridpane.setHgap(10);
-        gridpane.add(DG1View, 0, 0);
-        gridpane.add(DG2View, 0, 1);
-        gridpane.add(DG3View, 1, 0);
-        gridpane.add(DG4View, 1, 1);
-        gridpane.add(DG5View, 2, 0);
-        gridpane.add(DG6View, 2, 1);
-        
-        //Garden Gates scene
-        VBox vbox3 = new VBox(10);
-        
-        Label gemlbl = new Label("Gem Stone");
-        Label sealbl = new Label("Sea Shell");
-        Label medlbl = new Label("Mediterranean");
-        Label roselbl = new Label("Morning Rose");
-        Label archlbl = new Label("Arch Vine");
-        Label oasislbl = new Label("Oasis");
-        
-//        ScrollPane scrollPane3 = new ScrollPane(vbox3);
-//        scrollPane3.setPadding(new Insets(10));
-//        scrollPane3.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-//        scrollPane3.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-//        BorderPane root3 = new BorderPane(scrollPane3);
-//        root3.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-//        root3.setPadding(new Insets(10));
-//        Scene ggScene = new Scene(root3, WIDTH, HEIGHT);
-//        ggScene.getStylesheets().add("Style.css");
-        
-        GridPane gridpane2 = new GridPane();
-        gridpane2.setVgap(10);
-        gridpane2.setHgap(10);
-        gridpane2.add(GG1View, 0, 0);
-        gridpane2.add(GG2View, 0, 1);
-        gridpane2.add(GG3View, 1, 0);
-        gridpane2.add(GG4View, 1, 1);
-        gridpane2.add(GG5View, 2, 0);
-        gridpane2.add(GG6View, 2, 1);
-
-        //Fencing scene
-//        VBox vbox4 = new VBox(10);
-//        ScrollPane scrollPane4 = new ScrollPane(vbox4);
-//        scrollPane4.setPadding(new Insets(10));
-//        scrollPane4.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-//        scrollPane4.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-//        BorderPane root4 = new BorderPane(scrollPane3);
-//        root4.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-//        root4.setPadding(new Insets(10));
-//        Scene fScene = new Scene(root4, WIDTH, HEIGHT);
-//        fScene.getStylesheets().add("Style.css");
-        
-        GridPane gridpane3 = new GridPane();
-        gridpane3.setVgap(10);
-        gridpane3.setHgap(10);
-        gridpane3.add(AF1View, 0, 0);
-        gridpane3.add(AF2View, 0, 1);
-        gridpane3.add(AF3View, 1, 0);
-        gridpane3.add(AF4View, 1, 1);
-        gridpane3.add(AF5View, 2, 0);
-        gridpane3.add(AF6View, 2, 1);
-
-//        linksComboBox.setOnAction(e -> {
-//            switch (linksComboBox.getValue()) {
-//                case "Driveway Gates": primaryStage.setScene(dgScene);
-//                    vbox2.getChildren().addAll(headerHbox, linksHbox, gridpane,
-//                            infoHbox);
-//                    linksComboBox.setValue("Driveway Gates");
-//                    break;
-//                    
-//                case "Garden Gates": primaryStage.setScene(ggScene);
-//                    vbox3.getChildren().addAll(headerHbox, linksHbox, gridpane2,
-//                            infoHbox);
-//                    linksComboBox.setValue("Garden Gates");
-//                    break;
-//                    
-//                case "Fencing": primaryStage.setScene(fScene);
-//                    vbox4.getChildren().addAll(headerHbox, linksHbox, gridpane3,
-//                            infoHbox);
-//                    linksComboBox.setValue("Fencing");
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-//        });
-        
         
         primaryStage.setScene(scene);
         primaryStage.show();
