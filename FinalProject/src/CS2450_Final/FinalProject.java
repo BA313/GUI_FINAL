@@ -718,7 +718,7 @@ public class FinalProject extends Application {
         contactAdditonalLabel.setPrefWidth(300);
         
         TextField contactColorsTextField = new TextField();
-        contactFirstTextField.setPrefWidth(600);
+        contactColorsTextField.setPrefWidth(600);
         contactColorsTextField.setDisable(true);
         
         ComboBox<String> startComboBox = new ComboBox<>();
@@ -737,6 +737,71 @@ public class FinalProject extends Application {
         contactAdditioalTextArea.setPrefColumnCount(4);
         contactAdditioalTextArea.setPrefHeight(100);
         
+        Label contactGateOpenLabel = new Label("Gate Opener Info");
+        contactGateOpenLabel.setTextAlignment(TextAlignment.CENTER);
+        contactGateOpenLabel.setId("contactOpener");
+        
+        Label contactCommercialLabel = new Label("Is this for Commercial use?");
+        contactCommercialLabel.setPrefWidth(500);
+        CheckBox contactCommercialCheckBox = new CheckBox();
+        contactCommercialCheckBox.setDisable(true);
+        Label contactResidentialLabel = new Label("Is this for Residential use?");
+        contactResidentialLabel.setPrefWidth(500);
+        CheckBox contactResidentialCheckBox = new CheckBox();
+        contactResidentialCheckBox.setDisable(true);
+        
+        Label contactBrandLabel = new Label("Which Brand of Opener do you want?");
+        contactBrandLabel.setPrefWidth(400);
+        
+        ComboBox<String> brandComboBox = new ComboBox<>();
+        brandComboBox.getItems().addAll("SELECT BRAND","Power Master", "Eagle", "Elite", "Door King", "RamSet"
+        		, "SEA", "OSCO");
+        brandComboBox.setValue("SELECT BRAND");
+        brandComboBox.setPrefWidth(600);
+        brandComboBox.setDisable(true);
+        
+        Label contactTypeLabel = new Label("How would you like to open the gate?");
+        contactTypeLabel.setWrapText(true);
+        
+        Label contactRemoteLabel = new Label("Remote Control");
+        CheckBox contactRemoteCheckBox = new CheckBox();
+        contactRemoteCheckBox.setDisable(true);
+        
+        Label contactKeypadLabel = new Label("Keypad");
+        CheckBox contactKeypadCheckBox = new CheckBox();
+        contactKeypadCheckBox.setDisable(true);
+        
+        Label contactCardReaderLabel = new Label("Card Reader");
+        CheckBox contactCardReaderCheckBox = new CheckBox();
+        contactCardReaderCheckBox.setDisable(true);
+        
+        Label contactBarCodelLabel = new Label("Bar-Code Reader");
+        CheckBox contactBarCodeCheckBox = new CheckBox();
+        contactBarCodeCheckBox.setDisable(true);
+        
+        Label contactPhoneEntryLabel = new Label("Phone Entry");
+        CheckBox contactPhoneEntryCheckBox = new CheckBox();
+        contactPhoneEntryCheckBox.setDisable(true);
+        
+        Label contactIntercomLabel = new Label("Intercom");
+        CheckBox contactIntercomCheckBox = new CheckBox();
+        contactIntercomCheckBox.setDisable(true);
+        
+        Label contactOpenLabel = new Label("About how many time will this gate be opened daily?");
+        contactOpenLabel.setPrefWidth(500);
+        contactOpenLabel.setWrapText(true);
+        Label contactDistanceLabel = new Label("About how far is your home from the gate?");
+        contactDistanceLabel.setPrefWidth(500);
+        
+        TextField contactOpenTextField = new TextField();
+        contactOpenTextField.setPrefWidth(500);
+        contactOpenTextField.setDisable(true);
+        TextField contactDistanceTextField = new TextField();
+        contactDistanceTextField.setPrefWidth(500);
+        contactDistanceTextField.setDisable(true);
+        
+        Button contactSubmit = new Button("Submit");
+        Button contactReset = new Button("Reset");
         
         //TODO work on contact us page
         //TODO write a clear function for all contact us inputs
@@ -804,6 +869,70 @@ public class FinalProject extends Application {
         disableGroup(contactGardenGateGroup);
         disableGroup(contactMatchFenceGroup);
         
+        contactOpenerCheckBox.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+	               if(contactOpenerCheckBox.isSelected()) {
+	                   contactCommercialCheckBox.setDisable(false);
+	                   contactResidentialCheckBox.setDisable(false);
+	                   brandComboBox.setDisable(false);
+	                   contactRemoteCheckBox.setDisable(false);
+	                   contactKeypadCheckBox.setDisable(false);
+	                   contactCardReaderCheckBox.setDisable(false);
+	                   contactBarCodeCheckBox.setDisable(false);
+	                   contactPhoneEntryCheckBox.setDisable(false);
+	                   contactIntercomCheckBox.setDisable(false);
+	                   contactOpenTextField.setDisable(false);
+	                   contactDistanceTextField.setDisable(false);
+	               }else {
+	            	   brandComboBox.setDisable(true);
+	            	   brandComboBox.setValue("SELECT BRAND");
+	            	   fullDisable(contactCommercialCheckBox);
+	            	   fullDisable(contactResidentialCheckBox);
+	            	   fullDisable(contactRemoteCheckBox);
+	            	   fullDisable(contactKeypadCheckBox);
+	            	   fullDisable(contactCardReaderCheckBox);
+	            	   fullDisable(contactBarCodeCheckBox);
+	            	   fullDisable(contactPhoneEntryCheckBox);
+	            	   fullDisable(contactIntercomCheckBox);
+	            	   contactOpenTextField.setText("");
+	            	   contactOpenTextField.setDisable(true);
+	            	   contactDistanceTextField.setText("");
+	            	   contactDistanceTextField.setDisable(true);
+	               }
+	            }
+			});
+        
+        contactReset.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				contactGateCheckBox.setSelected(false);
+				contactGateCheckBox.fireEvent(new ActionEvent());
+				contactFenceCheckBox.setSelected(false);
+				contactFenceCheckBox.fireEvent(new ActionEvent());
+				contactOpenerCheckBox.setSelected(false);
+				contactOpenerCheckBox.fireEvent(new ActionEvent());
+				contactRailingCheckBox.setSelected(false);
+				
+				statesComboBox.setValue("SELECT_STATE");
+				contactFirstTextField.setText("");
+				contactFirstTextField.fireEvent(new ActionEvent());
+				contactLastTextField.setText("");
+				contactLastTextField.fireEvent(new ActionEvent());
+				contactAddressTextField.setText("");
+				contactAddressTextField.fireEvent(new ActionEvent());
+				contactCityTextField.setText("");
+				contactCityTextField.fireEvent(new ActionEvent());
+				contactZipCodeTextField.setText("");
+				contactZipCodeTextField.fireEvent(new ActionEvent());
+				contactEmailTextField.setText("");
+				contactEmailTextField.fireEvent(new ActionEvent());
+				contactPhoneTextField.setText("");
+				contactPhoneTextField.fireEvent(new ActionEvent());
+				
+			}
+        	
+        });
         
         //Contact Page Holders
         HBox contactQuoteHeadHbox = new HBox(10,contactQuoteLabel);
@@ -880,7 +1009,7 @@ public class FinalProject extends Application {
         contactGOptions.setVgap(10);
         contactGOptions.setHgap(10);
         contactGOptions.add(contactColorsLabel, 0, 0,4,1);
-        contactGOptions.add(contactFirstTextField, 4,0,8,1);
+        contactGOptions.add(contactColorsTextField, 4,0,8,1);
         contactGOptions.add(contactSHeightLabel, 0, 1, 2, 1);
         contactGOptions.add(startComboBox, 2,1,4,1);
         contactGOptions.add(contactFHeightLabel, 6, 1, 2, 1);
@@ -915,6 +1044,46 @@ public class FinalProject extends Application {
         HBox contactGateOptionsHbox = new HBox(10,contactSwingVbox, contactSlideVbox);
         contactGateOptionsHbox.setAlignment(Pos.TOP_CENTER);
         
+        HBox contactOpenHeadHbox = new HBox(10, contactGateOpenLabel);
+        contactOpenHeadHbox.setAlignment(Pos.TOP_CENTER);
+        
+        HBox contactCommericalHbox = new HBox(10, contactCommercialLabel, contactCommercialCheckBox);
+        contactCommericalHbox.setAlignment(Pos.TOP_CENTER);
+        
+        HBox contactResidentialHbox = new HBox(10,  contactResidentialLabel, contactResidentialCheckBox);
+        contactResidentialHbox.setAlignment(Pos.TOP_CENTER);
+        
+        HBox contactType1Hbox = new HBox(10,  contactRemoteLabel, contactRemoteCheckBox, 
+        		contactKeypadLabel,contactKeypadCheckBox, contactCardReaderLabel,
+        		contactCardReaderCheckBox);
+        contactType1Hbox.setAlignment(Pos.TOP_CENTER);
+        contactType1Hbox.setPrefWidth(600);
+        
+        HBox contactType2Hbox = new HBox(10,  contactBarCodelLabel, contactBarCodeCheckBox,
+        		contactPhoneEntryLabel, contactPhoneEntryCheckBox, contactIntercomLabel,
+        		contactIntercomCheckBox);
+        contactType2Hbox.setAlignment(Pos.TOP_CENTER);
+        contactType2Hbox.setPrefWidth(600);
+        
+        GridPane contactOpenGridPane = new GridPane();
+        contactOpenGridPane.setPadding(new Insets(10));
+        contactOpenGridPane.setAlignment(Pos.TOP_CENTER);
+        contactOpenGridPane.setVgap(10);
+        contactOpenGridPane.setHgap(10);
+        contactOpenGridPane.add(contactCommericalHbox, 0, 0, 5, 1);
+        contactOpenGridPane.add(contactResidentialHbox, 5,0,5,1);
+        contactOpenGridPane.add(contactBrandLabel, 0, 1, 5, 1);
+        contactOpenGridPane.add(brandComboBox, 5,1,5,1);
+        contactOpenGridPane.add(contactOpenLabel, 0, 2, 5, 1);
+        contactOpenGridPane.add(contactOpenTextField, 5,2,5,1);
+        contactOpenGridPane.add(contactTypeLabel, 0, 3, 5, 2);
+        contactOpenGridPane.add(contactType1Hbox, 5,3,5,1);
+        contactOpenGridPane.add(contactType2Hbox, 5,4,5,1);
+        contactOpenGridPane.add(contactDistanceLabel, 0, 5, 5, 1);
+        contactOpenGridPane.add(contactDistanceTextField, 5,5,5,1);
+        
+        HBox buttonHolderHbox = new HBox(10, contactSubmit, contactReset);
+        buttonHolderHbox.setAlignment(Pos.BOTTOM_CENTER);
         
         //No Page Default Holder
         HBox NoPageHbox = new HBox(10, PageNotFoundView);
@@ -931,7 +1100,8 @@ public class FinalProject extends Application {
         
         //Contact Page
         ContactVbox = new VBox(10,contactHeaderVbox, contactGridPane, 
-        		contactQuoteHbox, contactGateOptionsHbox, contactGOptions);
+        		contactQuoteHbox, contactGateOptionsHbox, contactGOptions,
+        		contactOpenHeadHbox, contactOpenGridPane,buttonHolderHbox);
         
         //vbox to order everything vertically
         mainVbox = new VBox(10,headerVbox, BodyVbox, infoHbox);
