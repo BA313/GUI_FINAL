@@ -47,13 +47,11 @@ public class FinalProject extends Application {
 
     //window size
     private static final double WIDTH = 1250.0, HEIGHT = 1800.0,
-    		TEXT_WIDTH = 1000.0, TEXT_FIELD_WIDTH = 600.0;
+    		TEXT_WIDTH = 1200.0, TEXT_FIELD_WIDTH = 600.0;
     
     //greeting header
     private static final String SUBHEADER = "Enhance the entry of your home with"
             + " custom, decorative gates and fences!";
-    
-    //Cut down on the text cause this site says so much fucking information
     
     //business info
     private static final String BUSINESS_INFO = "L.A. Ornamental Corp\r\n"
@@ -116,36 +114,7 @@ public class FinalProject extends Application {
             + " preexisting gates you have and we have a variety of powder coated"
             + " colors. These gates will really give your home that elegant look.\r\n";
 
-//    //Brand Name Section
-//    private static final String NAME_BRAND_SEC1 = "Here are some of our top brands!\r\n";
-//    
-//    private static final String NAME_BRAND_SEC2 = "BFT Gate Openers\r\n"
-//            + "PowerMaster Gate Openers\r\n"
-//            + "Eagle Gate Operators\r\n"
-//            + "Elite Gate Openers\r\n"
-//            + "Ramset Gate Operators\r\n"
-//            + "Doorking Gate Openers\r\n"
-//            + "Viking Gate Operators\r\n"
-//            + "OSCO Linear Gate Openers\r\n"
-//            + "Liftmaster Gate Openers\r\n"
-//            + "Allstar Gate Operators\r\n"
-//            + "SEA Gate Openers\r\n"
-//            + "FAAC Gate Operators\r\n"
-//            + "Apollo Gate Openers\r\n"
-//            + "Hysecurity Barriers / Risers  Swing  Slides\r\n"
-//            + "\r\n"
-//            + "Residential Sliding Gate Openers\r\n"
-//            + "\r\n"
-//            + "Barrier Gate Vehicle Barrier Gate, Parking\r\n"
-//            + "Gate, Barrier\r\n"
-//            + "\r\n"
-//            + "Ditek Surge Protector  -- Transformers\r\n"
-//            + "Revere\r\n"
-//            + "Aiphone Intercom";
-//            //clean this up a bit/shorter the list
-
     //final about section and legal information
-    //probably remove doesnt change effectiveness of website/presentation
     static final String ADDITIONAL_INFO = "|  About Us  |   Contact Us   |   "
             + "Our Policies   |   FAQ   |   Manufactures   |   Links   |   \n"
             + "Copyright Protected 2004-2008 - L. A. Ornamental & Rack Corp.  "
@@ -160,6 +129,7 @@ public class FinalProject extends Application {
     static final String ABOUT_HEADER = "A Brief History of Aluminum and Gating";
     
     static final String ABOUT_PAGE = "Aluminum The Material of choice\r\n" + 
+    		"\r\n" +
     		"Aluminum: Aluminium is a soft and lightweight metal with a dull silver-gray appearance.  Aluminium is about one-third as dense as steel or copper is " + 
     		"malleable ductile, and easily machined and cast; and has excellent corrosion resistance and durability due to the protective oxide layer. It is also " + 
     		"nonmagnetic and nonsparking and is the second most malleable metal (most being gold) and the sixth most ductile. Whether measured in terms of " + 
@@ -167,25 +137,31 @@ public class FinalProject extends Application {
     		"Aluminium alloys form vital components of aircrafts and rockets as a result of their high strength to weight ratio. Aluminium was selected as the material " + 
     		"to be used for the apex of the Washington Monument, at a time when one ounce cost twice the daily wages of a labourer." + 
     		"\r\n" +
+    		"\r\n" +
     		"After peaking in popularity in the lavish homes of the 1920s then nearly disappearing from new construction during the whimsical vinyl-sided cottage era, " + 
     		"Wrought Aluminum is making a phenomenal come back over wrought iron, now that Aluminum is cheaper to produce and the new techniques available " + 
     		"to make it look like wrought iron with the benefit of maintenance free . " + 
     		"Designers and builders attribute the re-surging demand to current trends in architecture featuring Mediterranean, Southwestern, and French country " + 
     		"style homes. Also credited are improved production methods that render the metal applications more durable " + 
     		"\r\n" + 
+    		"\r\n" +
     		"The topic of gating is increasing. The blur between the public space and the private realm of the homeowners' association and its management is " + 
     		"surfacing. However, land developers are very aware that gating is assumed to favor increased property values, and the town officials are aware of the " + 
     		"associated increases in the town's property tax base. " + 
     		"\r\n" + 
+    		"\r\n" +
     		"There are more than seven million households (about 6 percent of the national total) behind fences or walls, according to the Census Bureau's 2001 " + 
     		"American Housing Survey. The Census Bureau estimated the percentage of people living in gated communities had shot up by 11 percent in the West. " + 
     		"The homes behind the walls, the survey revealed, were \"upscale,\" and \"mostly white developments.\" " + 
     		"\r\n" + 
+    		"\r\n" +
     		"Built in the early 1930s, the first gated communities in Los Angeles were upper-scale developments in Rolling Hills and Bradbury. Now, gated " + 
     		"communities represent almost 50 percent of the market in the desert resort areas near Palm Springs. " + 
     		"\r\n" + 
+    		"\r\n" +
     		"\"As real-estate commodities, they are tailored to fit to specific prospective buyers. Gated communities are located within every kind of middle class and " + 
-    		"upper-class neighborhoods, and are now available for every market segment continuing to increase.";
+    		"upper-class neighborhoods, and are now available for every market segment continuing to increase."+
+    		"\r\n";
 
     //Contact Section
     static final String CONTACT_HEADER = "Contact Us! For all your Fence and Gate Needs";
@@ -305,17 +281,14 @@ public class FinalProject extends Application {
         AF6View.setFitHeight(250);
         
         ImageView AG1View = new ImageView(AlGate1);
-        AG1View.setPreserveRatio(true);
         AG1View.setFitWidth(300);
         AG1View.setFitHeight(250);
         
         ImageView AG2View = new ImageView(AlGate2);
-        AG2View.setPreserveRatio(true);
         AG2View.setFitWidth(300);
         AG2View.setFitHeight(250);
         
         ImageView AG3View = new ImageView(AlGate3);
-        AG3View.setPreserveRatio(true);
         AG3View.setFitWidth(300);
         AG3View.setFitHeight(250);
         
@@ -351,8 +324,7 @@ public class FinalProject extends Application {
         ImageView R2View = new ImageView(Railings2);
         R2View.setPreserveRatio(true);
         R2View.setFitWidth(300);
-        R2View.setFitHeight(250);
-        
+        R2View.setFitHeight(250); 
        
         ImageView DG1View = new ImageView(DrivewayGate1);
         DG1View.setFitWidth(300);
@@ -393,13 +365,13 @@ public class FinalProject extends Application {
         locationLabel.setId("locationlabel");
         locationLabel.setWrapText(true);
 
-        Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2);
+        Label businessLabel = new Label(ABOUT_SEC1 + "\n" + ABOUT_SEC2+ "\n\n" + REASONS_SEC2);
         businessLabel.setWrapText(true);
-        businessLabel.setMaxWidth(650);
+        businessLabel.setMaxWidth(830);
         businessLabel.setPadding(new Insets(0,10,0,10));
         businessLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
-        Label reasonsLabel = new Label(REASONS_SEC1 + "\n" + REASONS_SEC2);
+        Label reasonsLabel = new Label(REASONS_SEC1);
         reasonsLabel.setWrapText(true);
         reasonsLabel.setMaxWidth(TEXT_WIDTH);
         reasonsLabel.setTextAlignment(TextAlignment.JUSTIFY);
@@ -408,10 +380,6 @@ public class FinalProject extends Application {
         typesLabel.setWrapText(true);
         typesLabel.setMaxWidth(TEXT_WIDTH);
         typesLabel.setTextAlignment(TextAlignment.JUSTIFY);
-        
-//        Label brandsLabel = new Label(NAME_BRAND_SEC1 + NAME_BRAND_SEC2);
-//        brandsLabel.setMaxWidth(950);
-//        brandsLabel.setTextAlignment(TextAlignment.JUSTIFY);
         
         Hyperlink hyperlink;
         
@@ -515,19 +483,13 @@ public class FinalProject extends Application {
         reasonsHbox.setAlignment(Pos.BOTTOM_CENTER);
         reasonsHbox.setPadding(new Insets(0,10,0,10));
         
-        HBox imagesHbox = new HBox(10, HP2View, AG1View, AG2View, AG3View);
+        HBox imagesHbox = new HBox(10, HP2View, AG1View, AG2View);
         imagesHbox.setAlignment(Pos.TOP_CENTER);
-        
         
         //hbox for gate types
         HBox typesHbox = new HBox(10, typesLabel);
         typesHbox.setAlignment(Pos.BOTTOM_CENTER);
         typesHbox.setPadding(new Insets(0,10,0,10));
-        
-//        //hbox for brand links
-//        HBox brandsHbox = new HBox(10, brandsLabel);
-//        brandsHbox.setAlignment(Pos.BOTTOM_CENTER);
-//        brandsHbox.setPadding(new Insets(0,10,0,10));
         
         //hbox for additional site bs
         HBox infoHbox = new HBox(10, addtInfoTextFlow);
@@ -922,20 +884,29 @@ public class FinalProject extends Application {
 				contactRailingCheckBox.setSelected(false);
 				
 				statesComboBox.setValue("SELECT_STATE");
+				if(!star(contactFirstLabel))
+					addStar(contactFirstLabel);
 				contactFirstTextField.setText("");
-				contactFirstTextField.fireEvent(new ActionEvent());
+				if(!star(contactLastLabel))
+					addStar(contactLastLabel);
 				contactLastTextField.setText("");
-				contactLastTextField.fireEvent(new ActionEvent());
+				if(!star(contactAddressLabel))
+					addStar(contactAddressLabel);
 				contactAddressTextField.setText("");
-				contactAddressTextField.fireEvent(new ActionEvent());
+				if(!star(contactCityLabel))
+					addStar(contactCityLabel);
 				contactCityTextField.setText("");
-				contactCityTextField.fireEvent(new ActionEvent());
+				if(!star(contactStateLabel))
+					addStar(contactStateLabel);
 				contactZipCodeTextField.setText("");
-				contactZipCodeTextField.fireEvent(new ActionEvent());
+				if(!star(contactZipCodeLabel))
+					addStar(contactZipCodeLabel);
 				contactEmailTextField.setText("");
-				contactEmailTextField.fireEvent(new ActionEvent());
+				if(!star(contactEmailLabel))
+					addStar(contactEmailLabel);
 				contactPhoneTextField.setText("");
-				contactPhoneTextField.fireEvent(new ActionEvent());
+				if(!star(contactPhoneLabel))
+					addStar(contactPhoneLabel);
 				
 			}
         	
@@ -1075,7 +1046,7 @@ public class FinalProject extends Application {
         GridPane contactOpenGridPane = new GridPane();
         //contactOpenGridPane.setMaxWidth(1000);
         contactOpenGridPane.setPadding(new Insets(10));
-        contactOpenGridPane.setAlignment(Pos.TOP_CENTER);
+        contactOpenGridPane.setAlignment(Pos.BOTTOM_CENTER);
         contactOpenGridPane.setVgap(10);
         contactOpenGridPane.setHgap(10);
         contactOpenGridPane.add(contactCommericalHbox, 0, 0, 5, 1);
@@ -1400,7 +1371,7 @@ public class FinalProject extends Application {
                 }
         });
         
-        //added a scroll bar in case its too long, restyle later
+        //added a scroll bar in case its too long
         ScrollPane scrollPane = new ScrollPane(mainVbox);
         scrollPane.setPadding(new Insets(10));
         scrollPane.setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
