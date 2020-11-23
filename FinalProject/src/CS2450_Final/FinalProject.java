@@ -1,5 +1,7 @@
 package CS2450_Final;
 
+import java.awt.Font;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -44,7 +46,7 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
 
     //window size
-    private static final double WIDTH = 1100.0, HEIGHT = 1800.0,
+    private static final double WIDTH = 1250.0, HEIGHT = 1800.0,
     		TEXT_WIDTH = 1000.0, TEXT_FIELD_WIDTH = 600.0;
     
     //greeting header
@@ -198,7 +200,7 @@ public class FinalProject extends Application {
     
     static final Image PageNotFound = new Image("PageNotFound.jpg");
     
-    static final Image AlFence1 = new Image("AluminumFence.jpg");
+    static final Image AlFence1 = new Image("AluminumFence1.jpg");
     static final Image AlFence2 = new Image("AluminumFence2.jpg");
     static final Image AlFence3 = new Image("AluminumFence3.jpg");
     static final Image AlFence4 = new Image("AluminumFence4.jpg");
@@ -379,8 +381,6 @@ public class FinalProject extends Application {
         ImageView HP1View = new ImageView(Homepage1);
         HP1View.setFitWidth(300);
         HP1View.setFitHeight(250);
-        Label subLabel = new Label(SUBHEADER);
-        subLabel.setFont(Font.font("Cambria, 12"));
         
         ImageView HP2View = new ImageView(Homepage2);
         HP2View.setFitWidth(300);
@@ -1073,6 +1073,7 @@ public class FinalProject extends Application {
         contactType2Hbox.setPrefWidth(600);
         
         GridPane contactOpenGridPane = new GridPane();
+        //contactOpenGridPane.setMaxWidth(1000);
         contactOpenGridPane.setPadding(new Insets(10));
         contactOpenGridPane.setAlignment(Pos.TOP_CENTER);
         contactOpenGridPane.setVgap(10);
