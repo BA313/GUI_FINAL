@@ -1,5 +1,5 @@
 .button {
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
@@ -7,13 +7,13 @@
     -fx-background-color: rgb(110, 54, 0);
 }
 .combo-box {
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
     -fx-cell-size: 1.66667em;
 }
 .combo-box .list-cell {
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-background-color: rgb(51, 25, 0);
     -fx-text-fill: rgb(238, 212, 212);
 }
@@ -23,20 +23,41 @@
 .combo-box-popup .list-view .list-cell:hover {
     -fx-background-color: rgb(110, 54, 0);
 }
-
 .text-area .content{
-    -fx-font-size: 10pt;
+    -fx-font-size: 9pt;
     -fx-font-stye: underlined;
+}
+#addtinfotext {
+    -fx-font-size: 8pt;
+}
+#pagelabels {
+    -fx-text-fill: rgb(47, 24, 71);
+    -fx-font-size: 20pt; 
+    -fx-font-family: Copperplate;
+    -fx-font-weight: bold;
+}
+#pagelabels:hover {
+    -fx-effect: dropshadow(gaussian, rgba(79, 79, 79, 0.5), 0, 0, 5, 5);
+}
+#purchaselabels {
+    -fx-text-fill: rgb(47, 24, 71);
+    -fx-font-size: 20pt; 
+    -fx-font-family: Copperplate;
+    -fx-font-weight: bold;
+}
+#sublabel {
+    -fx-font-size: 12pt;
+}
+#locationlabel {
+    -fx-font-size: 15pt;
 }
 VBox {
     -fx-background-color: #FFEBCD;
 }
 .root {
-    -fx-font-size: 12pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Courier New";
     -fx-text-fill: rgb(51, 25, 0);
-    -fx-background-color: #FFEBCD;
 }
-
 
 
